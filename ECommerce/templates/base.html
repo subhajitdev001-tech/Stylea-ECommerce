@@ -1,0 +1,2337 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STYLÉA - Online Shopping India</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Phosphor Icons for modern vector icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="{% static "image/favicon.png" %}" type="image/x-icon">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f6f7fb',
+              100: '#e9ebf5',
+              500: '#3b5bf5',
+              600: '#2544e8',
+              900: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- External Custom Stylesheet -->
+  <link rel="stylesheet" href="{% static "css/style.css" %}">
+
+  <style>
+  /* Pure CSS Form Switcher Logic without JS */
+  #showSignInRadio:checked ~ div #cssSignUpBox { display: none; }
+  #showSignInRadio:checked ~ div #cssSignInBox { display: block; }
+  
+  #showSignUpRadio:checked ~ div #cssSignInBox { display: none; }
+  #showSignUpRadio:checked ~ div #cssSignUpBox { display: block; }
+</style>
+
+</head>
+<body class="bg-[#F8FAFC] text-slate-900 min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+
+{% block header %}
+<header class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 transition-all duration-200 bg-white/90 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 sm:h-20 gap-2 sm:gap-6">
+      
+      <!-- Brand (Responsive Text Styling) -->
+      <div class="flex items-center cursor-pointer flex-shrink-0" onclick="resetFilters()">
+        <div class="select-none">
+          <a href="/"><span class="brand-title text-[18px] sm:text-[26px] tracking-[4px] sm:tracking-[7px]" style="font-family: 'Times New Roman', Times, serif; font-weight: 400; text-transform: uppercase; color: #1e293b; display: inline-block;">
+            S T Y L <span style="color: #d97706; font-style: italic; font-weight: 600;">É</span> A
+          </span></a>
+          <div style="height: 1.5px; width: 100%; background: linear-gradient(90deg, #d97706, transparent); margin: 1px 0;"></div>
+          <span class="sm:text-[8px]" style="display: block; font-size: 7px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #94a3b8; text-align: center;">
+            Haldia &bull; Kolkata 
+          </span>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation with Hover Dropdowns for Women and Men -->
+      <nav class="hidden lg:flex items-center gap-1 h-full">
+        <button onclick="filterDepartment('all')"
+          class="px-4 py-2 text-sm font-bold text-slate-700 hover:text-brand-600 rounded-xl transition hover:bg-slate-100/80">
+          All Collections
+        </button>
+
+        <!-- WOMEN HOVER DROPDOWN -->
+        <div class="relative group h-full flex items-center">
+          <button onclick="filterDepartment('women')"
+            class="flex items-center gap-1.5 px-4 py-2 text-sm font-bold text-slate-700 hover:text-brand-600 rounded-xl transition group-hover:bg-slate-100/80">
+            <span>Women</span>
+            <i class="ph ph-caret-down text-xs transition-transform duration-200 group-hover:rotate-180 text-slate-400 group-hover:text-brand-600"></i>
+        </button>
+
+          <!-- Mega Dropdown Menu -->
+          <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 ease-out transform translate-y-2 group-hover:translate-y-0 absolute top-full left-0 w-[740px] bg-white rounded-3xl shadow-2xl border border-slate-100 p-6 z-50 pointer-events-none group-hover:pointer-events-auto">
+            <div class="grid grid-cols-12 gap-6">
+              <div class="col-span-8 space-y-3">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-2 px-1">
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">Women's Wardrobe</span>
+                  <button onclick="filterDepartment('women')" class="text-[11px] font-bold text-brand-600 hover:underline">View All Women's</button>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-2">
+                  <a href="{% url "index" %}?category=Sarees" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group/item">
+                    <div class="w-9 h-9 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-lg flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                      <i class="ph ph-flower-lotus"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 group-hover/item:text-brand-600">Sarees</div>
+                      <div class="text-[10px] text-slate-500">Pure Kanjivaram &amp; Banarasi silk</div>
+                    </div>
+                  </a>
+
+                  <a href="{% url "index" %}?category=One-Piece" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group/item">
+                    <div class="w-9 h-9 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center text-lg flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                      <i class="ph ph-dress"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 group-hover/item:text-brand-600">One Piece</div>
+                      <div class="text-[10px] text-slate-500">Sculpted jumpsuits &amp; midi bodycons</div>
+                    </div>
+                  </a>
+
+                  <a href="{% url "index" %}?category=Shirt" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group/item">
+                    <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                      <i class="ph ph-t-shirt"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 group-hover/item:text-brand-600">Shirts</div>
+                      <div class="text-[10px] text-slate-500">Silk poplin button-downs</div>
+                    </div>
+                  </a>
+
+                  <a href="{% url 'index' %}?category=T-Shirt-Tops" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group/item">
+                    <div class="w-9 h-9 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center text-lg flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                      <i class="ph ph-shirt-folded"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 group-hover/item:text-brand-600">T-Shirts &amp; Tops</div>
+                      <div class="text-[10px] text-slate-500">Organic Supima cotton staples</div>
+                    </div>
+                  </a>
+
+                  <a href="{% url 'index' %}?category=Jeans" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group/item">
+                    <div class="w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                      <i class="ph ph-pants"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 group-hover/item:text-brand-600">Jeans &amp; Denim</div>
+                      <div class="text-[10px] text-slate-500">High-rise sculpt &amp; straight leg</div>
+                    </div>
+                  </a>
+
+                  <a href="{% url 'index' %}?category=Dresses" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group/item">
+                    <div class="w-9 h-9 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                      <i class="ph ph-sparkle"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 group-hover/item:text-brand-600">Dresses &amp; Gowns</div>
+                      <div class="text-[10px] text-slate-500">Chiffon &amp; gala attire</div>
+                    </div>
+                  </a>
+
+                  <a href="{% url 'index' %}?category=Shoes-Heels" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group/item">
+                    <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                      <i class="ph ph-sneaker-move"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 group-hover/item:text-brand-600">Shoes &amp; Heels</div>
+                      <div class="text-[10px] text-slate-500">Sculpted stiletto pumps</div>
+                    </div>
+                  </a>
+
+                  <a href="{% url 'index' %}?category=Jewellery" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group/item">
+                    <div class="w-9 h-9 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-lg flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                      <i class="ph ph-sketch-logo"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 group-hover/item:text-brand-600">Jewellery &amp; Watches</div>
+                      <div class="text-[10px] text-slate-500">18K suites &amp; diamond timepieces</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Featured Highlight Banner -->
+              <div class="col-span-4 bg-gradient-to-br from-rose-50 via-pink-50 to-amber-50 rounded-2xl p-4 flex flex-col justify-between border border-rose-100/70">
+                <div>
+                  <span class="text-[10px] font-bold uppercase tracking-wider bg-rose-600 text-white px-2 py-0.5 rounded-full">New Arrivals</span>
+                  <h5 class="text-xs font-extrabold text-slate-900 mt-2">Drapes, Denim &amp; Silk</h5>
+                  <p class="text-[11px] text-slate-600 mt-1 leading-snug">Pure handwoven silks, custom contoured denim, and effortless shirts.</p>
+                </div>
+                <div class="space-y-1.5 mt-4">
+                  <a href="{% url 'index' %}?category=Sarees" class="w-full py-2 bg-rose-600 hover:bg-rose-700 text-white font-bold text-[11px] rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm">
+                    <i class="ph ph-flower-lotus"></i>
+                    <span>Explore Sarees</span>
+                  </a>
+                  <button onclick="filterDepartment('women')" class="w-full py-2 bg-slate-900 hover:bg-brand-600 text-white font-bold text-[11px] rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm">
+                    <span>All Women's Line</span>
+                    <i class="ph ph-arrow-right font-bold"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MEN HOVER DROPDOWN -->
+        <div class="relative group h-full flex items-center">
+          <button onclick="filterDepartment('men')"
+            class="flex items-center gap-1.5 px-4 py-2 text-sm font-bold text-slate-700 hover:text-brand-600 rounded-xl transition group-hover:bg-slate-100/80 cursor-pointer">
+            <span>Men</span>
+            <i class="ph ph-caret-down text-xs transition-transform duration-200 group-hover:rotate-180 text-slate-400 group-hover:text-brand-600"></i>
+        </button>
+
+          <!-- Mega Dropdown Menu -->
+          <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 ease-out transform translate-y-2 group-hover:translate-y-0 absolute top-full left-0 w-[680px] bg-white rounded-3xl shadow-2xl border border-slate-100 p-6 z-50 pointer-events-none group-hover:pointer-events-auto">
+            <div class="grid grid-cols-12 gap-6">
+              <div class="col-span-8 space-y-2">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-2 px-1">
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">Men's Wardrobe</span>
+                  <button onclick="filterDepartment('men')" class="text-[11px] font-bold text-brand-600 hover:underline cursor-pointer">View All Men's</button>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-2">
+                  <a href="{% url "index" %}?category=Suits" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group/item">
+                    <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                      <i class="ph ph-coat-hanger"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 group-hover/item:text-brand-600">Suits &amp; Tuxedos</div>
+                      <div class="text-[10px] text-slate-500">Italian wool tailoring</div>
+                    </div>
+                  </a>
+
+                  <a href="{% url 'index' %}?category=Shirts" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group/item">
+                    <div class="w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                      <i class="ph ph-t-shirt"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 group-hover/item:text-brand-600">Shirts</div>
+                      <div class="text-[10px] text-slate-500">Egyptian cotton dress shirts</div>
+                    </div>
+                  </a>
+
+                  <a href="{% url 'index' %}?category=T-Shirt" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group/item">
+                    <div class="w-9 h-9 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center text-lg flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                      <i class="ph ph-shirt-folded"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 group-hover/item:text-brand-600">T-Shirts</div>
+                      <div class="text-[10px] text-slate-500">Heavyweight luxury tees</div>
+                    </div>
+                  </a>
+
+                  <a href="{% url 'index' %}?category=Jeans-Denim" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group/item">
+                    <div class="w-9 h-9 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center text-lg flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                      <i class="ph ph-pants"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 group-hover/item:text-brand-600">Jeans &amp; Denim</div>
+                      <div class="text-[10px] text-slate-500">Japanese selvedge cut</div>
+                    </div>
+                  </a>
+
+                  <a href="{% url 'index' %}?category=Shoes" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group/item">
+                    <div class="w-9 h-9 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                      <i class="ph ph-sneaker"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 group-hover/item:text-brand-600">Shoes &amp; Loafers</div>
+                      <div class="text-[10px] text-slate-500">Goodyear-welted &amp; sneakers</div>
+                    </div>
+                  </a>
+
+                  <a href="{% url 'index' %}?category=Watches" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group/item">
+                    <div class="w-9 h-9 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center text-lg flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                      <i class="ph ph-clock"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 group-hover/item:text-brand-600">Watches</div>
+                      <div class="text-[10px] text-slate-500">Automatic chronographs</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Featured Highlight Banner -->
+              <div class="col-span-4 bg-gradient-to-br from-slate-900 to-brand-900 text-white rounded-2xl p-4 flex flex-col justify-between">
+                <div>
+                  <span class="text-[10px] font-bold uppercase tracking-wider bg-brand-500 text-white px-2 py-0.5 rounded-full">Bespoke</span>
+                  <h5 class="text-xs font-extrabold text-white mt-2">Men's Capsule</h5>
+                  <p class="text-[11px] text-slate-300 mt-1 leading-snug">Precision tailored suits, selvedge denim &amp; Swiss mechanical horology.</p>
+                </div>
+                <button onclick="filterDepartment('men')" class="mt-4 w-full py-2 bg-white hover:bg-slate-100 text-slate-900 font-bold text-[11px] rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm">
+                  <span>View All Men's</span>
+                  <i class="ph ph-arrow-right font-bold"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Desktop Search Bar -->
+      <div class="flex-1 max-w-sm hidden md:block">
+        <div class="relative" id="searchContainer">
+          <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-600 text-lg"></i>
+          <input 
+            id="searchInput" 
+            type="text" 
+            autocomplete="off"
+            placeholder="Search 'shirt for men', 'shirt under 2000', 'watch'..." 
+            class="w-full bg-slate-100/90 text-sm text-slate-800 placeholder-slate-600 pl-11 pr-10 py-2.5 rounded-full border border-transparent focus:border-brand-500 focus:bg-white focus:outline-none transition-all shadow-inner" 
+            oninput="showSearchSuggestions(this.value)"
+            onkeydown="handleSearchKey(event, this.value)" 
+          />
+          <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 hover:text-slate-800 p-1">
+            <i class="ph ph-x-circle-fill text-lg"></i>
+          </button>
+
+          <!-- Flipkart-Style Smart Suggestions Dropdown -->
+          <div id="searchSuggestions" class="hidden absolute left-0 right-0 top-full mt-2 bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50">
+            <ul id="suggestionList" class="divide-y divide-slate-100 text-xs text-slate-700"></ul>
+          </div>
+        </div>
+      </div>
+      <!-- User Authentication State Section -->
+      <div class="flex items-center gap-2">
+        {% if request.user.is_authenticated %}
+          <!-- 1. VISIBLE ONLY WHEN LOGGED IN -->
+          {% with avatar_key=request.user.profile.avatar|default:'b1' %}
+          <div class="relative group" tabindex="0">
+
+            <!-- Name + Avatar circle -->
+            <div class="flex items-center gap-2 sm:gap-3 bg-slate-100/80 group-hover:bg-slate-100 pl-3 pr-1.5 py-1 rounded-full border border-slate-200/60 transition cursor-pointer">
+              <span class="text-xs sm:text-sm font-medium text-slate-700">
+                Hi, <span class="font-bold text-slate-900 capitalize">{{ request.user.first_name|default:request.user.username }}</span>
+              </span>
+              <img src="{% static 'image/avatars/'|add:avatar_key|add:'.svg' %}" alt="Avatar"
+                   class="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover ring-2 ring-white">
+            </div>
+
+            <!-- Dropdown menu (opens on hover; also on tap/focus for mobile) -->
+            <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-all duration-200 absolute right-0 top-full pt-2 w-56 z-50">
+              <div class="bg-white rounded-2xl shadow-2xl border border-slate-100 py-2 overflow-hidden">
+
+                <div class="px-4 py-2.5 border-b border-slate-100">
+                  <p class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">Signed in as</p>
+                  <p class="text-sm font-bold text-slate-900 truncate capitalize">{{ request.user.first_name|default:request.user.username }}</p>
+                </div>
+
+                <a href="{% url 'manage_account' %}" class="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-600 transition">
+                  <i class="ph ph-user-gear text-lg"></i><span>Manage Account</span>
+                </a>
+                <a href="{% url 'my_orders' %}" class="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-600 transition">
+                  <i class="ph ph-package text-lg"></i><span>Orders</span>
+                </a>
+                <a href="{% url 'contact_us' %}" class="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-600 transition">
+                  <i class="ph ph-envelope-simple text-lg"></i><span>Contact Us</span>
+                </a>
+                <a href="{% url 'help' %}" class="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-600 transition">
+                  <i class="ph ph-lifebuoy text-lg"></i><span>Help</span>
+                </a>
+
+                <div class="border-t border-slate-100 mt-1 pt-1">
+                  <a href="{% url 'logout' %}" class="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold text-rose-600 hover:bg-rose-50 transition">
+                    <i class="ph ph-sign-out text-lg"></i><span>Logout</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endwith %}
+
+        {% else %}
+          <!-- 2. VISIBLE ONLY WHEN LOGGED OUT -->
+          <a 
+            href="{% url 'login' %}" 
+            class="relative flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full text-slate-700 hover:text-slate-950 hover:bg-slate-100 active:scale-95 transition cursor-pointer no-underline border border-slate-200/80 sm:border-transparent hover:border-slate-300"
+            title="Sign In / Register">
+            <i class="ph ph-user text-lg sm:text-xl"></i>
+            <span class="text-xs sm:text-sm font-semibold tracking-wide text-slate-800">Login</span>
+          </a>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+          <!-- Wishlist Button (Visible only when logged in) -->
+          <button onclick="toggleWishlistFilter()" id="wishlistHeaderBtn" class="relative p-2 rounded-full {% if request.GET.wishlist == 'true' %}text-rose-600 bg-rose-50{% else %}text-slate-600 hover:bg-slate-100{% endif %} active:scale-95 transition" title="View Wishlist">
+            <i class="{% if request.GET.wishlist == 'true' %}ph-fill{% else %}ph{% endif %} ph-heart text-2xl"></i>
+            <span id="wishlistCountBadge" class="{% if wishlist_count == 0 %}hidden{% endif %} absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] bg-rose-500 text-white text-[10px] font-bold rounded-full px-1 flex items-center justify-center ring-2 ring-white">
+              {{ wishlist_count }}
+            </span>
+          </button>
+
+          <!-- Slide-out Cart Button (Visible only when logged in) -->
+          <button onclick="openCart()" class="relative flex items-center gap-1.5 sm:gap-2 bg-slate-900 hover:bg-slate-800 text-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-full font-medium text-xs sm:text-sm transition-all shadow-md shadow-slate-900/10 active:scale-95">
+            <i class="ph ph-shopping-bag text-lg sm:text-xl"></i>
+            <span class="hidden sm:inline font-semibold">Cart</span>
+            <span id="cartCountBadge" class="bg-brand-500 text-white text-[10px] sm:text-xs px-1.5 py-0.2 rounded-full font-bold">
+              {{ cart_count }}
+            </span>
+          </button>
+        {% endif %}
+        </div>
+
+    </div>
+
+    <!-- Mobile Search Sub-Bar (Expandable) -->
+    <div id="mobileSearchBar" class="hidden md:hidden pb-3 pt-1 border-t border-slate-100">
+      <div class="relative">
+        <i class="ph ph-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-600"></i>
+        <input 
+          type="text" 
+          placeholder="Search catalog..." 
+          class="w-full bg-slate-100 text-sm text-slate-800 placeholder-slate-600 pl-10 pr-4 py-2 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500" 
+          oninput="handleSearch(this.value)" 
+        />
+      </div>
+    </div>
+  </div>
+</header>
+{% endblock header %}
+
+
+<!-- Mobile Quick Category Bar (Only visible on Mobile & Tablet) -->
+<div class="lg:hidden bg-white/95 border-b border-slate-200/80 sticky top-16 z-30 px-3 py-2.5 backdrop-blur-md">
+  <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+    
+    <!-- All Collections -->
+    <button onclick="filterDepartment('all')"
+      class="flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all bg-slate-900 text-white shadow-sm active:scale-95">
+      All
+    </button>
+
+    <!-- Women Quick Filter -->
+    <button onclick="filterDepartment('women')"
+      class="flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200 active:scale-95">
+      Women
+    </button>
+
+    <!-- Men Quick Filter -->
+    <button onclick="filterDepartment('men')"
+      class="flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200 active:scale-95">
+      Men
+    </button>
+
+    <div class="h-4 w-[1px] bg-slate-300 flex-shrink-0 mx-1"></div>
+
+    <!-- Direct Fast Access to Popular Sections -->
+    <button onclick="selectGenderAndCategory('Women', 'Sarees')" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium bg-rose-50 text-rose-700 active:scale-95">
+      Sarees
+    </button>
+    <button onclick="selectGenderAndCategory('Men', 'Men\'s Attire')" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 active:scale-95">
+      Suits
+    </button>
+    <button onclick="selectGenderAndCategory('Men', 'Watches')" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700 active:scale-95">
+      Watches
+    </button>
+  </div>
+</div>
+  <main class="flex-grow">
+    <!-- Main Unified E-Commerce Promotional Banner Carousel -->
+    <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-4 pb-3" aria-label="E-Commerce Hero Banner">
+      <div class="relative group/banner" id="mainHeroBannerWrapper">
+        
+        <!-- Outer Banner Box -->
+        <div class="hero-banner-container bg-white shadow-sm border border-slate-200/90">
+          <div class="hero-slider-track" id="heroSliderTrack" style="transform: translateX(0%);">
+            
+            <!-- Banner 1: AI-Powered Fashion -->
+            <div class="hero-banner-slide bg-gradient-to-r from-blue-50 via-indigo-50/60 to-slate-100 flex items-stretch justify-between overflow-hidden">
+              <div class="flex-1 flex flex-col justify-center px-5 sm:px-10 lg:px-14 z-10 max-w-[62%] sm:max-w-[58%]">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-100/90 text-brand-600 text-[10px] sm:text-xs font-extrabold uppercase tracking-wider w-fit mb-1.5 sm:mb-2.5 border border-blue-200">
+                  <i class="ph-fill ph-sparkle text-xs"></i>
+                  <span>AI Fashion Engine</span>
+                </div>
+                <h2 class="text-lg sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                  AI-Powered Fashion
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1 sm:mt-2 line-clamp-2 max-w-md font-medium">
+                  Find the perfect outfit for every occasion curated instantly to your taste and fit.
+                </p>
+                <div class="mt-3 sm:mt-5 flex items-center gap-3">
+                  <button onclick="scrollToCatalog()" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-brand-500/25 active:scale-95 flex items-center gap-2">
+                    <span>Try AI Stylist</span>
+                    <i class="ph ph-arrow-right font-bold"></i>
+                  </button>
+                  <span class="hidden md:inline-block text-xs font-semibold text-slate-500">Free Virtual Fitting</span>
+                </div>
+              </div>
+              <div class="w-[38%] sm:w-[42%] relative flex items-center justify-end overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80" 
+                  alt="AI-Powered Fashion Models" 
+                  class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" 
+                />
+                <div class="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-blue-50/90 via-blue-50/40 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+            <!-- Banner 2: Tailored Men's Shirts -->
+            <div class="hero-banner-slide bg-gradient-to-r from-sky-50 via-blue-50/60 to-indigo-50 flex items-stretch justify-between overflow-hidden">
+              <div class="flex-1 flex flex-col justify-center px-5 sm:px-10 lg:px-14 z-10 max-w-[62%] sm:max-w-[58%]">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 text-[10px] sm:text-xs font-extrabold uppercase tracking-wider w-fit mb-1.5 sm:mb-2 border border-blue-200">
+                  <i class="ph-fill ph-t-shirt text-xs"></i>
+                  <span>140/2 Egyptian Giza Poplin</span>
+                </div>
+                <h2 class="text-lg sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                  Tailored Men's Shirts
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1 sm:mt-1.5 line-clamp-2 max-w-md font-medium">
+                  Single-needle stitched luxury poplin &amp; twill shirts with mother-of-pearl buttons and crisp spread collars.
+                </p>
+                <div class="mt-3 sm:mt-5 flex items-center gap-3">
+                  <button onclick="selectGenderAndCategory('Men', 'Shirts')" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-blue-700 hover:bg-blue-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-blue-700/25 active:scale-95 flex items-center gap-2">
+                    <span>Shop Dress Shirts</span>
+                    <i class="ph ph-arrow-right font-bold"></i>
+                  </button>
+                  <span class="hidden md:inline-block text-xs font-semibold text-blue-700 bg-blue-50 px-2 py-1 rounded-lg border border-blue-200">Starting at $185</span>
+                </div>
+              </div>
+              <div class="w-[38%] sm:w-[42%] relative flex items-center justify-end overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=900&q=80" 
+                  alt="Tailored Men's Dress Shirt" 
+                  class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" 
+                />
+                <div class="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-sky-50/90 via-sky-50/40 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+            <!-- Banner 3: Perfect Party Look -->
+            <div class="hero-banner-slide bg-gradient-to-r from-rose-50 via-amber-50/50 to-pink-50 flex items-stretch justify-between overflow-hidden">
+              <div class="flex-1 flex flex-col justify-center px-5 sm:px-10 lg:px-14 z-10 max-w-[62%] sm:max-w-[58%]">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-100 text-rose-700 text-[10px] sm:text-xs font-extrabold uppercase tracking-wider w-fit mb-1.5 sm:mb-2.5 border border-rose-200">
+                  <i class="ph-fill ph-confetti text-xs"></i>
+                  <span>Curated For Celebrations</span>
+                </div>
+                <h2 class="text-lg sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                  Perfect Party Look
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1 sm:mt-2 line-clamp-2 max-w-md font-medium">
+                  AI-curated outfits for your next party. From evening silk gowns to sharp tuxedos.
+                </p>
+                <div class="mt-3 sm:mt-5 flex items-center gap-3">
+                  <button onclick="scrollToCatalog()" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
+                    <span>Shop Now</span>
+                    <i class="ph ph-bag font-bold"></i>
+                  </button>
+                  <span class="hidden md:inline-block text-xs font-semibold text-rose-600 bg-rose-50 px-2 py-1 rounded-lg border border-rose-200">Extra 15% with SAVE15</span>
+                </div>
+              </div>
+              <div class="w-[38%] sm:w-[42%] relative flex items-center justify-end overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=900&q=80" 
+                  alt="Party Evening Looks" 
+                  class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" 
+                />
+                <div class="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-rose-50/90 via-rose-50/40 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+            <!-- Banner 4: Swiss Automatic Chronographs -->
+            <div class="hero-banner-slide bg-gradient-to-r from-slate-100 via-stone-100 to-amber-50/40 flex items-stretch justify-between overflow-hidden">
+              <div class="flex-1 flex flex-col justify-center px-5 sm:px-10 lg:px-14 z-10 max-w-[62%] sm:max-w-[58%]">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-200 text-slate-800 text-[10px] sm:text-xs font-extrabold uppercase tracking-wider w-fit mb-1.5 sm:mb-2 border border-slate-300">
+                  <i class="ph-fill ph-clock text-xs"></i>
+                  <span>Swiss Mechanical Caliber</span>
+                </div>
+                <h2 class="text-lg sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                  Automatic Chronographs
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1 sm:mt-1.5 line-clamp-2 max-w-md font-medium">
+                  28,800 vph skeleton exhibition casebacks, scratch-resistant sapphire crystals, and 56-hour reserve.
+                </p>
+                <div class="mt-3 sm:mt-5 flex items-center gap-3">
+                  <button onclick="selectGenderAndCategory('Men', 'Watches')" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-slate-950 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
+                    <span>Explore Watches</span>
+                    <i class="ph ph-compass font-bold"></i>
+                  </button>
+                  <span class="hidden md:inline-block text-xs font-semibold text-slate-700 bg-white px-2 py-1 rounded-lg border border-slate-200">56-Hr Reserve</span>
+                </div>
+              </div>
+              <div class="w-[38%] sm:w-[42%] relative flex items-center justify-end overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80" 
+                  alt="Men's Skeleton Automatic Chronograph" 
+                  class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" 
+                />
+                <div class="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-slate-100/90 via-slate-100/40 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+            <!-- Banner 5: Premium Men's T-Shirts -->
+            <div class="hero-banner-slide bg-gradient-to-r from-teal-50 via-slate-50 to-emerald-50 flex items-stretch justify-between overflow-hidden">
+              <div class="flex-1 flex flex-col justify-center px-5 sm:px-10 lg:px-14 z-10 max-w-[62%] sm:max-w-[58%]">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-teal-100 text-teal-800 text-[10px] sm:text-xs font-extrabold uppercase tracking-wider w-fit mb-1.5 sm:mb-2 border border-teal-200">
+                  <i class="ph-fill ph-shirt-folded text-xs"></i>
+                  <span>260 GSM Mercerized Cotton</span>
+                </div>
+                <h2 class="text-lg sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                  Luxury Men's T-Shirts
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1 sm:mt-1.5 line-clamp-2 max-w-md font-medium">
+                  Dense combed cotton with double mercerization, drop-shoulder contour, and durable shape retention.
+                </p>
+                <div class="mt-3 sm:mt-5 flex items-center gap-3">
+                  <button onclick="selectGenderAndCategory('Men', 'T-Shirts')" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-teal-700 hover:bg-teal-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-teal-700/25 active:scale-95 flex items-center gap-2">
+                    <span>Shop Luxury Tees</span>
+                    <i class="ph ph-bag font-bold"></i>
+                  </button>
+                  <span class="hidden md:inline-block text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-lg border border-emerald-200">Zero Shrinkage</span>
+                </div>
+              </div>
+              <div class="w-[38%] sm:w-[42%] relative flex items-center justify-end overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80" 
+                  alt="Men's Heavyweight Mercerized T-Shirt" 
+                  class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" 
+                />
+                <div class="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-teal-50/90 via-teal-50/40 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+            <!-- Banner 6: Handcrafted Heritage Sarees -->
+            <div class="hero-banner-slide bg-gradient-to-r from-purple-50 via-pink-50/60 to-rose-50 flex items-stretch justify-between overflow-hidden">
+              <div class="flex-1 flex flex-col justify-center px-5 sm:px-10 lg:px-14 z-10 max-w-[62%] sm:max-w-[58%]">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-purple-100 text-purple-800 text-[10px] sm:text-xs font-extrabold uppercase tracking-wider w-fit mb-1.5 sm:mb-2.5 border border-purple-200">
+                  <i class="ph-fill ph-flower-lotus text-xs"></i>
+                  <span>Heirloom Handlooms</span>
+                </div>
+                <h2 class="text-lg sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                  Heritage Silk Sarees
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1 sm:mt-2 line-clamp-2 max-w-md font-medium">
+                  Pure Kanjivaram &amp; Varanasi Banarasi georgette silks woven with certified gold zari.
+                </p>
+                <div class="mt-3 sm:mt-5 flex items-center gap-3">
+                  <button onclick="selectGenderAndCategory('Women', 'Sarees')" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-purple-700 hover:bg-purple-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-purple-700/25 active:scale-95 flex items-center gap-2">
+                    <span>Explore Sarees</span>
+                    <i class="ph ph-arrow-right font-bold"></i>
+                  </button>
+                  <span class="hidden md:inline-block text-xs font-semibold text-purple-700 bg-purple-50 px-2 py-1 rounded-lg border border-purple-200">Free Matching Blouse Cut</span>
+                </div>
+              </div>
+              <div class="w-[38%] sm:w-[42%] relative flex items-center justify-end overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=900&q=80" 
+                  alt="Heritage Sarees Collection" 
+                  class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" 
+                />
+                <div class="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-purple-50/90 via-purple-50/40 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+            <!-- Banner 7: Fine Jewellery & Watches -->
+            <div class="hero-banner-slide bg-gradient-to-r from-amber-50 via-stone-50 to-slate-100 flex items-stretch justify-between overflow-hidden">
+              <div class="flex-1 flex flex-col justify-center px-5 sm:px-10 lg:px-14 z-10 max-w-[62%] sm:max-w-[58%]">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-100/90 text-amber-900 text-[10px] sm:text-xs font-extrabold uppercase tracking-wider w-fit mb-1.5 sm:mb-2.5 border border-amber-200">
+                  <i class="ph-fill ph-sketch-logo text-xs"></i>
+                  <span>VVS Certified Suites</span>
+                </div>
+                <h2 class="text-lg sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                  Fine Jewellery &amp; Watches
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1 sm:mt-2 line-clamp-2 max-w-md font-medium">
+                  Solitaire 18K suites, South Sea pearls &amp; Swiss mechanical skeleton chronographs.
+                </p>
+                <div class="mt-3 sm:mt-5 flex items-center gap-3">
+                  <button onclick="selectGenderAndCategory('All', 'Jewellery Sets')" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
+                    <span>View Jewels</span>
+                    <i class="ph ph-sparkle font-bold"></i>
+                  </button>
+                  <span class="hidden md:inline-block text-xs font-semibold text-slate-600">Complimentary Certificate</span>
+                </div>
+              </div>
+              <div class="w-[38%] sm:w-[42%] relative flex items-center justify-end overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80" 
+                  alt="Fine Jewellery and Watches" 
+                  class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" 
+                />
+                <div class="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-amber-50/90 via-amber-50/40 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+            <!-- Banner 8: Men's Sartorial & Raw Denim -->
+            <div class="hero-banner-slide bg-gradient-to-r from-slate-100 via-blue-50/50 to-indigo-50 flex items-stretch justify-between overflow-hidden">
+              <div class="flex-1 flex flex-col justify-center px-5 sm:px-10 lg:px-14 z-10 max-w-[62%] sm:max-w-[58%]">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-200 text-slate-800 text-[10px] sm:text-xs font-extrabold uppercase tracking-wider w-fit mb-1.5 sm:mb-2.5 border border-slate-300">
+                  <i class="ph-fill ph-coat-hanger text-xs"></i>
+                  <span>Italian Tailoring</span>
+                </div>
+                <h2 class="text-lg sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                  Men's Sartorial Capsule
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1 sm:mt-2 line-clamp-2 max-w-md font-medium">
+                  Super 150s Biella wool tuxedos, Giza poplin shirts, and Okayama raw selvedge denim.
+                </p>
+                <div class="mt-3 sm:mt-5 flex items-center gap-3">
+                  <button onclick="selectGenderAndCategory('Men', 'All')" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-blue-700 hover:bg-blue-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-blue-700/25 active:scale-95 flex items-center gap-2">
+                    <span>Shop Menswear</span>
+                    <i class="ph ph-arrow-right font-bold"></i>
+                  </button>
+                  <span class="hidden md:inline-block text-xs font-semibold text-slate-500">Bespoke Fit Guaranteed</span>
+                </div>
+              </div>
+              <div class="w-[38%] sm:w-[42%] relative flex items-center justify-end overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=900&q=80" 
+                  alt="Men's Sartorial Suit" 
+                  class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" 
+                />
+                <div class="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-slate-100/90 via-slate-100/40 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+            <!-- Banner 9: Virtual Try-On -->
+            <div class="hero-banner-slide bg-gradient-to-r from-teal-50 via-cyan-50/60 to-emerald-50 flex items-stretch justify-between overflow-hidden">
+              <div class="flex-1 flex flex-col justify-center px-5 sm:px-10 lg:px-14 z-10 max-w-[62%] sm:max-w-[58%]">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-teal-100 text-teal-800 text-[10px] sm:text-xs font-extrabold uppercase tracking-wider w-fit mb-1.5 sm:mb-2.5 border border-teal-200">
+                  <i class="ph-fill ph-camera text-xs"></i>
+                  <span>AR Smart Fitting</span>
+                </div>
+                <h2 class="text-lg sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                  Virtual Try-On
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1 sm:mt-2 line-clamp-2 max-w-md font-medium">
+                  Try your outfit virtually before you buy. Experience true drape, color and silhouette.
+                </p>
+                <div class="mt-3 sm:mt-5 flex items-center gap-3">
+                  <button onclick="scrollToCatalog()" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-teal-700 hover:bg-teal-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-teal-700/20 active:scale-95 flex items-center gap-2">
+                    <span>Try It On</span>
+                    <i class="ph ph-arrows-out-cardinal font-bold"></i>
+                  </button>
+                  <span class="hidden md:inline-block text-xs font-semibold text-slate-500">Zero Returns Guarantee</span>
+                </div>
+              </div>
+              <div class="w-[38%] sm:w-[42%] relative flex items-center justify-end overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=80" 
+                  alt="Virtual Fashion Fitting" 
+                  class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" 
+                />
+                <div class="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-teal-50/90 via-teal-50/40 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Vertically Centered Left & Right Navigation Arrows -->
+        <button 
+          id="heroPrevBannerBtn" 
+          class="banner-arrow-btn banner-arrow-btn-prev absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/95 text-slate-800 flex items-center justify-center border border-slate-200 z-20" 
+          aria-label="Previous Banner">
+          <i class="ph ph-caret-left font-bold text-base sm:text-lg"></i>
+        </button>
+
+        <button 
+          id="heroNextBannerBtn" 
+          class="banner-arrow-btn banner-arrow-btn-next absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/95 text-slate-800 flex items-center justify-center border border-slate-200 z-20" 
+          aria-label="Next Banner">
+          <i class="ph ph-caret-right font-bold text-base sm:text-lg"></i>
+        </button>
+
+        <!-- Centered Pagination Dots Below Banner -->
+        <div class="hero-banner-dots flex items-center justify-center gap-2 mt-3" id="heroBannerDotsContainer">
+          <!-- Dots rendered dynamically by FlipkartBannerCarousel -->
+        </div>
+
+      </div>
+    </section>
+    
+    <!-- Filter Bar Section -->
+    <section id="catalogSection" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-5">
+        
+        <!-- Left Category Scroll Section -->
+        <div class="flex-1 min-w-0 relative flex items-center gap-1 group/scroll">
+          <button 
+            id="catScrollLeftBtn"
+            onclick="scrollCategoryBar(-220)" 
+            class="flex-shrink-0 w-8 h-8 rounded-full bg-white shadow-md border border-slate-200 text-slate-700 hover:text-brand-600 hover:bg-slate-50 flex items-center justify-center transition active:scale-95 z-10"
+            title="Scroll left"
+            aria-label="Scroll categories left">
+            <i class="ph ph-caret-left font-bold text-sm"></i>
+          </button>
+
+          <!-- Category Buttons Container (Updated with Master Toggles & Django loop) -->
+          <div 
+            id="categoryButtonsContainer" 
+            class="flex-1 min-w-0 flex items-center gap-2 overflow-x-auto hide-scrollbar py-1 px-1 cursor-grab active:cursor-grabbing">
+            
+            <!-- Master Toggles (All, Women, Men) -->
+            <button onclick="filterDepartment('all')" id="btn-dept-all" class="dept-btn shrink-0 rounded-full px-5 py-2 text-xs font-bold bg-[#0f172a] text-white shadow-md transition">
+                All Products
+            </button>
+            <button onclick="filterDepartment('women')" id="btn-dept-women" class="dept-btn shrink-0 rounded-full px-5 py-2 text-xs font-bold bg-white text-slate-600 ring-1 ring-slate-200 hover:ring-pink-500 hover:text-pink-600 transition">
+                Women
+            </button>
+            <button onclick="filterDepartment('men')" id="btn-dept-men" class="dept-btn shrink-0 rounded-full px-5 py-2 text-xs font-bold bg-white text-slate-600 ring-1 ring-slate-200 hover:ring-blue-500 hover:text-blue-600 transition">
+                Men
+            </button>
+
+            <!-- Divider -->
+            <div class="w-px h-5 bg-slate-300 mx-1 shrink-0"></div>
+
+            <!-- Dynamic Subcategories from Database -->
+            {% for cat in categories %}
+            <a href="{% url 'index' %}?category={{ cat.category_slug }}" 
+              class="subcat-chip flex items-center shrink-0 rounded-full px-4 py-2 text-xs font-semibold bg-white text-slate-600 ring-1 ring-slate-200 hover:ring-[#ea580c] hover:text-[#ea580c] transition {% if selected_category == cat.category_slug %}bg-orange-50 ring-[#ea580c] text-[#ea580c]{% endif %}"
+              data-catname="{{ cat.category_name|lower }}">
+                {{ cat.category_name }}
+            </a>
+            {% endfor %}
+          </div>
+
+          <button 
+            id="catScrollRightBtn"
+            onclick="scrollCategoryBar(220)" 
+            class="flex-shrink-0 w-8 h-8 rounded-full bg-white shadow-md border border-slate-200 text-slate-700 hover:text-brand-600 hover:bg-slate-50 flex items-center justify-center transition active:scale-95 z-10"
+            title="Scroll right"
+            aria-label="Scroll categories right">
+            <i class="ph ph-caret-right font-bold text-sm"></i>
+          </button>
+        </div>
+
+        <!-- Right Side Sorting -->
+        <div class="flex items-center gap-3 flex-shrink-0 self-end md:self-auto">
+          <div class="flex items-center gap-2 text-xs font-semibold text-slate-500">
+            <i class="ph ph-sort-ascending text-lg"></i>
+            <span>Sort:</span>
+          </div>
+          <select id="sortSelect" onchange="handleSortChange(this.value)" class="text-xs bg-white border border-slate-200 rounded-xl px-3 py-2 text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-sm cursor-pointer">
+            <option value="featured" {% if not request.GET.sort or request.GET.sort == 'featured' %}selected{% endif %}>Featured Runway</option>
+            <option value="price-low" {% if request.GET.sort == 'price-low' %}selected{% endif %}>Price: Low to High</option>
+            <option value="price-high" {% if request.GET.sort == 'price-high' %}selected{% endif %}>Price: High to Low</option>
+            <option value="rating" {% if request.GET.sort == 'rating' %}selected{% endif %}>Highest Rated</option>
+          </select>
+        </div>
+
+      </div>
+    </section>
+
+    {% block content %}{% endblock content %}
+
+    <!-- Secondary Mid-Page Horizontal Promotional Banner Carousel -->
+    <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pb-14" aria-label="Seasonal Spotlight Promotional Carousel">
+      <div class="flex items-center justify-between mb-3 px-1">
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-brand-600">Curated Highlights</span>
+          <h3 class="text-base sm:text-lg font-extrabold text-slate-900">Trending Spotlight &amp; Special Edition Offers</h3>
+        </div>
+        <button onclick="scrollToCatalog()" class="text-xs font-bold text-brand-600 hover:text-brand-800 flex items-center gap-1 transition">
+          <span>Explore All Offers</span>
+          <i class="ph ph-arrow-right"></i>
+        </button>
+      </div>
+
+      <div class="relative group/secondaryBanner" id="secondaryPromoBannerWrapper">
+        <div class="hero-banner-container bg-white shadow-sm border border-slate-200/90">
+          <div class="hero-slider-track" style="transform: translateX(0%);">
+            
+            <!-- Mid Banner 1: Festive Fusion -->
+            <div class="hero-banner-slide bg-gradient-to-r from-rose-50 via-pink-50/50 to-orange-50 flex items-stretch justify-between overflow-hidden">
+              <div class="flex-1 flex flex-col justify-center px-5 sm:px-10 lg:px-14 z-10 max-w-[62%] sm:max-w-[58%]">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-100 text-rose-800 text-[10px] sm:text-xs font-extrabold uppercase tracking-wider w-fit mb-1.5 sm:mb-2.5 border border-rose-200">
+                  <i class="ph-fill ph-sparkle text-xs"></i>
+                  <span>Limited Festive Season</span>
+                </div>
+                <h2 class="text-lg sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                  Festive Fusion Spotlight
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1 sm:mt-2 line-clamp-2 max-w-md font-medium">
+                  Extra 20% off bridal wear, Kanjivaram silks, and tailored double-breasted tuxedos.
+                </p>
+                <div class="mt-3 sm:mt-5 flex items-center gap-3">
+                  <button onclick="scrollToCatalog()" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-rose-600/25 active:scale-95 flex items-center gap-2">
+                    <span>Unlock Discounts</span>
+                    <i class="ph ph-ticket font-bold"></i>
+                  </button>
+                  <span class="hidden md:inline-block text-xs font-semibold text-rose-700 bg-rose-50 px-2 py-1 rounded-lg border border-rose-200">Coupon: FESTIVE20</span>
+                </div>
+              </div>
+              <div class="w-[38%] sm:w-[42%] relative flex items-center justify-end overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=80" 
+                  alt="Festive Fusion Wear" 
+                  class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" 
+                />
+                <div class="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-rose-50/90 via-rose-50/40 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+            <!-- Mid Banner 2: Luxury Footwear Showcase -->
+            <div class="hero-banner-slide bg-gradient-to-r from-amber-50 via-yellow-50/50 to-stone-100 flex items-stretch justify-between overflow-hidden">
+              <div class="flex-1 flex flex-col justify-center px-5 sm:px-10 lg:px-14 z-10 max-w-[62%] sm:max-w-[58%]">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 text-[10px] sm:text-xs font-extrabold uppercase tracking-wider w-fit mb-1.5 sm:mb-2.5 border border-amber-200">
+                  <i class="ph-fill ph-sneaker text-xs"></i>
+                  <span>Italian Leather Craft</span>
+                </div>
+                <h2 class="text-lg sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                  Handcrafted Footwear Range
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1 sm:mt-2 line-clamp-2 max-w-md font-medium">
+                  Goodyear-welted burnished leather loafers and sculpted 85mm Italian Nappa stiletto pumps.
+                </p>
+                <div class="mt-3 sm:mt-5 flex items-center gap-3">
+                  <button onclick="selectGenderAndCategory('All', 'Shoes')" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-amber-800 hover:bg-amber-700 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
+                    <span>Shop Footwear</span>
+                    <i class="ph ph-arrow-right font-bold"></i>
+                  </button>
+                  <span class="hidden md:inline-block text-xs font-semibold text-slate-600">Free Size Exchanges</span>
+                </div>
+              </div>
+              <div class="w-[38%] sm:w-[42%] relative flex items-center justify-end overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=900&q=80" 
+                  alt="Leather Shoes" 
+                  class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" 
+                />
+                <div class="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-amber-50/90 via-amber-50/40 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+            <!-- Mid Banner 3: Premium Casuals & Selvedge Denim -->
+            <div class="hero-banner-slide bg-gradient-to-r from-teal-50 via-cyan-50/50 to-blue-50 flex items-stretch justify-between overflow-hidden">
+              <div class="flex-1 flex flex-col justify-center px-5 sm:px-10 lg:px-14 z-10 max-w-[62%] sm:max-w-[58%]">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-teal-100 text-teal-800 text-[10px] sm:text-xs font-extrabold uppercase tracking-wider w-fit mb-1.5 sm:mb-2.5 border border-teal-200">
+                  <i class="ph-fill ph-pants text-xs"></i>
+                  <span>Atelier Denim Works</span>
+                </div>
+                <h2 class="text-lg sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                  Pure Supima Tees &amp; Kurabo Denim
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1 sm:mt-2 line-clamp-2 max-w-md font-medium">
+                  Heavyweight 260GSM mercerized crewnecks and 14.5oz authentic Okayama raw selvedge jeans.
+                </p>
+                <div class="mt-3 sm:mt-5 flex items-center gap-3">
+                  <button onclick="selectGenderAndCategory('All', 'Jeans')" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-teal-700 hover:bg-teal-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
+                    <span>Discover Denim</span>
+                    <i class="ph ph-arrow-right font-bold"></i>
+                  </button>
+                  <span class="hidden md:inline-block text-xs font-semibold text-teal-700 bg-teal-50 px-2 py-1 rounded-lg">Japanese Mill Certified</span>
+                </div>
+              </div>
+              <div class="w-[38%] sm:w-[42%] relative flex items-center justify-end overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=80" 
+                  alt="Denim Jeans" 
+                  class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" 
+                />
+                <div class="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-teal-50/90 via-teal-50/40 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Vertically Centered Left & Right Navigation Arrows -->
+        <button 
+          class="banner-arrow-btn banner-arrow-btn-prev absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/95 text-slate-800 flex items-center justify-center border border-slate-200 z-20" 
+          aria-label="Previous Banner">
+          <i class="ph ph-caret-left font-bold text-base sm:text-lg"></i>
+        </button>
+
+        <button 
+          class="banner-arrow-btn banner-arrow-btn-next absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/95 text-slate-800 flex items-center justify-center border border-slate-200 z-20" 
+          aria-label="Next Banner">
+          <i class="ph ph-caret-right font-bold text-base sm:text-lg"></i>
+        </button>
+
+        <!-- Centered Pagination Dots Below Banner -->
+        <div class="hero-banner-dots flex items-center justify-center gap-2 mt-3">
+          <button class="hero-dot-indicator w-2.5 h-2 rounded-full bg-brand-600 active" aria-label="Slide 1"></button>
+          <button class="hero-dot-indicator w-2 h-2 rounded-full bg-slate-300" aria-label="Slide 2"></button>
+          <button class="hero-dot-indicator w-2 h-2 rounded-full bg-slate-300" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Badges & Guarantee -->
+    <section class="bg-white border-t border-slate-200 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="flex items-start gap-4">
+            <div class="p-3 bg-brand-50 text-brand-600 rounded-2xl">
+              <i class="ph ph-truck text-2xl font-bold"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-slate-900">Complimentary Shipping</h4>
+              <p class="text-xs text-slate-500 mt-0.5">Carbon neutral transit on orders over $50 with real-time tracking.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="p-3 bg-brand-50 text-brand-600 rounded-2xl">
+              <i class="ph ph-shield-check text-2xl font-bold"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-slate-900">2-Year Studio Warranty</h4>
+              <p class="text-xs text-slate-500 mt-0.5">Comprehensive parts &amp; craftsmanship protection on all designs.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="p-3 bg-brand-50 text-brand-600 rounded-2xl">
+              <i class="ph ph-arrows-counter-clockwise text-2xl font-bold"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-slate-900">30-Day Home Trial</h4>
+              <p class="text-xs text-slate-500 mt-0.5">No-hassle returns and exchanges with prepaid return postage.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="p-3 bg-brand-50 text-brand-600 rounded-2xl">
+              <i class="ph ph-lock-key text-2xl font-bold"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-slate-900">256-Bit Encrypted</h4>
+              <p class="text-xs text-slate-500 mt-0.5">Instant checkout with Apple Pay, Google Pay, cards &amp; Klarna.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {% block footer %}
+  <footer class="bg-slate-950 text-slate-400 text-xs py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-2">
+            
+            <span style="font-family: 'Times New Roman', Times, serif; font-size: 26px; font-weight: 400; letter-spacing: 7px; text-transform: uppercase; color: #d1d6df; display: inline-block;">
+            S T Y L <span style="color: #d97706; font-style: italic; font-weight: 600;">É</span> A
+            </span>
+          </div>
+          <p class="text-slate-400 text-xs leading-relaxed max-w-sm">
+            Curated essentials engineered at the intersection of architecture, sound design, and industrial ergonomics. Crafted for modern creatives.
+          </p>
+          <div class="flex gap-4 text-lg text-slate-400">
+            <a href="#" class="hover:text-white transition"><i class="ph ph-youtube-logo"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="ph ph-linkedin-logo"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="ph ph-github-logo"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h5 class="font-bold text-white uppercase tracking-wider mb-3">Collections</h5>
+          <ul class="space-y-2">
+            <li><a href="#" onclick="selectCategory('Electronics'); return false;" class="hover:text-white transition">Personal Audio</a></li>
+            <li><a href="#" onclick="selectCategory('Watches'); return false;" class="hover:text-white transition">Horology</a></li>
+            <li><a href="#" onclick="selectCategory('Home & Living'); return false;" class="hover:text-white transition">Interior Living</a></li>
+            <li><a href="#" onclick="selectCategory('Accessories'); return false;" class="hover:text-white transition">Everyday Carry</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-bold text-white uppercase tracking-wider mb-3">Customer Care</h5>
+          <ul class="space-y-2">
+            <li><a href="#orderLookup" onclick="showToast('Tracking portal active for registered orders', 'info'); return false;" class="hover:text-white transition">Track Your Order</a></li>
+            <li><a href="#" onclick="showToast('Warranty claims serviced in 48 hours', 'info'); return false;" class="hover:text-white transition">Warranty Claims</a></li>
+            <li><a href="#" onclick="showToast('Free returns within 30 days', 'info'); return false;" class="hover:text-white transition">Returns Policy</a></li>
+            <li><a href="#" onclick="showToast('Support live on Mon-Fri 9AM-6PM EST', 'info'); return false;" class="hover:text-white transition">Contact Studio</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-bold text-white uppercase tracking-wider mb-3">Exclusive Updates</h5>
+          <p class="text-slate-400 mb-3 leading-relaxed">Subscribe for restricted prototype batch alerts.</p>
+          <form action="{% url 'newsletter_subscribe' %}" method="POST" class="flex gap-2">
+            {% csrf_token %}
+            <input type="email" name="email" required placeholder="Enter email" class="bg-slate-900 border border-slate-800 px-3 py-2 rounded-xl text-white text-xs w-full focus:outline-none focus:border-brand-500" />
+            <button type="submit" class="bg-brand-600 hover:bg-brand-500 text-white px-3 py-2 rounded-xl font-bold text-xs transition">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-400">
+        <div>&copy; 2026 STYLÉA Concept Studio Inc. All rights reserved. Mock checkout demo.</div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:underline">Privacy Policy</a>
+          <a href="#" class="hover:underline">Terms of Service</a>
+          <a href="#" class="hover:underline">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  {% endblock footer %}
+
+  <!-- ================= DJANGO MESSAGES (POPUP TOAST) ================= -->
+{% if messages %}
+<!-- Container ke majhkhaner upore (Top-Middle) set kora hoyeche -->
+<div id="toast-container" class="fixed bottom-10 right-5 z-[9999] flex flex-col items-end gap-3 pointer-events-none w-max max-w-sm">
+    {% for message in messages %}
+        <div class="toast-notification pointer-events-auto transform transition-all duration-500 ease-out flex items-center p-4 bg-white border border-slate-200 rounded-2xl shadow-2xl min-w-[300px] translate-y-0 opacity-100">
+            
+            <!-- Icon change based on success or error -->
+            {% if message.tags == 'error' %}
+                <div class="inline-flex items-center justify-center shrink-0 w-8 h-8 text-rose-500 bg-rose-50 ring-1 ring-rose-200 rounded-full">
+                    <i class="ph-fill ph-warning-circle text-lg"></i>
+                </div>
+            {% else %}
+                <div class="inline-flex items-center justify-center shrink-0 w-8 h-8 text-emerald-500 bg-emerald-50 ring-1 ring-emerald-200 rounded-full">
+                    <i class="ph-fill ph-check-circle text-lg"></i>
+                </div>
+            {% endif %}
+            
+            <!-- Message Text -->
+            <div class="ml-3 text-sm font-bold text-slate-800">{{ message }}</div>
+            
+            <!-- Close Button -->
+            <button type="button" onclick="this.closest('.toast-notification').remove()" class="ml-auto pl-3 bg-white text-slate-400 hover:text-slate-900 rounded-full p-1.5 hover:bg-slate-100 inline-flex h-8 w-8 items-center justify-center transition">
+                <i class="ph ph-x text-base"></i>
+            </button>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- Auto-hide script -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const toasts = document.querySelectorAll('.toast-notification');
+        
+        // 4 second por popup gulo upore (top) slide kore miliye jabe
+        setTimeout(() => {
+            toasts.forEach(toast => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                // Popup ta halka upore uthe jabe ebong invisible hobe
+                toast.classList.add('-translate-y-5', 'opacity-0'); 
+                
+                // Transition sesh howar por HTML theke remove kora
+                setTimeout(() => toast.remove(), 500); 
+            });
+        }, 4000);
+    });
+</script>
+{% endif %}
+
+<!-- ==========================================
+     PREMIUM AI STYLIST
+========================================== -->
+
+{% if user.is_authenticated %}
+
+<!-- FLOATING ROBOT BUTTON -->
+
+<button id="ai-stylist-fab"
+        onclick="toggleStylist()"
+        aria-label="Open AI Stylist">
+
+    <img src="{% static 'image/ai-stylist-bot.png' %}"
+         alt="AI Stylist Robot">
+
+    <span class="stylist-online-dot"></span>
+
+    <span class="stylist-tooltip">Ask AI Stylist ✨</span>
+
+</button>
+
+
+<!-- ==========================================
+     AI STYLIST CHAT DRAWER
+========================================== -->
+
+<div id="ai-stylist-drawer">
+
+    <!-- HEADER -->
+
+    <div class="stylist-header">
+
+        <div class="stylist-header-left">
+
+            <div class="stylist-avatar">
+              <img src="{% static 'image/ai-stylist-bot.png' %}" alt="AI Stylist Robot">
+                <span class="avatar-online"></span>
+            </div>
+
+            <div class="stylist-header-info">
+                <h3>Personal AI Stylist</h3>
+                <p>
+                    <span class="online-indicator"></span>
+                    Your personal fashion guide
+                </p>
+            </div>
+
+        </div>
+
+        <div class="stylist-header-actions">
+
+            <button onclick="clearStylistChat()" title="Clear chat">
+                <i class="ph ph-trash"></i>
+            </button>
+
+            <button onclick="toggleStylist()" title="Close">
+                <i class="ph ph-x"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- CHAT MESSAGES -->
+
+    <div id="chat-messages">
+
+        <!-- WELCOME SCREEN -->
+
+        <div class="stylist-welcome">
+
+            <div class="welcome-icon">
+              <img src="{% static 'image/favicon.png' %}"
+              alt="AI Stylist Robot">
+            </div>
+
+            <span class="welcome-label">
+                YOUR PERSONAL STYLE GUIDE
+            </span>
+
+            <h2>
+                Let's find your<br>
+                <span>perfect look.</span>
+            </h2>
+
+            <p>
+                Tell me where you're going, what you love,
+                and your budget. I'll curate an outfit just for you.
+            </p>
+
+            <div class="suggestion-title">
+                TRY ASKING
+            </div>
+
+            <div class="stylist-suggestions">
+
+                <button onclick="useStylistPrompt('Suggest a birthday party outfit')">
+                    <i class="ph ph-confetti"></i>
+                    Birthday outfit
+                </button>
+
+                <button onclick="useStylistPrompt('Show me stylish watches')">
+                    <i class="ph ph-watch"></i>
+                    Stylish watches
+                </button>
+
+                <button onclick="useStylistPrompt('Suggest a casual outfit under ₹2000')">
+                    <i class="ph ph-t-shirt"></i>
+                    Casual under ₹2000
+                </button>
+
+                <button onclick="useStylistPrompt('Recommend a premium formal look')">
+                    <i class="ph ph-briefcase"></i>
+                    Formal look
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- INPUT AREA -->
+
+    <div class="stylist-input-area">
+
+        <div class="stylist-input-wrapper">
+
+            <input
+                type="text"
+                id="stylist-input"
+                placeholder="Describe your dream outfit..."
+                autocomplete="off"
+            >
+
+            <button id="stylist-send-btn"
+                    onclick="sendStylistMessage()"
+                    aria-label="Send message">
+
+                <i class="ph-fill ph-paper-plane-right"></i>
+
+            </button>
+
+        </div>
+
+        <div class="stylist-input-footer">
+
+            <span>
+                <i class="ph ph-sparkle"></i>
+                Powered by AI
+            </span>
+
+            <span>Find your signature style.</span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+     AI STYLIST CSS
+========================================== -->
+
+<style>
+
+/* =================================
+   FLOATING ROBOT BUTTON
+================================= */
+
+/* LARGE FLOATING AI STYLIST BUTTON */
+
+#ai-stylist-fab {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    border-radius: 50%;
+
+    padding: 0;
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 0.3s ease;
+}
+
+/* ROBOT IMAGE */
+
+#ai-stylist-fab img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* HOVER EFFECT */
+
+#ai-stylist-fab:hover {
+    transform: scale(1.12);
+}
+
+/* ONLINE INDICATOR */
+
+.stylist-online-dot {
+    position: absolute;
+
+    width: 17px;
+    height: 17px;
+
+    background: #22c55e;
+    border: 3px solid white;
+
+    border-radius: 50%;
+
+    top: 8px;
+    right: 8px;
+}
+
+/* TOOLTIP */
+
+.stylist-tooltip {
+    position: absolute;
+
+    right: 110px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: #0f172a;
+    color: white;
+
+    padding: 9px 15px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s ease;
+}
+
+#ai-stylist-fab:hover .stylist-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* MOBILE */
+
+@media (max-width: 576px) {
+    #ai-stylist-fab {
+        width: 85px;
+        height: 85px;
+
+        bottom: 18px;
+        right: 18px;
+    }
+}
+
+
+/* =================================
+   CHAT DRAWER
+================================= */
+
+#ai-stylist-drawer {
+    position: fixed;
+
+    right: 25px;
+    bottom: 115px;
+
+    width: 390px;
+    height: min(620px, calc(100vh - 140px));
+
+    z-index: 9999;
+
+    display: none;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 22px;
+
+    box-shadow: 0 25px 80px rgba(15,23,42,.22);
+}
+
+#ai-stylist-drawer.stylist-open {
+    animation: stylistOpen .3s ease;
+}
+
+@keyframes stylistOpen {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+.stylist-header {
+    background: #0f172a;
+    color: white;
+
+    padding: 17px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stylist-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stylist-avatar {
+  width: 43px;
+  height: 43px;
+
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 23px;
+
+  color: white;
+  background: linear-gradient(135deg, #f97316, #c2410c);
+
+  position: relative;
+
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar-online {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    right: -2px;
+    bottom: -2px;
+
+    background: #22c55e;
+
+    border: 2px solid #0f172a;
+    border-radius: 50%;
+}
+
+.stylist-header-info h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+}
+
+.stylist-header-info p {
+    color: #aab5c7;
+    font-size: 10px;
+    margin: 4px 0 0;
+}
+
+.online-indicator {
+    display: inline-block;
+
+    width: 6px;
+    height: 6px;
+
+    background: #22c55e;
+    border-radius: 50%;
+
+    margin-right: 4px;
+}
+
+.stylist-header-actions {
+    display: flex;
+    gap: 7px;
+}
+
+.stylist-header-actions button {
+    width: 33px;
+    height: 33px;
+
+    border: 0;
+    border-radius: 9px;
+
+    color: #cbd5e1;
+    background: rgba(255,255,255,.08);
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.stylist-header-actions button:hover {
+    color: white;
+    background: rgba(255,255,255,.18);
+}
+
+
+/* =================================
+   CHAT BODY
+================================= */
+
+#chat-messages {
+    flex: 1;
+    min-height: 0;
+
+    overflow-y: auto;
+
+    padding: 22px 17px;
+
+    background: #fafafa;
+
+    font-size: 13px;
+
+    scroll-behavior: smooth;
+}
+
+#chat-messages::-webkit-scrollbar {
+    width: 4px;
+}
+
+#chat-messages::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
+
+
+/* =================================
+   WELCOME SCREEN
+================================= */
+
+.stylist-welcome {
+    text-align: center;
+    padding: 15px 2px;
+}
+
+.welcome-icon {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 15px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 18px;
+
+    font-size: 27px;
+
+    color: #ea580c;
+    background: #fff0e8;
+}
+
+.welcome-label {
+    color: #ea580c;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+}
+
+.stylist-welcome h2 {
+    margin: 12px 0;
+
+    color: #0f172a;
+
+    font-size: 27px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.stylist-welcome h2 span {
+    color: #ea580c;
+}
+
+.stylist-welcome > p {
+    max-width: 280px;
+
+    margin: 0 auto 24px;
+
+    color: #64748b;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.suggestion-title {
+    text-align: left;
+
+    color: #94a3b8;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+}
+
+.stylist-suggestions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.stylist-suggestions button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    text-align: left;
+
+    padding: 11px 9px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 11px;
+
+    background: white;
+    color: #334155;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.stylist-suggestions button i {
+    color: #ea580c;
+    font-size: 16px;
+}
+
+.stylist-suggestions button:hover {
+    border-color: #ea580c;
+    background: #fff7ed;
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   CHAT BUBBLES
+================================= */
+
+.stylist-user-message {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 14px;
+}
+
+.stylist-user-message span {
+    max-width: 82%;
+
+    background: #0f172a;
+    color: white;
+
+    padding: 11px 14px;
+
+    border-radius: 15px 15px 3px 15px;
+
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.stylist-ai-message {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+
+    margin-bottom: 15px;
+}
+
+
+/* AI ROBOT AVATAR */
+
+.stylist-ai-icon {
+    flex-shrink: 0;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    background: white;
+    border: 1px solid #e2e8f0;
+
+    padding: 2px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stylist-ai-icon img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* PREMIUM AI RESPONSE BUBBLE */
+
+.stylist-ai-content {
+    max-width: 85%;
+
+    padding: 13px 15px;
+
+    background: #ffffff;
+    color: #334155;
+
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid #ea580c;
+
+    border-radius: 3px 16px 16px 16px;
+
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+}
+
+.stylist-ai-content p {
+    margin: 0 0 9px;
+}
+
+.stylist-ai-content p:last-child {
+    margin-bottom: 0;
+}
+
+.stylist-ai-content ul,
+.stylist-ai-content ol {
+    padding-left: 20px;
+    margin: 8px 0;
+}
+
+.stylist-ai-content strong {
+    color: #0f172a;
+}
+
+
+/* =================================
+   TYPING ANIMATION
+================================= */
+
+.stylist-typing {
+    display: flex;
+    gap: 5px;
+    padding: 5px 0;
+}
+
+.stylist-typing span {
+    width: 6px;
+    height: 6px;
+
+    background: #ea580c;
+    border-radius: 50%;
+
+    animation: typingBounce .8s infinite alternate;
+}
+
+.stylist-typing span:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.stylist-typing span:nth-child(3) {
+    animation-delay: .4s;
+}
+
+@keyframes typingBounce {
+    to {
+        opacity: .3;
+        transform: translateY(-4px);
+    }
+}
+
+
+/* =================================
+   INPUT AREA
+================================= */
+
+.stylist-input-area {
+    padding: 13px 15px 11px;
+
+    border-top: 1px solid #e5e7eb;
+
+    background: white;
+}
+
+.stylist-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 5px 6px 5px 13px;
+
+    background: #f1f5f9;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 13px;
+
+    transition: .2s;
+}
+
+.stylist-input-wrapper:focus-within {
+    background: white;
+    border-color: #ea580c;
+
+    box-shadow: 0 0 0 3px rgba(234,88,12,.08);
+}
+
+#stylist-input {
+    width: 100%;
+    min-width: 0;
+
+    border: 0;
+    outline: none;
+
+    background: transparent;
+    color: #0f172a;
+
+    font-size: 12px;
+
+    padding: 9px 0;
+}
+
+#stylist-input::placeholder {
+    color: #94a3b8;
+}
+
+#stylist-send-btn {
+    flex-shrink: 0;
+
+    width: 37px;
+    height: 37px;
+
+    display: grid;
+    place-items: center;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: #0f172a;
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+#stylist-send-btn:hover {
+    background: #ea580c;
+    transform: scale(1.05);
+}
+
+#stylist-send-btn:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.stylist-input-footer {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 9px;
+
+    color: #94a3b8;
+    font-size: 9px;
+}
+
+.stylist-input-footer i {
+    color: #ea580c;
+}
+
+
+/* =================================
+   MOBILE RESPONSIVE
+================================= */
+
+@media(max-width: 480px) {
+
+    #ai-stylist-drawer {
+        right: 10px;
+        left: 10px;
+
+        bottom: 95px;
+
+        width: auto;
+
+        height: min(610px, calc(100dvh - 115px));
+
+        border-radius: 19px;
+    }
+
+    #ai-stylist-fab {
+        width: 65px;
+        height: 65px;
+
+        right: 16px;
+        bottom: 17px;
+    }
+
+}
+
+</style>
+
+
+<!-- ==========================================
+     AI STYLIST JAVASCRIPT
+========================================== -->
+
+<script>
+
+// =================================
+// TOGGLE CHAT DRAWER
+// =================================
+
+function toggleStylist() {
+
+    const drawer = document.getElementById('ai-stylist-drawer');
+
+    const isOpen = drawer.style.display === 'flex';
+
+    drawer.style.display = isOpen ? 'none' : 'flex';
+
+    if (!isOpen) {
+
+        drawer.classList.remove('stylist-open');
+
+        // Restart opening animation
+        void drawer.offsetWidth;
+
+        drawer.classList.add('stylist-open');
+
+        document.getElementById('stylist-input').focus();
+
+    }
+
+}
+
+
+// =================================
+// ESCAPE HTML
+// =================================
+
+function escapeStylistHtml(text) {
+
+    const div = document.createElement('div');
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
+
+
+// =================================
+// SUGGESTED PROMPTS
+// =================================
+
+function useStylistPrompt(prompt) {
+
+    const input = document.getElementById('stylist-input');
+
+    input.value = prompt;
+
+    sendStylistMessage();
+
+}
+
+
+// =================================
+// CLEAR CHAT
+// =================================
+
+function clearStylistChat() {
+
+    const chatBox = document.getElementById('chat-messages');
+
+    if (!confirm('Clear your current chat?')) return;
+
+    chatBox.innerHTML = `
+
+        <div class="stylist-welcome">
+
+          <div class="stylist-ai-icon">
+              <img src="{% static 'image/ai-stylist-bot.png' %}"
+                  alt="AI Stylist">
+          </div>
+
+            <span class="welcome-label">
+                YOUR PERSONAL STYLE GUIDE
+            </span>
+
+            <h2>
+                Let's find your<br>
+                <span>perfect look.</span>
+            </h2>
+
+            <p>
+                Tell me where you're going and I'll curate an outfit for you.
+            </p>
+
+        </div>
+
+    `;
+
+}
+
+
+// =================================
+// SEND MESSAGE
+// =================================
+
+async function sendStylistMessage() {
+
+    const input = document.getElementById('stylist-input');
+
+    const sendBtn = document.getElementById('stylist-send-btn');
+
+    const msg = input.value.trim();
+
+    if (!msg || sendBtn.disabled) return;
+
+    const chatBox = document.getElementById('chat-messages');
+
+    // Remove welcome screen
+    chatBox.querySelector('.stylist-welcome')?.remove();
+
+
+    // Show user message
+
+    chatBox.insertAdjacentHTML('beforeend', `
+
+        <div class="stylist-user-message">
+
+            <span>
+                ${escapeStylistHtml(msg)}
+            </span>
+
+        </div>
+
+    `);
+
+
+    input.value = '';
+
+    sendBtn.disabled = true;
+
+
+    // Loading animation
+
+    const loadingId = 'loading-' + Date.now();
+
+    chatBox.insertAdjacentHTML('beforeend', `
+
+        <div class="stylist-ai-message" id="${loadingId}">
+
+          <div class="stylist-ai-icon">
+              <img src="{% static 'image/ai-stylist-bot.png' %}"
+                  alt="AI Stylist">
+          </div>
+
+            <div class="stylist-ai-content">
+
+                <div class="stylist-typing">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
+
+        </div>
+
+    `);
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+
+    try {
+
+        // Django API request
+
+        const response = await fetch('/api/ai-stylist/', {
+
+            method: 'POST',
+
+            headers: {
+
+                'Content-Type': 'application/json',
+
+                'X-CSRFToken': '{{ csrf_token }}'
+
+            },
+
+            body: JSON.stringify({
+
+                message: msg
+
+            })
+
+        });
+
+
+        const data = await response.json();
+
+
+        // Remove loading animation
+
+        document.getElementById(loadingId)?.remove();
+
+
+        // Read backend response
+
+        const reply = data.reply || data.error ||
+
+            'Sorry, something went wrong. Please try again.';
+
+
+        let safeReply;
+
+
+        if (response.ok && data.status !== 'error') {
+
+            // Markdown formatting
+
+            const formattedReply =
+
+                typeof marked !== 'undefined'
+
+                    ? marked.parse(reply)
+
+                    : escapeStylistHtml(reply).replace(/\n/g, '<br>');
+
+
+            // Sanitize HTML
+
+            safeReply =
+
+                typeof DOMPurify !== 'undefined'
+
+                    ? DOMPurify.sanitize(formattedReply)
+
+                    : escapeStylistHtml(reply).replace(/\n/g, '<br>');
+
+        }
+
+        else {
+
+            safeReply = escapeStylistHtml(reply);
+
+        }
+
+
+        // Display AI response
+
+        chatBox.insertAdjacentHTML('beforeend', `
+
+            <div class="stylist-ai-message">
+
+              <div class="stylist-ai-icon">
+                  <img src="{% static 'image/ai-stylist-bot.png' %}"
+                      alt="AI Stylist">
+              </div>
+
+                <div class="stylist-ai-content">
+
+                    ${safeReply}
+
+                </div>
+
+            </div>
+
+        `);
+
+
+        // Refresh cart after adding products
+
+        if (response.ok && /successfully added/i.test(reply)) {
+
+            setTimeout(() => {
+
+                window.location.reload();
+
+            }, 2500);
+
+        }
+
+
+    }
+
+    catch (error) {
+
+        document.getElementById(loadingId)?.remove();
+
+        console.error('AI Stylist Error:', error);
+
+
+        chatBox.insertAdjacentHTML('beforeend', `
+
+            <div class="stylist-ai-message">
+
+                <div class="stylist-ai-icon">
+                    <i class="ph ph-warning-circle"></i>
+                </div>
+
+                <div class="stylist-ai-content">
+
+                    Sorry! I'm having trouble connecting right now.
+                    Please try again in a moment.
+
+                </div>
+
+            </div>
+
+        `);
+
+    }
+
+    finally {
+
+        sendBtn.disabled = false;
+
+        input.focus();
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+    }
+
+}
+
+
+// =================================
+// ENTER KEY TO SEND MESSAGE
+// =================================
+
+document.getElementById('stylist-input')?.addEventListener(
+    'keydown',
+    function(event) {
+
+        if (event.key === 'Enter') {
+
+            event.preventDefault();
+
+            sendStylistMessage();
+
+        }
+
+    }
+);
+
+</script>
+
+{% endif %}
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+  <script src="{% static "js/script.js" %}"></script>
+</body>
+</html>

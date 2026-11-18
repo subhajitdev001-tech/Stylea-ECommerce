@@ -1,0 +1,283 @@
+{% extends 'info_base.html' %}
+
+{% block title %}Help Center - STYLÉA{% endblock %}
+
+{% block content %}
+<style>html { scroll-behavior: smooth; }</style>
+
+<!-- ========== HERO ========== -->
+<section class="bg-white border-b border-slate-200">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8 text-center">
+    <h1 class="text-2xl sm:text-3xl font-extrabold text-[#0f172a] tracking-tight">Help Center</h1>
+    <p class="text-sm text-slate-500 mt-1">Everything you need to know about shopping, delivery and payments at STYLÉA.</p>
+
+    <div class="grid grid-cols-3 gap-3 max-w-xl mx-auto mt-6">
+      <div class="rounded-2xl bg-emerald-50 border border-emerald-100 py-3 px-2">
+        <i class="ph ph-truck text-2xl text-emerald-600"></i>
+        <p class="text-xs font-extrabold text-slate-900 mt-1">Free Delivery</p>
+      </div>
+      <div class="rounded-2xl bg-sky-50 border border-sky-100 py-3 px-2">
+        <i class="ph ph-arrows-counter-clockwise text-2xl text-sky-600"></i>
+        <p class="text-xs font-extrabold text-slate-900 mt-1">7-Day Returns</p>
+      </div>
+      <div class="rounded-2xl bg-orange-50 border border-orange-100 py-3 px-2">
+        <i class="ph ph-lock-key text-2xl text-[#ea580c]"></i>
+        <p class="text-xs font-extrabold text-slate-900 mt-1">Secure Payment</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION NAV (sticks under the header) ========== -->
+<nav class="sticky top-16 z-30 bg-slate-50/95 backdrop-blur border-b border-slate-200">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-2.5 flex gap-2 overflow-x-auto text-[11px] font-bold uppercase tracking-wider whitespace-nowrap">
+    <a href="#about" class="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-[#ea580c] hover:text-[#ea580c] transition">About</a>
+    <a href="#how-it-works" class="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-[#ea580c] hover:text-[#ea580c] transition">How It Works</a>
+    <a href="#delivery" class="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-[#ea580c] hover:text-[#ea580c] transition">Delivery</a>
+    <a href="#payment" class="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-[#ea580c] hover:text-[#ea580c] transition">Payment</a>
+    <a href="#returns" class="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-[#ea580c] hover:text-[#ea580c] transition">Returns</a>
+    <a href="#faq" class="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-[#ea580c] hover:text-[#ea580c] transition">FAQ</a>
+  </div>
+</nav>
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 py-8 space-y-10">
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="scroll-mt-32">
+    <h2 class="text-lg font-extrabold text-[#0f172a] mb-3 flex items-center gap-2">
+      <i class="ph ph-storefront text-[#ea580c]"></i> About STYLÉA
+    </h2>
+    <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm space-y-3 text-sm text-slate-600 leading-relaxed">
+      <p>STYLÉA is an online fashion store from <strong class="text-slate-900">Haldia &bull; Kolkata</strong>. You can shop for both men and women, with collections like sarees, dresses, shirts, T-shirts, jeans, shoes, jewellery and watches, all in one place.</p>
+      <p>Not sure what to wear? Try our <strong class="text-slate-900">AI Stylist</strong> on the home page to get outfit ideas for different occasions, then add your favourites to your wishlist or cart.</p>
+      <div class="flex flex-wrap gap-2 pt-1">
+        <a href="{% url 'index' %}" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#ea580c] hover:underline">Start shopping <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section id="how-it-works" class="scroll-mt-32">
+    <h2 class="text-lg font-extrabold text-[#0f172a] mb-3 flex items-center gap-2">
+      <i class="ph ph-list-checks text-[#ea580c]"></i> How Shopping Works
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex gap-3">
+        <div class="w-8 h-8 rounded-full bg-[#0f172a] text-white text-sm font-extrabold flex items-center justify-center flex-shrink-0">1</div>
+        <div>
+          <h3 class="text-sm font-extrabold text-slate-900">Create an account</h3>
+          <p class="text-xs text-slate-600 mt-1 leading-relaxed"><a href="{% url 'register' %}" class="font-bold text-[#ea580c] hover:underline">Register</a> or <a href="{% url 'login' %}" class="font-bold text-[#ea580c] hover:underline">log in</a>. You need an account to use the wishlist, cart and checkout.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex gap-3">
+        <div class="w-8 h-8 rounded-full bg-[#0f172a] text-white text-sm font-extrabold flex items-center justify-center flex-shrink-0">2</div>
+        <div>
+          <h3 class="text-sm font-extrabold text-slate-900">Browse and choose</h3>
+          <p class="text-xs text-slate-600 mt-1 leading-relaxed">Explore categories for men and women. Tap the heart to save an item to your wishlist.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex gap-3">
+        <div class="w-8 h-8 rounded-full bg-[#0f172a] text-white text-sm font-extrabold flex items-center justify-center flex-shrink-0">3</div>
+        <div>
+          <h3 class="text-sm font-extrabold text-slate-900">Add to cart or Buy Now</h3>
+          <p class="text-xs text-slate-600 mt-1 leading-relaxed">Add several items to your cart and check out together, or use <strong>Buy Now</strong> to purchase a single item quickly.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex gap-3">
+        <div class="w-8 h-8 rounded-full bg-[#0f172a] text-white text-sm font-extrabold flex items-center justify-center flex-shrink-0">4</div>
+        <div>
+          <h3 class="text-sm font-extrabold text-slate-900">Enter your delivery address</h3>
+          <p class="text-xs text-slate-600 mt-1 leading-relaxed">Fill in your name, phone number, full address and pincode. Please double-check them so your order reaches you.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex gap-3">
+        <div class="w-8 h-8 rounded-full bg-[#0f172a] text-white text-sm font-extrabold flex items-center justify-center flex-shrink-0">5</div>
+        <div>
+          <h3 class="text-sm font-extrabold text-slate-900">Choose how to pay</h3>
+          <p class="text-xs text-slate-600 mt-1 leading-relaxed">Pay online with UPI, or choose Cash on Delivery. See <a href="#payment" class="font-bold text-[#ea580c] hover:underline">Payment</a> below for details.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex gap-3">
+        <div class="w-8 h-8 rounded-full bg-[#ea580c] text-white text-sm font-extrabold flex items-center justify-center flex-shrink-0">6</div>
+        <div>
+          <h3 class="text-sm font-extrabold text-slate-900">Track your order</h3>
+          <p class="text-xs text-slate-600 mt-1 leading-relaxed">After ordering, open <a href="{% url 'my_orders' %}" class="font-bold text-[#ea580c] hover:underline">Orders</a> from your avatar menu to see its status.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== DELIVERY ========== -->
+  <section id="delivery" class="scroll-mt-32">
+    <h2 class="text-lg font-extrabold text-[#0f172a] mb-3 flex items-center gap-2">
+      <i class="ph ph-truck text-[#ea580c]"></i> Delivery Information
+    </h2>
+
+    <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+        <div>
+          <p class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 mb-1">Delivery Charges</p>
+          <p class="text-sm font-extrabold text-emerald-600">FREE</p>
+          <p class="text-[11px] text-slate-500 mt-0.5">No extra delivery fee at checkout.</p>
+        </div>
+        <div>
+          <p class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 mb-1">Estimated Delivery</p>
+          <p class="text-sm font-extrabold text-slate-900">About 5 days</p>
+          <p class="text-[11px] text-slate-500 mt-0.5">Counted from your order date. It may vary by location.</p>
+        </div>
+        <div>
+          <p class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 mb-1">Where to see it</p>
+          <p class="text-sm font-extrabold text-slate-900">Order page &amp; Orders</p>
+          <p class="text-[11px] text-slate-500 mt-0.5">Your estimated delivery date is shown after you order.</p>
+        </div>
+      </div>
+
+      <p class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 mb-3">Order Status Journey</p>
+      <div class="grid grid-cols-4 gap-2 text-center">
+        <div>
+          <div class="mx-auto w-10 h-10 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center"><i class="ph ph-clock text-xl"></i></div>
+          <p class="text-xs font-extrabold text-slate-900 mt-1.5">Pending</p>
+          <p class="text-[10px] text-slate-500 leading-snug">Order received</p>
+        </div>
+        <div>
+          <div class="mx-auto w-10 h-10 rounded-full bg-sky-50 text-sky-600 flex items-center justify-center"><i class="ph ph-package text-xl"></i></div>
+          <p class="text-xs font-extrabold text-slate-900 mt-1.5">Processing</p>
+          <p class="text-[10px] text-slate-500 leading-snug">Being prepared</p>
+        </div>
+        <div>
+          <div class="mx-auto w-10 h-10 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center"><i class="ph ph-truck text-xl"></i></div>
+          <p class="text-xs font-extrabold text-slate-900 mt-1.5">Shipped</p>
+          <p class="text-[10px] text-slate-500 leading-snug">On the way</p>
+        </div>
+        <div>
+          <div class="mx-auto w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center"><i class="ph ph-check-circle text-xl"></i></div>
+          <p class="text-xs font-extrabold text-slate-900 mt-1.5">Delivered</p>
+          <p class="text-[10px] text-slate-500 leading-snug">Reached you</p>
+        </div>
+      </div>
+
+      <div class="mt-5 rounded-xl bg-slate-50 border border-slate-100 px-4 py-3 text-xs text-slate-600 leading-relaxed">
+        <strong class="text-slate-900">Good to know:</strong> Please enter your full address and correct pincode at checkout. Addresses can't be edited from your account yet, so if you need to change one after ordering, <a href="{% url 'contact_us' %}" class="font-bold text-[#ea580c] hover:underline">contact us</a> with your order number as soon as possible.
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PAYMENT ========== -->
+  <section id="payment" class="scroll-mt-32">
+    <h2 class="text-lg font-extrabold text-[#0f172a] mb-3 flex items-center gap-2">
+      <i class="ph ph-credit-card text-[#ea580c]"></i> Payment Information
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+      <!-- Online -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="text-sm font-extrabold text-slate-900 flex items-center gap-2"><i class="ph ph-device-mobile text-lg text-sky-600"></i> Online Payment (UPI)</h3>
+          <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 ring-1 ring-emerald-200 px-2 py-0.5 rounded-full">FASTEST</span>
+        </div>
+        <ul class="space-y-1.5 text-xs text-slate-600 leading-relaxed list-disc pl-4">
+          <li>Pay with UPI apps like Google Pay, PhonePe and Paytm.</li>
+          <li>When you place your order, a secure payment window (powered by Razorpay) opens. Complete your payment there.</li>
+          <li>Your order is confirmed once the payment succeeds, and you'll see the success page.</li>
+          <li>Your payment details are entered on Razorpay's window and are not stored on our website.</li>
+        </ul>
+      </div>
+
+      <!-- COD -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+        <h3 class="text-sm font-extrabold text-slate-900 flex items-center gap-2 mb-2"><i class="ph ph-hand-coins text-lg text-amber-600"></i> Cash on Delivery</h3>
+        <ul class="space-y-1.5 text-xs text-slate-600 leading-relaxed list-disc pl-4">
+          <li>Choose <strong>Cash on Delivery</strong> at checkout and pay in cash when your order arrives.</li>
+          <li>Your order is placed right away, and payment shows as "Pending" until you pay on delivery.</li>
+          <li>Please keep the exact amount ready if you can.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-3 bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+      <h3 class="text-sm font-extrabold text-slate-900 mb-2 flex items-center gap-2"><i class="ph ph-receipt text-lg text-[#ea580c]"></i> Prices &amp; Totals</h3>
+      <p class="text-xs text-slate-600 leading-relaxed">At checkout you'll see the original price, your discount, and how much you save. The total shown there is the amount you pay, with <strong class="text-emerald-600">free delivery</strong>.</p>
+    </div>
+
+    <div class="mt-3 rounded-2xl bg-amber-50 border border-amber-200 px-5 py-4 text-xs text-amber-900 leading-relaxed">
+      <strong>Money deducted but no order showing?</strong> Please don't pay again. Online orders appear in Orders only after the payment is confirmed. <a href="{% url 'contact_us' %}" class="font-bold underline">Contact us</a> with the payment date, amount and payment ID (or a screenshot) and we'll check it for you.
+    </div>
+  </section>
+
+  <!-- ========== RETURNS ========== -->
+  <section id="returns" class="scroll-mt-32">
+    <h2 class="text-lg font-extrabold text-[#0f172a] mb-3 flex items-center gap-2">
+      <i class="ph ph-arrows-counter-clockwise text-[#ea580c]"></i> Returns &amp; Refunds
+    </h2>
+    <!-- EDIT: replace this text with your real return and refund policy -->
+    <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm space-y-2 text-sm text-slate-600 leading-relaxed">
+      <p>We offer <strong class="text-slate-900">7-day returns</strong>. If something isn't right, <a href="{% url 'contact_us' %}" class="font-bold text-[#ea580c] hover:underline">contact us</a> within 7 days of receiving your order with your order number, the item and the reason, and we'll guide you through the next steps.</p>
+      <p>Once a return is approved, refunds for online payments are sent back to the original payment method. For Cash on Delivery orders, we'll arrange the refund with you directly.</p>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section id="faq" class="scroll-mt-32">
+    <h2 class="text-lg font-extrabold text-[#0f172a] mb-3 flex items-center gap-2">
+      <i class="ph ph-question text-[#ea580c]"></i> Quick Answers
+    </h2>
+    <div class="space-y-2">
+
+      <details class="group bg-white rounded-2xl border border-slate-200 shadow-sm">
+        <summary class="flex items-center justify-between gap-3 cursor-pointer list-none px-4 py-3.5 text-sm font-bold text-slate-900">
+          <span>How do I change my password or avatar?</span>
+          <i class="ph ph-caret-down text-slate-400 transition-transform group-open:rotate-180"></i>
+        </summary>
+        <p class="px-4 pb-4 text-sm text-slate-600 leading-relaxed">Hover over your avatar in the top-right corner and click <strong>Manage Account</strong>. There you can pick a new avatar and change your password. You'll stay logged in.</p>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-slate-200 shadow-sm">
+        <summary class="flex items-center justify-between gap-3 cursor-pointer list-none px-4 py-3.5 text-sm font-bold text-slate-900">
+          <span>I forgot my password</span>
+          <i class="ph ph-caret-down text-slate-400 transition-transform group-open:rotate-180"></i>
+        </summary>
+        <p class="px-4 pb-4 text-sm text-slate-600 leading-relaxed">Please <a href="{% url 'contact_us' %}" class="font-bold text-[#ea580c] hover:underline">contact us</a> from the email address you registered with, and we'll help you get back into your account.</p>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-slate-200 shadow-sm">
+        <summary class="flex items-center justify-between gap-3 cursor-pointer list-none px-4 py-3.5 text-sm font-bold text-slate-900">
+          <span>Why can't I add items to my cart or wishlist?</span>
+          <i class="ph ph-caret-down text-slate-400 transition-transform group-open:rotate-180"></i>
+        </summary>
+        <p class="px-4 pb-4 text-sm text-slate-600 leading-relaxed">You need to be logged in to use the cart, wishlist and checkout. <a href="{% url 'login' %}" class="font-bold text-[#ea580c] hover:underline">Log in</a> or <a href="{% url 'register' %}" class="font-bold text-[#ea580c] hover:underline">create an account</a> and try again.</p>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-slate-200 shadow-sm">
+        <summary class="flex items-center justify-between gap-3 cursor-pointer list-none px-4 py-3.5 text-sm font-bold text-slate-900">
+          <span>Where can I see my past orders?</span>
+          <i class="ph ph-caret-down text-slate-400 transition-transform group-open:rotate-180"></i>
+        </summary>
+        <p class="px-4 pb-4 text-sm text-slate-600 leading-relaxed">Click <strong>Orders</strong> in your avatar menu. Every order shows its items, date, payment method, total and current status.</p>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- ========== STILL NEED HELP ========== -->
+  <div class="bg-[#0f172a] rounded-3xl p-6 sm:p-8 text-center">
+    <h2 class="text-lg sm:text-xl font-extrabold text-white">Still need help?</h2>
+    <p class="text-sm text-slate-300 mt-1 mb-4">Send us a message and we'll get back to you by email.</p>
+    <a href="{% url 'contact_us' %}" class="inline-flex items-center gap-2 py-3 px-6 bg-[#ea580c] hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-[1.5px] rounded-xl transition">
+      <span>Contact Us</span>
+      <i class="ph ph-arrow-right text-base"></i>
+    </a>
+  </div>
+
+</div>
+{% endblock %}

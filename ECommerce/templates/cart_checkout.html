@@ -1,0 +1,515 @@
+{% extends 'Navber_Footer.html' %} {% load static %} {% block content %}
+
+<div
+  id="cartCheckoutWrapper"
+  class="bg-slate-50 text-slate-900 min-h-screen py-8"
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div
+      class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6"
+    >
+      <div>
+        <a
+          href="{% url 'index' %}"
+          class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-[#0f172a] transition mb-1"
+        >
+          <i class="ph ph-arrow-left text-sm"></i>
+          Back to Shopping
+        </a>
+
+        <h1
+          class="text-xl sm:text-2xl font-extrabold text-[#0f172a] tracking-tight"
+        >
+          Express Cart Checkout
+        </h1>
+      </div>
+
+      <div
+        class="inline-flex items-center gap-2 bg-white border border-slate-200 px-3.5 py-2 rounded-full shadow-xs self-start sm:self-auto"
+      >
+        <i class="ph-fill ph-shield-check text-emerald-600 text-base"></i>
+
+        <span
+          class="text-[11px] font-bold text-slate-700 uppercase tracking-wider"
+        >
+          100% Secure STYLÉA Checkout
+        </span>
+      </div>
+    </div>
+
+    {% if messages %}
+      <div class="mb-6">
+        {% for message in messages %}
+          <div class="p-4 rounded-xl text-sm font-bold {% if message.tags == 'error' %}bg-red-50 text-red-600 border border-red-200{% else %}bg-emerald-50 text-emerald-600 border border-emerald-200{% endif %}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    
+    <!-- CHECKOUT FORM -->
+    <form
+      method="POST"
+      action="{% url 'cart_checkout' %}"
+      class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start"
+    >
+      {% csrf_token %}
+
+      <!-- LEFT SIDE -->
+      <div class="lg:col-span-7 space-y-6">
+        <!-- 1. CART ITEMS -->
+        <div
+          class="rounded-3xl bg-white border border-slate-200 p-4 sm:p-5 shadow-sm"
+        >
+          <div
+            class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100"
+          >
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-slate-400"
+            >
+              1. Order Items ({{ cart_count }})
+            </span>
+
+            <span
+              class="text-[11px] font-medium text-emerald-700 bg-emerald-50 ring-1 ring-emerald-200 px-2.5 py-0.5 rounded-full"
+            >
+              Verified Bag
+            </span>
+          </div>
+
+          <div
+            class="space-y-4 max-h-[380px] overflow-y-auto pr-2 no-scrollbar"
+          >
+            {% for item in cart_items %}
+
+            <div
+              class="flex flex-col sm:flex-row gap-4 p-3.5 rounded-2xl border border-slate-100 bg-slate-50/60"
+            >
+              <!-- Product Image -->
+              <div
+                class="relative w-full sm:w-24 aspect-square bg-white rounded-xl overflow-hidden shrink-0 border border-slate-200/80"
+              >
+                {% if item.product.product_image %}
+
+                <img
+                  src="{{ item.product.product_image.url }}"
+                  alt="{{ item.product.product_name }}"
+                  class="w-full h-full object-cover"
+                />
+
+                {% else %}
+
+                <div
+                  class="w-full h-full flex items-center justify-center text-slate-400 text-xs"
+                >
+                  No Image
+                </div>
+
+                {% endif %} {% if item.product.product_discount > 0 %}
+
+                <span
+                  class="absolute top-1.5 left-1.5 bg-[#ea580c] text-white text-[8px] font-bold px-1.5 py-0.5 rounded-full shadow"
+                >
+                  {{ item.product.product_discount }}% OFF
+                </span>
+
+                {% endif %}
+              </div>
+
+              <!-- Product Details -->
+              <div class="flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <span
+                      class="text-[11px] font-semibold text-slate-500 bg-white px-2 py-0.5 rounded-md border border-slate-200"
+                    >
+                      Qty: {{ item.quantity }}
+                    </span>
+                  </div>
+
+                  <h3 class="text-sm font-bold text-slate-900 line-clamp-1">
+                    {{ item.product.product_name }}
+                  </h3>
+
+                  <p class="text-xs text-slate-500 line-clamp-1 mt-0.5">
+                    {{ item.product.product_desc }}
+                  </p>
+                </div>
+
+                <div
+                  class="flex items-center justify-between pt-2 mt-2 border-t border-slate-200/60"
+                >
+                  <div class="flex items-baseline gap-2">
+                    <span class="text-sm font-extrabold text-[#0f172a]">
+                      ₹{{ item.total_price }}
+                    </span>
+
+                    <span class="text-[11px] text-slate-400">
+                      (₹{{ item.product.product_current_price }} each)
+                    </span>
+                  </div>
+
+                  <span class="text-[10px] text-emerald-600 font-bold">
+                    In Stock
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {% empty %}
+
+            <div class="text-center py-8">
+              <i class="ph ph-shopping-bag text-3xl text-slate-300 mb-2"></i>
+
+              <p class="text-xs text-slate-500">Your bag is empty.</p>
+            </div>
+
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- 2. DELIVERY ADDRESS -->
+        <div
+          class="rounded-3xl bg-white border border-slate-200 p-5 sm:p-6 shadow-sm"
+        >
+          <div class="pb-3 mb-4 border-b border-slate-100">
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-slate-400"
+            >
+              2. Delivery Address
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Full Name -->
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-2">
+                Full Name
+              </label>
+
+              <input
+                type="text"
+                name="full_name"
+                value="{{ request.user.first_name|default:request.user.username }}"
+                required
+                class="w-full bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200 outline-none focus:border-[#ea580c]"
+              />
+            </div>
+
+            <!-- Phone -->
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-2">
+                Phone Number
+              </label>
+
+              <input
+                type="tel"
+                name="phone"
+                maxlength="15"
+                required
+                placeholder="+91 98765 43210"
+                class="w-full bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200 outline-none focus:border-[#ea580c]"
+              />
+            </div>
+
+            <!-- Street Address -->
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-bold text-slate-600 mb-2">
+                Street Address / House No.
+              </label>
+
+              <input
+                type="text"
+                name="address"
+                maxlength="150"
+                required
+                placeholder="House No, Building, Street"
+                class="w-full bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200 outline-none focus:border-[#ea580c]"
+              />
+            </div>
+
+            <!-- City -->
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-2">
+                City
+              </label>
+
+              <input
+                type="text"
+                name="city"
+                required
+                class="w-full bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200 outline-none focus:border-[#ea580c]"
+              />
+            </div>
+
+            <!-- State -->
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-2">
+                State
+              </label>
+
+              <input
+                type="text"
+                name="state"
+                required
+                placeholder="West Bengal"
+                class="w-full bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200 outline-none focus:border-[#ea580c]"
+              />
+            </div>
+
+            <!-- Country -->
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-2">
+                Country
+              </label>
+
+              <input
+                type="text"
+                name="country"
+                value="India"
+                required
+                class="w-full bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200 outline-none focus:border-[#ea580c]"
+              />
+            </div>
+
+            <!-- Pincode -->
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-2">
+                Pincode
+              </label>
+
+              <input
+                type="text"
+                name="pincode"
+                maxlength="6"
+                pattern="[0-9]{6}"
+                required
+                placeholder="721602"
+                class="w-full bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200 outline-none focus:border-[#ea580c]"
+              />
+            </div>
+
+            <!-- Address Type -->
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-2">
+                Address Type
+              </label>
+
+              <select
+                name="address_type"
+                required
+                class="w-full bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200 outline-none focus:border-[#ea580c]"
+              >
+                <option value="home">Home</option>
+                <option value="office">Office</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. PAYMENT METHOD -->
+        <div
+          class="rounded-3xl bg-white border border-slate-200 p-5 sm:p-6 shadow-sm"
+        >
+          <div class="pb-3 mb-4 border-b border-slate-100">
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-slate-400"
+            >
+              3. Select Payment Method
+            </span>
+          </div>
+
+          <div class="space-y-3">
+            <!-- UPI -->
+            <label
+              class="flex items-center justify-between p-3.5 rounded-2xl border border-slate-200 cursor-pointer hover:border-[#0f172a] transition has-[:checked]:border-[#0f172a] has-[:checked]:bg-slate-50/80"
+            >
+              <div class="flex items-center gap-3">
+                <input
+                  type="radio"
+                  name="payment_method"
+                  value="online"
+                  checked
+                  required
+                  class="h-4 w-4 text-[#0f172a] focus:ring-[#0f172a]"
+                />
+
+                <div>
+                  <span class="block text-xs font-bold text-slate-900">
+                    UPI (Google Pay, PhonePe, Paytm)
+                  </span>
+
+                  <span class="block text-[11px] text-slate-500">
+                    Online payment using UPI
+                  </span>
+                </div>
+              </div>
+
+              <span
+                class="text-[10px] font-bold text-emerald-700 bg-emerald-50 ring-1 ring-emerald-200 px-2 py-0.5 rounded-full"
+              >
+                FASTEST
+              </span>
+            </label>
+
+            <!-- COD -->
+            <label
+              class="flex items-center justify-between p-3.5 rounded-2xl border border-slate-200 cursor-pointer hover:border-[#0f172a] transition has-[:checked]:border-[#0f172a] has-[:checked]:bg-slate-50/80"
+            >
+              <div class="flex items-center gap-3">
+                <input
+                  type="radio"
+                  name="payment_method"
+                  value="cod"
+                  class="h-4 w-4 text-[#0f172a] focus:ring-[#0f172a]"
+                />
+
+                <div>
+                  <span class="block text-xs font-bold text-slate-900">
+                    Cash on Delivery (COD)
+                  </span>
+
+                  <span class="block text-[11px] text-slate-500">
+                    Pay when your order arrives
+                  </span>
+                </div>
+              </div>
+
+              <i class="ph ph-money text-lg text-slate-500"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE: PRICE SUMMARY -->
+      <div class="lg:col-span-5 lg:sticky lg:top-24">
+        <div
+          class="rounded-3xl bg-white border border-slate-200 p-5 sm:p-6 shadow-sm"
+        >
+          <h3
+            class="text-xs font-bold uppercase tracking-wider text-slate-400 pb-3 mb-4 border-b border-slate-100"
+          >
+            Price Details
+          </h3>
+
+          <div class="space-y-3 text-xs">
+            <!-- MRP -->
+            <div class="flex justify-between text-slate-600">
+              <span> Price ({{ cart_count }} items) </span>
+
+              <span class="font-semibold text-slate-900">
+                ₹{{ cart_total_mrp|default:cart_total }}
+              </span>
+            </div>
+
+            <!-- Discount -->
+            {% if total_discount > 0 %}
+
+            <div class="flex justify-between text-slate-600">
+              <span>Product Discount</span>
+
+              <span class="font-bold text-emerald-600">
+                - ₹{{ total_discount }}
+              </span>
+            </div>
+
+            {% endif %}
+
+            <!-- Delivery -->
+            <div class="flex justify-between text-slate-600">
+              <span>Delivery Charges</span>
+
+              <span class="font-bold text-emerald-600"> FREE </span>
+            </div>
+
+            <!-- Total -->
+            <div
+              class="pt-3 border-t border-slate-200 flex items-center justify-between text-base"
+            >
+              <span class="font-extrabold text-[#0f172a]"> Total Payable </span>
+
+              <span class="text-xl font-extrabold text-[#ea580c]">
+                ₹{{ cart_total }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Savings -->
+          {% if total_discount > 0 %}
+
+          <div
+            class="mt-4 bg-emerald-50 border border-emerald-200/80 rounded-xl px-3.5 py-2 text-[11px] font-bold text-emerald-800 flex items-center gap-2"
+          >
+            <i class="ph-fill ph-tag text-emerald-600 text-sm"></i>
+
+            <span> You will save ₹{{ total_discount }} on this order! </span>
+          </div>
+
+          {% endif %}
+
+          <!-- PLACE ORDER BUTTON -->
+          <button
+            type="submit"
+            {%
+            if
+            not
+            cart_items
+            %}disabled{%
+            endif
+            %}
+            class="w-full mt-5 py-3.5 px-4 bg-[#0f172a] hover:bg-[#ea580c] text-white font-bold text-xs uppercase tracking-[1.5px] rounded-2xl shadow-lg transition duration-200 flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.381z"
+                clip-rule="evenodd"
+              />
+            </svg>
+
+            <span>Confirm & Place Order</span>
+          </button>
+
+          <!-- TRUST BADGES -->
+          <div
+            class="grid grid-cols-3 gap-2 pt-5 mt-5 border-t border-slate-100 text-center"
+          >
+            <div class="flex flex-col items-center">
+              <i class="ph ph-seal-check text-lg text-amber-600 mb-1"></i>
+
+              <span class="text-[10px] font-semibold text-slate-500">
+                Authentic Luxury
+              </span>
+            </div>
+
+            <div class="flex flex-col items-center">
+              <i
+                class="ph ph-arrows-counter-clockwise text-lg text-blue-600 mb-1"
+              ></i>
+
+              <span class="text-[10px] font-semibold text-slate-500">
+                7-Day Returns
+              </span>
+            </div>
+
+            <div class="flex flex-col items-center">
+              <i class="ph ph-lock-key text-lg text-emerald-600 mb-1"></i>
+
+              <span class="text-[10px] font-semibold text-slate-500">
+                Secure Payment
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

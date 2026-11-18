@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Account</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex items-center justify-center antialiased selection:bg-[#0f172a] selection:text-white">
+
+  <div class="w-full max-w-4xl mx-auto px-4 py-6">
+
+    <!-- Title row -->
+    <div class="flex items-center justify-between mb-4">
+      <h1 class="text-xl sm:text-2xl font-extrabold text-[#0f172a] tracking-tight">Manage Account</h1>
+      <a href="{% url 'index' %}" class="text-[11px] font-bold uppercase tracking-wider text-slate-500 hover:text-[#ea580c] transition">
+        Back to Shop
+      </a>
+    </div>
+
+    <!-- Messages -->
+    {% if messages %}
+      {% for message in messages %}
+        <div class="mb-3 rounded-xl px-3 py-2 text-xs font-semibold border
+          {% if message.tags == 'success' %}bg-emerald-50 text-emerald-700 border-emerald-200{% else %}bg-rose-50 text-rose-700 border-rose-200{% endif %}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+      <!-- ========== AVATAR ========== -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="{% static 'image/avatars/'|add:profile.avatar|add:'.svg' %}" alt="Your avatar"
+               class="w-11 h-11 rounded-full object-cover ring-2 ring-slate-100">
+          <div>
+            <h2 class="text-sm font-extrabold text-[#0f172a] leading-tight">Your Avatar</h2>
+            <p class="text-[11px] text-slate-500 capitalize">{{ request.user.first_name|default:request.user.username }}</p>
+          </div>
+        </div>
+
+        <form method="POST" action="{% url 'manage_account' %}">
+          {% csrf_token %}
+          <input type="hidden" name="action" value="avatar">
+
+          <div class="grid grid-cols-4 gap-x-2 gap-y-3 mb-4 justify-items-center">
+            {% for key, label in avatars %}
+            <label class="cursor-pointer" title="{{ label }}">
+              <input type="radio" name="avatar" value="{{ key }}" class="peer sr-only" {% if profile.avatar == key %}checked{% endif %}>
+              <img src="{% static 'image/avatars/'|add:key|add:'.svg' %}" alt="{{ label }}"
+                   class="w-14 h-14 rounded-full object-cover ring-2 ring-transparent peer-checked:ring-[#ea580c] hover:ring-slate-200 transition">
+            </label>
+            {% endfor %}
+          </div>
+
+          <button type="submit"
+                  class="w-full py-2.5 bg-[#0f172a] hover:bg-[#ea580c] text-white font-bold text-[11px] uppercase tracking-[1.5px] rounded-xl transition duration-200">
+            Save Avatar
+          </button>
+        </form>
+      </div>
+
+      <!-- ========== CHANGE PASSWORD ========== -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+        <h2 class="text-sm font-extrabold text-[#0f172a] leading-tight">Change Password</h2>
+        <p class="text-[11px] text-slate-500 mb-3">You will stay logged in after changing it.</p>
+
+        {% if password_form.errors %}
+        <div class="mb-3 rounded-xl bg-rose-50 border border-rose-200 px-3 py-2 space-y-0.5">
+          {% for error in password_form.non_field_errors %}
+            <p class="text-[11px] font-semibold text-rose-700">{{ error }}</p>
+          {% endfor %}
+          {% for field in password_form %}
+            {% for error in field.errors %}
+              <p class="text-[11px] font-semibold text-rose-700">{{ error }}</p>
+            {% endfor %}
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <form method="POST" action="{% url 'manage_account' %}" class="space-y-3">
+          {% csrf_token %}
+          <input type="hidden" name="action" value="password">
+
+          <div>
+            <label for="{{ password_form.old_password.id_for_label }}" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Current Password</label>
+            <div class="relative">
+              {{ password_form.old_password }}
+              <button type="button" data-toggle-password aria-label="Show or hide password"
+                      class="absolute inset-y-0 right-0 px-3 flex items-center text-slate-400 hover:text-slate-700 transition">
+                <i class="ph ph-eye text-lg"></i>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <label for="{{ password_form.new_password1.id_for_label }}" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">New Password</label>
+            <div class="relative">
+              {{ password_form.new_password1 }}
+              <button type="button" data-toggle-password aria-label="Show or hide password"
+                      class="absolute inset-y-0 right-0 px-3 flex items-center text-slate-400 hover:text-slate-700 transition">
+                <i class="ph ph-eye text-lg"></i>
+              </button>
+            </div>
+            <p class="text-[10px] text-slate-400 mt-1">At least 8 characters. Not too common, not only numbers.</p>
+          </div>
+
+          <div>
+            <label for="{{ password_form.new_password2.id_for_label }}" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Confirm New Password</label>
+            <div class="relative">
+              {{ password_form.new_password2 }}
+              <button type="button" data-toggle-password aria-label="Show or hide password"
+                      class="absolute inset-y-0 right-0 px-3 flex items-center text-slate-400 hover:text-slate-700 transition">
+                <i class="ph ph-eye text-lg"></i>
+              </button>
+            </div>
+          </div>
+
+          <button type="submit"
+                  class="w-full py-2.5 bg-[#0f172a] hover:bg-[#ea580c] text-white font-bold text-[11px] uppercase tracking-[1.5px] rounded-xl transition duration-200">
+            Update Password
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Show / hide password (eye icon) -->
+  <script>
+    document.querySelectorAll('[data-toggle-password]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var input = btn.parentElement.querySelector('input');
+        var show = input.type === 'password';
+        input.type = show ? 'text' : 'password';
+        btn.querySelector('i').className = show ? 'ph ph-eye-slash text-lg' : 'ph ph-eye text-lg';
+      });
+    });
+  </script>
+
+</body>
+</html>

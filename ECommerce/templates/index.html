@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .shop { --navy: #0f172a; --accent: #ea580c; }
+    .shop .chips { scrollbar-width: none; }
+    .shop .chips::-webkit-scrollbar { display: none; }
+    .shop .card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+    .shop .card:hover { transform: translateY(-6px); border-color: rgba(234,88,12,.35); box-shadow: 0 20px 40px -18px rgba(15,23,42,.25); }
+    @media (prefers-reduced-motion: reduce) { .shop *, .shop .card { transition: none !important; } .shop .card:hover { transform: none; } }
+</style>
+
+<div class="shop bg-slate-50 text-slate-900 min-h-screen">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Products -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {% for product in products %}
+        <div class="card group relative flex flex-col justify-between rounded-3xl bg-white border border-slate-200 p-3 shadow-sm">
+
+            <div>
+                <div class="relative w-full aspect-square bg-slate-100 rounded-2xl overflow-hidden mb-3">
+                    {% if product.product_image %}
+                        <img src="{{ product.product_image.url }}" alt="{{ product.product_name }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    {% else %}
+                        <div class="w-full h-full flex items-center justify-center text-slate-400 text-xs">No Image</div>
+                    {% endif %}
+
+                    <div class="absolute top-2.5 left-2.5 flex flex-col gap-1 items-start">
+                        {% if product.product_discount > 0 %}
+                        <span class="bg-[#ea580c] text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow">
+                            {{ product.product_discount }}% OFF
+                        </span>
+                        {% endif %}
+                    </div>
+
+                    <!-- Wishlist (Visible only when user is logged in) -->
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'toggle_wishlist' product.id %}"
+                       class="absolute top-2.5 right-2.5 p-2 bg-white/90 hover:bg-white {% if product.id in wishlist_product_ids %}text-rose-500{% else %}text-slate-600 hover:text-[#ea580c]{% endif %} rounded-full backdrop-blur ring-1 ring-slate-200 transition-colors duration-200 focus:outline-none"
+                       title="{% if product.id in wishlist_product_ids %}Remove from Wishlist{% else %}Add to Wishlist{% endif %}">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="{% if product.id in wishlist_product_ids %}currentColor{% else %}none{% endif %}" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </a>
+                    {% endif %}
+                </div>
+
+                <!-- Rating and Category Row -->
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-[10px] font-bold text-blue-700 uppercase tracking-widest">
+                        {% if product.product_category %}{{ product.product_category.category_name }}{% endif %}
+                    </span>
+                    <div class="flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-amber-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <span class="text-[11px] font-semibold text-slate-700">
+                            {% if product.product_rating > 0 %}
+                                {{ product.product_rating }} <span class="text-slate-400 font-normal">({{ product.product_rating_count }})</span>
+                            {% else %}
+                                <span class="text-slate-400 font-normal">No reviews</span>
+                            {% endif %}
+                        </span>
+                    </div>
+                </div>
+
+                <h3 class="text-sm font-semibold text-slate-900 truncate mb-1" title="{{ product.product_name }}">
+                    {{ product.product_name }}
+                </h3>
+                <p class="text-xs text-slate-500 line-clamp-2 mb-3">
+                    {{ product.product_desc }}
+                </p>
+            </div>
+
+            <div class="pt-3 border-t border-slate-100 mt-auto">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-baseline gap-1.5 flex-wrap">
+                        <span class="text-lg font-extrabold text-[#0f172a]">₹{{ product.product_current_price }}</span>
+                        {% if product.product_previous_price > product.product_current_price %}
+                        <span class="text-xs text-slate-400 line-through">₹{{ product.product_previous_price }}</span>
+                        {% endif %}
+                    </div>
+
+                    <span class="text-[11px] font-medium {% if product.product_quantity_in_stock > 0 %}text-emerald-700 bg-emerald-50 ring-1 ring-emerald-200{% else %}text-rose-700 bg-rose-50 ring-1 ring-rose-200{% endif %} px-2 py-0.5 rounded-full whitespace-nowrap">
+                        {% if product.product_quantity_in_stock > 0 %}
+                            Stock: {{ product.product_quantity_in_stock }}
+                        {% else %}
+                            Out of Stock
+                        {% endif %}
+                    </span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <!-- Add to Cart (Visible only when user is logged in) -->
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'add_to_cart' product.id %}"
+                       class="flex-1 py-2.5 px-2 bg-white hover:bg-slate-50 text-[#0f172a] ring-1 ring-slate-300 hover:ring-[#0f172a] font-semibold text-xs rounded-xl transition duration-150 flex items-center justify-center gap-1.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span>Cart</span>
+                    </a>
+                    {% endif %}
+
+                    <!-- Buy Now -->
+                    <a href="{% url 'buy_now' product.id %}"
+                    class="flex-1 py-2.5 px-2 bg-[#0f172a] hover:bg-[#ea580c] text-white font-semibold text-xs rounded-xl shadow-md transition duration-150 flex items-center justify-center gap-1.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.381z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Buy Now</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        {% empty %}
+        <div class="col-span-full py-16 text-center">
+            <p class="text-slate-500 text-sm">No Product Found</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+
+<!-- ================= SLIDE-OUT CART DRAWER ================= -->
+{% if user.is_authenticated %}
+<!-- Cart Drawer Overlay -->
+<div id="cartOverlay" onclick="closeCart()" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-40 hidden transition-opacity"></div>
+
+<!-- Slide-Out Cart Drawer -->
+<aside id="cartDrawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+    <!-- Drawer Header -->
+    <div class="p-5 border-b border-slate-100 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <i class="ph ph-shopping-bag text-xl text-slate-900"></i>
+            <h2 class="text-base font-bold text-slate-900">Your Shopping Bag ({{ cart_count }})</h2>
+        </div>
+        <button type="button" onclick="closeCart()" class="p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition">
+            <i class="ph ph-x text-lg"></i>
+        </button>
+    </div>
+
+    <!-- Cart Items List -->
+    <div class="flex-1 overflow-y-auto p-5 space-y-4">
+        {% if cart_items %}
+            {% for item in cart_items %}
+            <div class="flex gap-4 p-3 rounded-2xl border border-slate-100 bg-slate-50/50">
+                {% if item.product.product_image %}
+                    <img src="{{ item.product.product_image.url }}" alt="{{ item.product.product_name }}" class="w-16 h-20 object-cover rounded-xl bg-white border border-slate-200 shrink-0" />
+                {% else %}
+                    <div class="w-16 h-20 rounded-xl bg-slate-200 flex items-center justify-center text-[10px] text-slate-500 shrink-0">No Image</div>
+                {% endif %}
+                <div class="flex-1 min-w-0">
+                    <h4 class="text-xs font-bold text-slate-900 truncate">{{ item.product.product_name }}</h4>
+                    <p class="text-xs font-semibold text-[#ea580c] mt-0.5">₹{{ item.product.product_current_price }}</p>
+                    
+                    <!-- Quantity Controls -->
+                    <div class="flex items-center justify-between mt-3">
+                        <div class="inline-flex items-center rounded-lg border border-slate-200 bg-white">
+                            <a href="{% url 'update_cart_item' item.id 'decrease' %}" class="px-2.5 py-1 text-xs font-bold text-slate-600 hover:text-slate-900">-</a>
+                            <span class="px-2.5 py-1 text-xs font-bold text-slate-900">{{ item.quantity }}</span>
+                            <a href="{% url 'update_cart_item' item.id 'increase' %}" class="px-2.5 py-1 text-xs font-bold text-slate-600 hover:text-slate-900">+</a>
+                        </div>
+
+                        <a href="{% url 'update_cart_item' item.id 'remove' %}" class="text-xs text-rose-500 hover:text-rose-700 font-semibold flex items-center gap-1">
+                            <i class="ph ph-trash"></i> Remove
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="text-center py-16">
+                <i class="ph ph-shopping-bag text-4xl text-slate-300 mb-2"></i>
+                <p class="text-sm font-semibold text-slate-600">Your bag is empty</p>
+                <p class="text-xs text-slate-400 mt-1">Explore STYLÉA and add your favorite pieces.</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Drawer Footer -->
+    {% if cart_items %}
+    <div class="p-5 border-t border-slate-100 bg-slate-50">
+        <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Subtotal</span>
+            <span class="text-lg font-bold text-slate-900">₹{{ cart_total }}</span>
+        </div>
+        <a href="{% url 'cart_checkout' %}" class="w-full py-3.5 bg-[#0f172a] hover:bg-[#ea580c] text-white font-bold text-xs uppercase tracking-[2px] rounded-xl flex items-center justify-center transition shadow-lg text-center cursor-pointer">
+            Proceed to Checkout
+        </a>
+    </div>
+    {% endif %}
+</aside>
+{% endif %}
+
+<script src="{% static 'js/tryon.js' %}"></script>
+{% endblock %}

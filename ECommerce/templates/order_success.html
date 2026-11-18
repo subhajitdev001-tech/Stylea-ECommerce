@@ -1,0 +1,133 @@
+{% extends 'info_base.html' %}
+{% block title %}Order Success - STYLÉA{% endblock %}
+{% block content %}
+<style>html { scroll-behavior: smooth; }</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Successful - ShopCart</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Phosphor Icons for modern vector icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased selection:bg-[#0f172a] selection:text-white">
+
+  <!-- Main Content Wrapper -->
+  <div class="flex-grow flex items-center justify-center py-12">
+    <div class="max-w-2xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Success Card -->
+      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-10 shadow-sm text-center relative overflow-hidden">
+        
+        <!-- Top Gradient Line -->
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-400 to-emerald-600"></div>
+        
+        <!-- Success Icon -->
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-emerald-50 rounded-full mb-6 ring-8 ring-emerald-50/50">
+          <i class="ph-fill ph-check-circle text-5xl text-emerald-500"></i>
+        </div>
+
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-[#0f172a] tracking-tight mb-2">
+          Order Placed Successfully!
+        </h1>
+        
+        <p class="text-sm text-slate-500 mb-8 max-w-md mx-auto">
+          Thank you for shopping with ShopCart, <span class="font-bold text-slate-700">{{ customer_name }}</span>. Your order is confirmed and is now being processed.
+        </p>
+
+        <!-- Order Details Box -->
+        <div class="bg-slate-50 rounded-2xl p-5 sm:p-6 border border-slate-100 mb-8 text-left">
+          <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-200/80">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Order Details</span>
+            
+            <!-- Dynamic Payment Badge -->
+            {% if payment_method == 'COD' %}
+              <span class="text-[10px] font-bold text-amber-700 bg-amber-50 ring-1 ring-amber-200 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                Pay on Delivery
+              </span>
+            {% else %}
+              <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 ring-1 ring-emerald-200 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                Paid via UPI
+              </span>
+            {% endif %}
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-4">
+            <div>
+              <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Order Number</p>
+              <p class="text-sm font-bold text-slate-900 truncate">#{{ order_id }}</p>
+            </div>
+            <div>
+              <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Payment Method</p>
+              <p class="text-sm font-bold text-slate-900 uppercase">
+                {% if payment_method == 'COD' %}Cash on Delivery{% else %}Online Payment{% endif %}
+              </p>
+            </div>
+            <div>
+              <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Total Amount</p>
+              <p class="text-sm font-extrabold text-[#ea580c]">₹{{ total_paid }}</p>
+            </div>
+            <div>
+              <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Order Date</p>
+              <p class="text-sm font-bold text-slate-900">{{ order_date|date:"d M Y, h:i A" }}</p>
+            </div>
+            <div>
+              <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Order Status</p>
+              <span class="inline-block text-[10px] font-bold text-sky-700 bg-sky-50 ring-1 ring-sky-200 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                {{ order_status }}
+              </span>
+            </div>
+            <div>
+              <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Estimated Delivery</p>
+              <p class="text-sm font-bold text-slate-900">{{ delivery_date|date:"D, d M Y" }}</p>
+            </div>
+            <div class="sm:col-span-2 pt-2 mt-1 border-t border-slate-200/60">
+              <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Delivery To</p>
+              <p class="text-xs text-slate-600 font-medium leading-relaxed">{{ delivery_address }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+          <a href="{% url 'index' %}" class="w-full sm:w-auto py-3.5 px-6 bg-[#0f172a] hover:bg-[#ea580c] text-white font-bold text-xs uppercase tracking-[1.5px] rounded-2xl shadow-lg transition duration-200 flex items-center justify-center gap-2">
+            <span>Continue Shopping</span>
+            <i class="ph ph-arrow-right text-lg"></i>
+          </a>
+          <a href="{% url 'my_orders' %}" class="w-full sm:w-auto py-3.5 px-6 bg-white hover:bg-slate-50 text-[#0f172a] border border-slate-300 font-bold text-xs uppercase tracking-[1.5px] rounded-2xl transition duration-200 flex items-center justify-center gap-2">
+            <i class="ph ph-package text-lg"></i>
+            <span>View My Orders</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
+{% endblock %}

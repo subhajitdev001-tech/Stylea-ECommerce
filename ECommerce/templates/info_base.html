@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}STYLÉA{% endblock %}</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link rel="icon" href="{% static 'image/favicon.png' %}" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Orange underline that slides in on hover and slides out the other way */
+    .link-underline { position: relative; display: inline-block; }
+    .link-underline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      background: #ea580c;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    a:hover .link-underline::after,
+    a:focus-visible .link-underline::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased selection:bg-[#0f172a] selection:text-white">
+
+  <!-- ========== HEADER ========== -->
+  <header class="bg-white/90 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+
+      <a href="{% url 'index' %}" class="select-none" aria-label="STYLÉA home">
+        <span style="font-family:'Times New Roman',Times,serif;font-weight:400;text-transform:uppercase;color:#1e293b;letter-spacing:6px;font-size:22px;display:inline-block;">
+          S T Y L <span style="color:#d97706;font-style:italic;font-weight:600;">É</span> A
+        </span>
+        <div style="height:1.5px;width:100%;background:linear-gradient(90deg,#d97706,transparent);margin:1px 0;"></div>
+        <span style="display:block;font-size:7px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#94a3b8;text-align:center;">Haldia &bull; Kolkata</span>
+      </a>
+
+      <nav class="flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs font-bold uppercase tracking-wider">
+        <a href="{% url 'help' %}" class="px-3 py-2 text-slate-600 hover:text-[#ea580c] transition"><span class="link-underline">Help</span></a>
+        <a href="{% url 'contact_us' %}" class="px-3 py-2 text-slate-600 hover:text-[#ea580c] transition"><span class="link-underline">Contact</span></a>
+        <a href="{% url 'index' %}" class="ml-1 px-3 sm:px-4 py-2 rounded-xl bg-[#0f172a] hover:bg-[#ea580c] text-white transition">Shop</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ========== PAGE CONTENT ========== -->
+  <main class="flex-grow">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 text-xs py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-2">
+            
+            <span style="font-family: 'Times New Roman', Times, serif; font-size: 26px; font-weight: 400; letter-spacing: 7px; text-transform: uppercase; color: #d1d6df; display: inline-block;">
+            S T Y L <span style="color: #d97706; font-style: italic; font-weight: 600;">É</span> A
+            </span>
+          </div>
+          <p class="text-slate-400 text-xs leading-relaxed max-w-sm">
+            Curated essentials engineered at the intersection of architecture, sound design, and industrial ergonomics. Crafted for modern creatives.
+          </p>
+          <div class="flex gap-4 text-lg text-slate-400">
+            <a href="#" class="hover:text-white transition"><i class="ph ph-youtube-logo"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="ph ph-linkedin-logo"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="ph ph-github-logo"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h5 class="font-bold text-white uppercase tracking-wider mb-3">Collections</h5>
+          <ul class="space-y-2">
+            <li><a href="#" onclick="selectCategory('Electronics'); return false;" class="hover:text-white transition">Personal Audio</a></li>
+            <li><a href="#" onclick="selectCategory('Watches'); return false;" class="hover:text-white transition">Horology</a></li>
+            <li><a href="#" onclick="selectCategory('Home & Living'); return false;" class="hover:text-white transition">Interior Living</a></li>
+            <li><a href="#" onclick="selectCategory('Accessories'); return false;" class="hover:text-white transition">Everyday Carry</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-bold text-white uppercase tracking-wider mb-3">Customer Care</h5>
+          <ul class="space-y-2">
+            <li><a href="#orderLookup" onclick="showToast('Tracking portal active for registered orders', 'info'); return false;" class="hover:text-white transition">Track Your Order</a></li>
+            <li><a href="#" onclick="showToast('Warranty claims serviced in 48 hours', 'info'); return false;" class="hover:text-white transition">Warranty Claims</a></li>
+            <li><a href="#" onclick="showToast('Free returns within 30 days', 'info'); return false;" class="hover:text-white transition">Returns Policy</a></li>
+            <li><a href="#" onclick="showToast('Support live on Mon-Fri 9AM-6PM EST', 'info'); return false;" class="hover:text-white transition">Contact Studio</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-bold text-white uppercase tracking-wider mb-3">Exclusive Updates</h5>
+          <p class="text-slate-400 mb-3 leading-relaxed">Subscribe for restricted prototype batch alerts.</p>
+          <div class="flex gap-2">
+            <input type="email" id="newsletterEmail" placeholder="Enter email" class="bg-slate-900 border border-slate-800 px-3 py-2 rounded-xl text-white text-xs w-full focus:outline-none focus:border-brand-500" />
+            <button onclick="subscribeNewsletter()" class="bg-brand-600 hover:bg-brand-500 text-white px-3 py-2 rounded-xl font-bold text-xs transition">Join</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-400">
+        <div>&copy; 2026 STYLÉA Concept Studio Inc. All rights reserved. Mock checkout demo.</div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:underline">Privacy Policy</a>
+          <a href="#" class="hover:underline">Terms of Service</a>
+          <a href="#" class="hover:underline">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,761 @@
+
+{% extends "Navber_Footer.html" %}
+{% load static %}
+
+{% block content %}
+
+<div id="buyNowPageWrapper" class="bg-slate-50 text-slate-900 min-h-screen py-8">
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Header -->
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+
+            <div>
+                <a href="{% url 'index' %}"
+                   class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-[#0f172a] transition mb-1">
+
+                    <i class="ph ph-arrow-left text-sm"></i>
+                    Back to Collections
+
+                </a>
+
+                <h1 class="text-xl sm:text-2xl font-extrabold text-[#0f172a] tracking-tight">
+                    Express Checkout
+                </h1>
+            </div>
+
+            <div class="inline-flex items-center gap-2 bg-white border border-slate-200 px-3.5 py-2 rounded-full shadow-xs self-start sm:self-auto">
+
+                <i class="ph-fill ph-shield-check text-emerald-600 text-base"></i>
+
+                <span class="text-[11px] font-bold text-slate-700 uppercase tracking-wider">
+                    100% Secure STYLÉA Checkout
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Checkout Form -->
+        <form method="POST"
+              action="{% url 'buy_now' product.id %}"
+              class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+            {% csrf_token %}
+
+
+            <!-- LEFT COLUMN -->
+            <div class="lg:col-span-7 space-y-6">
+
+
+                <!-- 1. PRODUCT SUMMARY -->
+                <div class="rounded-3xl bg-white border border-slate-200 p-4 sm:p-5 shadow-sm">
+
+                    <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
+
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">
+                            1. Item Summary
+                        </span>
+
+                        <span class="text-[11px] font-medium
+                            {% if product.product_quantity_in_stock > 0 %}
+                                text-emerald-700 bg-emerald-50 ring-1 ring-emerald-200
+                            {% else %}
+                                text-rose-700 bg-rose-50 ring-1 ring-rose-200
+                            {% endif %}
+                            px-2.5 py-0.5 rounded-full">
+
+                            {% if product.product_quantity_in_stock > 0 %}
+                                Stock: {{ product.product_quantity_in_stock }}
+                            {% else %}
+                                Out of Stock
+                            {% endif %}
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+
+                        <!-- Product Image -->
+                        <div class="relative w-full sm:w-32 aspect-square bg-slate-100 rounded-2xl overflow-hidden shrink-0 border border-slate-200/80">
+
+                            {% if product.product_image %}
+
+                                <img src="{{ product.product_image.url }}"
+                                     alt="{{ product.product_name }}"
+                                     class="w-full h-full object-cover">
+
+                            {% else %}
+
+                                <div class="w-full h-full flex items-center justify-center text-slate-400 text-xs">
+                                    No Image
+                                </div>
+
+                            {% endif %}
+
+
+                            {% if product.product_discount > 0 %}
+
+                                <span class="absolute top-2 left-2 bg-[#ea580c] text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow">
+                                    {{ product.product_discount }}% OFF
+                                </span>
+
+                            {% endif %}
+
+                        </div>
+
+
+                        <!-- Product Details -->
+                        <div class="flex-1 flex flex-col justify-between">
+
+                            <div>
+
+                                <div class="flex items-center justify-between mb-1">
+
+                                    <span class="text-[10px] font-bold text-blue-700 uppercase tracking-widest">
+
+                                        {% if product.product_category %}
+                                            {{ product.product_category.category_name }}
+                                        {% endif %}
+
+                                    </span>
+
+
+                                    <div class="flex items-center gap-1">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             class="h-3.5 w-3.5 text-amber-500"
+                                             viewBox="0 0 20 20"
+                                             fill="currentColor">
+
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 01.951.69z"/>
+
+                                        </svg>
+
+                                        <span class="text-[11px] font-semibold text-slate-700">
+
+                                            {% if product.product_rating > 0 %}
+                                                {{ product.product_rating }}
+                                                <span class="text-slate-400 font-normal">
+                                                    ({{ product.product_rating_count }})
+                                                </span>
+                                            {% else %}
+                                                New
+                                            {% endif %}
+
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <h2 class="text-base font-bold text-slate-900">
+                                    {{ product.product_name }}
+                                </h2>
+
+                                <p class="text-xs text-slate-500 line-clamp-2 mt-0.5">
+                                    {{ product.product_desc }}
+                                </p>
+
+                            </div>
+
+
+                            <!-- Price and Quantity -->
+                            <div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-3 border-t border-slate-100">
+
+                                <div class="flex items-baseline gap-2">
+
+                                    <span class="text-lg font-extrabold text-[#0f172a]">
+                                        ₹{{ product.product_current_price }}
+                                    </span>
+
+                                    {% if product.product_previous_price > product.product_current_price %}
+
+                                        <span class="text-xs text-slate-400 line-through">
+                                            ₹{{ product.product_previous_price }}
+                                        </span>
+
+                                    {% endif %}
+
+                                </div>
+
+
+                                <!-- Quantity Selector -->
+                                <div class="flex items-center gap-2">
+
+                                    <span class="text-[11px] font-semibold text-slate-500">
+                                        Qty:
+                                    </span>
+
+                                    <div class="inline-flex items-center rounded-xl border border-slate-200 bg-slate-50 p-0.5">
+
+                                        <button type="button"
+                                                onclick="changeQty(-1)"
+                                                class="w-7 h-7 rounded-lg bg-white text-slate-700 hover:bg-slate-100 font-bold text-xs shadow-2xs transition cursor-pointer">
+                                            -
+                                        </button>
+
+                                        <input type="number"
+                                               id="qtyInput"
+                                               name="quantity"
+                                               value="1"
+                                               min="1"
+                                               max="{{ product.product_quantity_in_stock }}"
+                                               readonly
+                                               class="w-9 text-center text-xs font-extrabold text-slate-900 bg-transparent focus:outline-none">
+
+                                        <button type="button"
+                                                onclick="changeQty(1)"
+                                                class="w-7 h-7 rounded-lg bg-white text-slate-700 hover:bg-slate-100 font-bold text-xs shadow-2xs transition cursor-pointer">
+                                            +
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- 2. DELIVERY ADDRESS -->
+                <div class="rounded-3xl bg-white border border-slate-200 p-5 sm:p-6 shadow-sm">
+
+                    <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
+
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">
+                            2. Delivery Address
+                        </span>
+
+                        <span class="text-[11px] font-semibold text-amber-700 flex items-center gap-1">
+
+                            <i class="ph ph-truck"></i>
+                            Fast Express Delivery
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+
+                        <!-- Full Name -->
+                        <div>
+
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                                Full Name
+                            </label>
+
+                            <input type="text"
+                                   name="full_name"
+                                   value="{{ request.user.first_name|default:request.user.username }}"
+                                   required
+                                   placeholder="Enter receiver's name"
+                                   class="w-full bg-slate-50 text-xs sm:text-sm text-slate-900 placeholder-slate-400 px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-[#0f172a] focus:bg-white transition">
+
+                        </div>
+
+
+                        <!-- Phone -->
+                        <div>
+
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                                Phone Number
+                            </label>
+
+                            <input type="tel"
+                                   name="phone"
+                                   maxlength="15"
+                                   required
+                                   placeholder="+91 98765 43210"
+                                   class="w-full bg-slate-50 text-xs sm:text-sm text-slate-900 placeholder-slate-400 px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-[#0f172a] focus:bg-white transition">
+
+                        </div>
+
+
+                        <!-- Street Address -->
+                        <div class="sm:col-span-2">
+
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                                Street Address / House No.
+                            </label>
+
+                            <textarea name="address"
+                                      required
+                                      rows="2"
+                                      placeholder="House/Flat No., Building Name, Area, Street"
+                                      class="w-full bg-slate-50 text-xs sm:text-sm text-slate-900 placeholder-slate-400 px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-[#0f172a] focus:bg-white transition resize-none"></textarea>
+
+                        </div>
+
+
+                        <!-- City -->
+                        <div>
+
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                                City / Town
+                            </label>
+
+                            <input type="text"
+                                   name="city"
+                                   required
+                                   placeholder="Haldia / Kolkata"
+                                   class="w-full bg-slate-50 text-xs sm:text-sm text-slate-900 placeholder-slate-400 px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-[#0f172a] focus:bg-white transition">
+
+                        </div>
+
+
+                        <!-- State -->
+                        <div>
+
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                                State
+                            </label>
+
+                            <input type="text"
+                                   name="state"
+                                   required
+                                   placeholder="West Bengal"
+                                   class="w-full bg-slate-50 text-xs sm:text-sm text-slate-900 placeholder-slate-400 px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-[#0f172a] focus:bg-white transition">
+
+                        </div>
+
+
+                        <!-- Country -->
+                        <div>
+
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                                Country
+                            </label>
+
+                            <input type="text"
+                                   name="country"
+                                   value="India"
+                                   required
+                                   class="w-full bg-slate-50 text-xs sm:text-sm text-slate-900 px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-[#0f172a] focus:bg-white transition">
+
+                        </div>
+
+
+                        <!-- Pincode -->
+                        <div>
+
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                                Pincode
+                            </label>
+
+                            <input type="text"
+                                   name="pincode"
+                                   required
+                                   pattern="[0-9]{6}"
+                                   maxlength="6"
+                                   placeholder="721602"
+                                   class="w-full bg-slate-50 text-xs sm:text-sm text-slate-900 placeholder-slate-400 px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-[#0f172a] focus:bg-white transition">
+
+                        </div>
+
+
+                        <!-- Address Type -->
+                        <div>
+
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                                Address Type
+                            </label>
+
+                            <select name="address_type"
+                                    required
+                                    class="w-full bg-slate-50 text-xs sm:text-sm text-slate-900 px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-[#0f172a] focus:bg-white transition">
+
+                                <option value="home">Home</option>
+                                <option value="office">Office</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- 3. PAYMENT METHOD -->
+                <div class="rounded-3xl bg-white border border-slate-200 p-5 sm:p-6 shadow-sm">
+
+                    <div class="pb-3 mb-4 border-b border-slate-100">
+
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">
+                            3. Select Payment Method
+                        </span>
+
+                    </div>
+
+
+                    <div class="space-y-3">
+
+
+                        <!-- UPI -->
+                        <label class="flex items-center justify-between p-3.5 rounded-2xl border border-slate-200 cursor-pointer hover:border-[#0f172a] transition has-[:checked]:border-[#0f172a] has-[:checked]:bg-slate-50/80">
+
+                            <div class="flex items-center gap-3">
+
+                                <input type="radio"
+                                       name="payment_method"
+                                       value="online"
+                                       checked
+                                       required
+                                       class="h-4 w-4 text-[#0f172a] focus:ring-[#0f172a]">
+
+                                <div>
+
+                                    <span class="block text-xs font-bold text-slate-900">
+                                        UPI (Google Pay, PhonePe, Paytm)
+                                    </span>
+
+                                    <span class="block text-[11px] text-slate-500">
+                                        Online payment using UPI
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 ring-1 ring-emerald-200 px-2 py-0.5 rounded-full">
+                                FASTEST
+                            </span>
+
+                        </label>
+
+
+
+                        <!-- COD -->
+                        <label class="flex items-center justify-between p-3.5 rounded-2xl border border-slate-200 cursor-pointer hover:border-[#0f172a] transition has-[:checked]:border-[#0f172a] has-[:checked]:bg-slate-50/80">
+
+                            <div class="flex items-center gap-3">
+
+                                <input type="radio"
+                                       name="payment_method"
+                                       value="cod"
+                                       class="h-4 w-4 text-[#0f172a] focus:ring-[#0f172a]">
+
+                                <div>
+
+                                    <span class="block text-xs font-bold text-slate-900">
+                                        Cash on Delivery (COD)
+                                    </span>
+
+                                    <span class="block text-[11px] text-slate-500">
+                                        Pay when your order arrives
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <i class="ph ph-money text-lg text-slate-500"></i>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT COLUMN: PRICE SUMMARY -->
+            <div class="lg:col-span-5 lg:sticky lg:top-24">
+
+                <div class="rounded-3xl bg-white border border-slate-200 p-5 sm:p-6 shadow-sm">
+
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 pb-3 mb-4 border-b border-slate-100">
+                        Price Details
+                    </h3>
+
+
+                    <div class="space-y-3 text-xs">
+
+
+                        <!-- MRP -->
+                        <div class="flex justify-between text-slate-600">
+
+                            <span>
+                                Price (<span id="summaryQty">1</span> item)
+                            </span>
+
+                            <span class="font-semibold text-slate-900">
+                                ₹<span id="summaryMrp">
+                                    {{ product.product_previous_price|default:product.product_current_price }}
+                                </span>
+                            </span>
+
+                        </div>
+
+
+                        <!-- Discount -->
+                        {% if product.product_previous_price > product.product_current_price %}
+
+                        <div class="flex justify-between text-slate-600">
+
+                            <span>Product Discount</span>
+
+                            <span class="font-bold text-emerald-600">
+                                - ₹<span id="summaryDiscount"></span>
+                            </span>
+
+                        </div>
+
+                        {% endif %}
+
+
+                        <!-- Delivery -->
+                        <div class="flex justify-between text-slate-600">
+
+                            <span>Delivery Charges</span>
+
+                            <span class="font-bold text-emerald-600">
+                                FREE
+                            </span>
+
+                        </div>
+
+
+                        <!-- Total -->
+                        <div class="pt-3 border-t border-slate-200 flex items-center justify-between text-base">
+
+                            <span class="font-extrabold text-[#0f172a]">
+                                Total Payable
+                            </span>
+
+                            <span class="text-xl font-extrabold text-[#0f172a]">
+                                ₹<span id="summaryTotal">
+                                    {{ product.product_current_price }}
+                                </span>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Savings -->
+                    {% if product.product_previous_price > product.product_current_price %}
+
+                    <div class="mt-4 bg-emerald-50 border border-emerald-200/80 rounded-xl px-3.5 py-2 text-[11px] font-bold text-emerald-800 flex items-center gap-2">
+
+                        <i class="ph-fill ph-tag text-emerald-600 text-sm"></i>
+
+                        <span>
+                            You are saving ₹<span id="savingAmount"></span> on this order!
+                        </span>
+
+                    </div>
+
+                    {% endif %}
+
+
+
+                    <!-- Place Order -->
+                    {% if product.product_quantity_in_stock > 0 %}
+
+                    <button type="submit"
+                            class="w-full mt-5 py-3.5 px-4 bg-[#0f172a] hover:bg-[#ea580c] text-white font-bold text-xs uppercase tracking-[1.5px] rounded-2xl shadow-lg transition duration-200 flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99]">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="h-4 w-4"
+                             viewBox="0 0 20 20"
+                             fill="currentColor">
+
+                            <path fill-rule="evenodd"
+                                  d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.381z"
+                                  clip-rule="evenodd"/>
+
+                        </svg>
+
+                        <span>Confirm & Place Order</span>
+
+                    </button>
+
+                    {% else %}
+
+                    <button type="button"
+                            disabled
+                            class="w-full mt-5 py-3.5 px-4 bg-slate-200 text-slate-500 font-bold text-xs uppercase tracking-[1.5px] rounded-2xl cursor-not-allowed">
+
+                        Currently Out of Stock
+
+                    </button>
+
+                    {% endif %}
+
+
+
+                    <!-- Trust Badges -->
+                    <div class="grid grid-cols-3 gap-2 pt-5 mt-5 border-t border-slate-100 text-center">
+
+                        <div class="flex flex-col items-center">
+
+                            <i class="ph ph-seal-check text-lg text-amber-600 mb-1"></i>
+
+                            <span class="text-[10px] font-semibold text-slate-500">
+                                Authentic Luxury
+                            </span>
+
+                        </div>
+
+
+                        <div class="flex flex-col items-center">
+
+                            <i class="ph ph-arrows-counter-clockwise text-lg text-blue-600 mb-1"></i>
+
+                            <span class="text-[10px] font-semibold text-slate-500">
+                                7-Day Returns
+                            </span>
+
+                        </div>
+
+
+                        <div class="flex flex-col items-center">
+
+                            <i class="ph ph-lock-key text-lg text-emerald-600 mb-1"></i>
+
+                            <span class="text-[10px] font-semibold text-slate-500">
+                                Secure Payment
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- LIVE QUANTITY AND PRICE CALCULATOR -->
+<script>
+
+    const unitCurrentPrice = parseFloat(
+        "{{ product.product_current_price }}"
+    ) || 0;
+
+    const unitPreviousPrice = parseFloat(
+        "{{ product.product_previous_price|default:product.product_current_price }}"
+    ) || unitCurrentPrice;
+
+    const unitDiscount = Math.max(
+        unitPreviousPrice - unitCurrentPrice,
+        0
+    );
+
+    const maxStock = parseInt(
+        "{{ product.product_quantity_in_stock }}",
+        10
+    ) || 1;
+
+
+    function changeQty(delta) {
+
+        const qtyInput = document.getElementById("qtyInput");
+
+        if (!qtyInput) return;
+
+        let currentQty = parseInt(qtyInput.value, 10) || 1;
+
+        let nextQty = currentQty + delta;
+
+        if (nextQty < 1) {
+            nextQty = 1;
+        }
+
+        if (nextQty > maxStock) {
+            nextQty = maxStock;
+        }
+
+        qtyInput.value = nextQty;
+
+
+        // Update quantity
+        document.getElementById("summaryQty").textContent = nextQty;
+
+
+        // Update MRP
+        document.getElementById("summaryMrp").textContent =
+            (unitPreviousPrice * nextQty).toFixed(2);
+
+
+        // Update total price
+        document.getElementById("summaryTotal").textContent =
+            (unitCurrentPrice * nextQty).toFixed(2);
+
+
+        // Update discount
+        const discountEl = document.getElementById("summaryDiscount");
+
+        if (discountEl) {
+
+            discountEl.textContent =
+                (unitDiscount * nextQty).toFixed(2);
+
+        }
+
+
+        // Update saving amount
+        const savingEl = document.getElementById("savingAmount");
+
+        if (savingEl) {
+
+            savingEl.textContent =
+                (unitDiscount * nextQty).toFixed(2);
+
+        }
+
+    }
+
+
+    // Initial price calculation
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const discountEl = document.getElementById("summaryDiscount");
+
+        if (discountEl) {
+
+            discountEl.textContent = unitDiscount.toFixed(2);
+
+        }
+
+
+        const savingEl = document.getElementById("savingAmount");
+
+        if (savingEl) {
+
+            savingEl.textContent = unitDiscount.toFixed(2);
+
+        }
+
+    });
+
+</script>
+
+{% endblock %}

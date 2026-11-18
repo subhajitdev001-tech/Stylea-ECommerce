@@ -1,0 +1,275 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Portal | STYLÉA</title>
+  <!-- Favicon -->
+  <link rel="icon" href="{% static "image/favicon.png" %}" type="image/x-icon">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <style>
+    /* Pure CSS Switcher between Sign In & Create Account */
+    #radioSignIn:checked ~ div #signInCard { display: block; }
+    #radioSignIn:checked ~ div #signUpCard { display: none; }
+
+    #radioSignUp:checked ~ div #signInCard { display: none; }
+    #radioSignUp:checked ~ div #signUpCard { display: block; }
+  </style>
+  
+</head>
+<body class="bg-slate-900 text-slate-800 antialiased min-h-screen flex items-center justify-center p-3 sm:p-4 selection:bg-amber-500 selection:text-white">
+  
+  <!-- Hidden CSS Controller Radios -->
+  <input type="radio" name="authPortalRadio" id="radioSignIn" class="hidden" checked />
+  <input type="radio" name="authPortalRadio" id="radioSignUp" class="hidden" />
+
+  <!-- Main Container (Reduced width & height) -->
+  <div class="w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[500px] border border-slate-100">
+    
+    <!-- Left Column: Visual Showcase (Hidden on Small Screens) -->
+    <div class="hidden lg:flex lg:col-span-5 relative bg-slate-950 p-7 flex-col justify-between overflow-hidden">
+      <!-- Background Image with Gradient Overlay -->
+      <img 
+        src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1200&auto=format&fit=crop" 
+        alt="Collection Showcase" 
+        class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity scale-105 transition-transform duration-700 hover:scale-100"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+
+      <!-- Top Branding -->
+      <div class="relative z-10">
+        <a href="/" class="inline-flex items-center gap-2 text-slate-300 hover:text-white transition text-[11px] tracking-wider uppercase font-semibold mb-4">
+          <i class="ph ph-arrow-left text-xs"></i> Return to STYLÉA
+        </a>
+        <div>
+          <span class="brand-title text-[16px] sm:text-[22px] tracking-[4px] sm:tracking-[6px]" style="font-family: 'Times New Roman', Times, serif; font-weight: 400; text-transform: uppercase; color: #eef0f3; display: inline-block;">
+            S T Y L <span style="color: #d97706; font-style: italic; font-weight: 600;">É</span> A
+          </span>
+          <div style="height: 1.5px; width: 60%; background: linear-gradient(90deg, #d97706, transparent); margin: 1px 0;"></div>
+          <span class="block text-[8px] tracking-[3px] text-slate-400 uppercase font-bold">Private Client Portal</span>
+        </div>
+      </div>
+
+      <!-- Bottom Editorial Quote -->
+      <div class="relative z-10 border-l-2 border-amber-600 pl-3.5 py-0.5">
+        <p class="text-xs font-light text-slate-200 leading-relaxed italic" style="font-family: 'Times New Roman', Times, serif;">
+          "Elegance is not standing out, but being remembered."
+        </p>
+        <span class="block text-[9px] tracking-widest text-slate-400 uppercase font-semibold mt-1.5">Haldia &bull; Kolkata</span>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Forms (Compact Padding) -->
+    <div class="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-center relative bg-white">
+      
+      <!-- Mobile Quick Home Link -->
+      <div class="lg:hidden flex items-center justify-between pb-4 mb-3 border-b border-slate-100">
+        <span class="text-base tracking-[4px]" style="font-family: 'Times New Roman', Times, serif; font-weight: 500; text-transform: uppercase; color: #1e293b;">
+          S T Y L <span style="color: #d97706; font-style: italic;">É</span> A
+        </span>
+        <a href="/" class="text-xs font-semibold text-slate-500 hover:text-slate-900 flex items-center gap-1">
+          <i class="ph ph-house"></i> Home
+        </a>
+      </div>
+
+      <!-- Django Messages Display (Alerts for Success/Error) -->
+      {% if messages %}
+        <div class="mb-3 space-y-1.5">
+          {% for message in messages %}
+            <div class="px-3.5 py-2 rounded-xl text-xs font-medium border flex items-center gap-2 
+              {% if message.tags == 'error' %}bg-rose-50 text-rose-700 border-rose-200{% else %}bg-emerald-50 text-emerald-700 border-emerald-200{% endif %}">
+              <i class="ph {% if message.tags == 'error' %}ph-warning-circle{% else %}ph-check-circle{% endif %} text-sm"></i>
+              <span>{{ message }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <!-- ================= 1. CLIENT SIGN IN CARD ================= -->
+      <div id="signInCard">
+        <div class="mb-5">
+          <span class="text-[9px] font-bold tracking-[2px] uppercase text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">Private Access</span>
+          <h1 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mt-2">Welcome Back</h1>
+          <p class="text-xs text-slate-500 mt-0.5">Sign in to view your orders, wishlist, and exclusive offers</p>
+        </div>
+
+        <form action="{% url 'login' %}" method="POST" class="space-y-3">
+          {% csrf_token %}
+
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-600 mb-1">Email Address</label>
+            <div class="relative">
+              <i class="ph ph-envelope-simple absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-base"></i>
+              <input 
+                type="email" 
+                name="email"
+                required 
+                placeholder="client@stylea.com" 
+                class="w-full bg-slate-50 text-xs sm:text-sm text-slate-900 placeholder-slate-400 pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-amber-600 focus:bg-white transition"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <label class="text-[10px] font-bold uppercase tracking-wider text-slate-600">Password</label>
+              <a href="#" class="text-[10px] font-semibold text-amber-700 hover:underline">Forgot password?</a>
+            </div>
+            <div class="relative">
+              <i class="ph ph-lock-key absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-base"></i>
+              
+              <input 
+                type="password" 
+                id="signInPassword"
+                name="password"
+                required 
+                placeholder="••••••••" 
+                class="w-full bg-slate-50 text-xs sm:text-sm text-slate-900 placeholder-slate-400 pl-10 pr-10 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-amber-600 focus:bg-white transition"
+              />
+          
+              <!-- Eye Toggle Button -->
+              <button 
+                type="button" 
+                onclick="toggleEye('signInPassword', this)"
+                class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 transition focus:outline-none cursor-pointer flex items-center">
+                <i class="ph ph-eye-slash text-base eye-slash"></i>
+                <i class="ph ph-eye text-base eye-open hidden"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2 pt-0.5">
+            <input type="checkbox" id="rememberMe" name="remember_me" class="rounded border-slate-300 text-amber-600 focus:ring-amber-500 h-3.5 w-3.5">
+            <label for="rememberMe" class="text-[11px] text-slate-600 select-none cursor-pointer">Keep me authenticated for 30 days</label>
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full py-2.5 bg-slate-950 hover:bg-black text-amber-400 font-bold text-[11px] uppercase tracking-[2px] rounded-xl transition duration-200 shadow-lg shadow-slate-950/10 active:scale-[0.99] mt-1 cursor-pointer">
+            Sign In to STYLÉA
+          </button>
+        </form>
+
+        <!-- Switch to Create Account -->
+        <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+          <span class="text-slate-500">Not yet registered with us?</span>
+          <label for="radioSignUp" class="font-bold text-amber-700 hover:text-amber-800 hover:underline cursor-pointer">
+            Create an account &rarr;
+          </label>
+        </div>
+      </div>
+
+      <!-- ================= 2. CREATE ACCOUNT CARD ================= -->
+      <div id="signUpCard" class="hidden">
+        <div class="mb-4">
+          <span class="text-[9px] font-bold tracking-[2px] uppercase text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">New Membership</span>
+          <h1 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mt-1.5">Create Account</h1>
+          <p class="text-xs text-slate-500 mt-0.5">Discover Your Signature Style with STYLÉA</p>
+        </div>
+
+        <form action="{% url 'register' %}" method="POST" class="space-y-2.5">
+          {% csrf_token %}
+
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-600 mb-1">Full Legal Name</label>
+            <div class="relative">
+              <i class="ph ph-user absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-base"></i>
+              <input 
+                type="text" 
+                name="full_name"
+                required 
+                placeholder="Subhajit Das" 
+                class="w-full bg-slate-50 text-xs sm:text-sm text-slate-900 placeholder-slate-400 pl-10 pr-4 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-amber-600 focus:bg-white transition"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-600 mb-1">Email Address</label>
+            <div class="relative">
+              <i class="ph ph-envelope-simple absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-base"></i>
+              <input 
+                type="email" 
+                name="email"
+                required 
+                placeholder="client@stylea.com" 
+                class="w-full bg-slate-50 text-xs sm:text-sm text-slate-900 placeholder-slate-400 pl-10 pr-4 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-amber-600 focus:bg-white transition"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-600 mb-1">Create Password</label>
+            <div class="relative">
+              <i class="ph ph-lock-key absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-base"></i>
+              
+              <input 
+                type="password" 
+                id="signUpPassword"
+                name="password"
+                required 
+                placeholder="Minimum 8 characters" 
+                class="w-full bg-slate-50 text-xs sm:text-sm text-slate-900 placeholder-slate-400 pl-10 pr-10 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-amber-600 focus:bg-white transition"
+              />
+          
+              <!-- Eye Toggle Button -->
+              <button 
+                type="button" 
+                onclick="toggleEye('signUpPassword', this)"
+                class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 transition focus:outline-none cursor-pointer flex items-center">
+                <i class="ph ph-eye-slash text-base eye-slash"></i>
+                <i class="ph ph-eye text-base eye-open hidden"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2 pt-0.5 text-left">
+            <input type="checkbox" id="termsPortal" required class="rounded border-slate-300 text-amber-600 focus:ring-amber-500 h-3.5 w-3.5">
+            <label for="termsPortal" class="text-[11px] text-slate-500 cursor-pointer">I accept the Terms of Service & Privacy Policy</label>
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full py-2.5 bg-slate-950 hover:bg-black text-amber-400 font-bold text-[11px] uppercase tracking-[2px] rounded-xl transition duration-200 shadow-lg shadow-slate-950/10 active:scale-[0.99] mt-1 cursor-pointer">
+            Create Account
+          </button>
+        </form>
+
+        <!-- Switch to Sign In -->
+        <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+          <span class="text-slate-500">Already have an account?</span>
+          <label for="radioSignIn" class="font-bold text-amber-700 hover:text-amber-800 hover:underline cursor-pointer">
+            Sign In &rarr;
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+  <script>
+    function toggleEye(inputId, btn) {
+      const input = document.getElementById(inputId);
+      const eyeSlash = btn.querySelector('.eye-slash');
+      const eyeOpen = btn.querySelector('.eye-open');
+
+      if (input.type === 'password') {
+        input.type = 'text';
+        eyeSlash.classList.add('hidden');
+        eyeOpen.classList.remove('hidden');
+      } else {
+        input.type = 'password';
+        eyeSlash.classList.remove('hidden');
+        eyeOpen.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

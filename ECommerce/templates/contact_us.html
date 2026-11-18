@@ -1,0 +1,128 @@
+{% extends 'info_base.html' %}
+
+{% block title %}Contact Us - STYLÉA{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto px-4 sm:px-6 py-8">
+
+  <div class="mb-6">
+    <h1 class="text-2xl sm:text-3xl font-extrabold text-[#0f172a] tracking-tight">Contact Us</h1>
+    <p class="text-sm text-slate-500 mt-1">Questions about an order, payment or product? Send us a message and we'll get back to you by email.</p>
+  </div>
+
+  <!-- Success / error messages -->
+  {% if messages %}
+    {% for message in messages %}
+      <div class="mb-4 rounded-xl px-4 py-3 text-sm font-semibold border flex items-center gap-2
+        {% if message.tags == 'success' %}bg-emerald-50 text-emerald-700 border-emerald-200{% else %}bg-rose-50 text-rose-700 border-rose-200{% endif %}">
+        <i class="ph-fill {% if message.tags == 'success' %}ph-check-circle{% else %}ph-warning-circle{% endif %} text-lg"></i>
+        <span>{{ message }}</span>
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  <div class="grid grid-cols-1 md:grid-cols-5 gap-5">
+
+    <!-- ========== LEFT: INFO CARDS ========== -->
+    <div class="md:col-span-2 space-y-3">
+
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex items-start gap-3">
+        <div class="w-10 h-10 rounded-xl bg-orange-50 text-[#ea580c] flex items-center justify-center flex-shrink-0">
+          <i class="ph ph-envelope-simple text-xl"></i>
+        </div>
+        <div class="min-w-0">
+          <p class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">Email us</p>
+          <a href="mailto:{{ support_email }}" class="text-sm font-bold text-slate-900 hover:text-[#ea580c] transition break-all">{{ support_email }}</a>
+          <p class="text-[11px] text-slate-500 mt-0.5">We reply by email as soon as we can.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex items-start gap-3">
+        <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center flex-shrink-0">
+          <i class="ph ph-map-pin text-xl"></i>
+        </div>
+        <div>
+          <p class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">Based in</p>
+          <p class="text-sm font-bold text-slate-900">Haldia &bull; Kolkata</p>
+          <p class="text-[11px] text-slate-500 mt-0.5">Online store, delivering to your door.</p>
+        </div>
+      </div>
+
+      <a href="{% url 'help' %}" class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex items-start gap-3 hover:border-[#0f172a] transition group">
+        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
+          <i class="ph ph-lifebuoy text-xl"></i>
+        </div>
+        <div class="flex-1">
+          <p class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">Quick answers</p>
+          <p class="text-sm font-bold text-slate-900">Visit the Help Center</p>
+          <p class="text-[11px] text-slate-500 mt-0.5">Orders, payments, account and returns.</p>
+        </div>
+        <i class="ph ph-arrow-right text-slate-300 group-hover:text-[#ea580c] transition self-center"></i>
+      </a>
+
+    </div>
+
+    <!-- ========== RIGHT: FORM ========== -->
+    <div class="md:col-span-3 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+
+      {% if errors %}
+      <div class="mb-4 rounded-xl bg-rose-50 border border-rose-200 px-3 py-2 space-y-0.5">
+        {% for error in errors %}
+          <p class="text-xs font-semibold text-rose-700">{{ error }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <form method="POST" action="{% url 'contact_us' %}" class="space-y-3.5">
+        {% csrf_token %}
+
+        <!-- Anti-spam: signed time the form was opened (browsers never autofill hidden fields) -->
+        <input type="hidden" name="form_ts" value="{{ form_ts }}">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div>
+            <label for="c_name" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Your Name</label>
+            <input id="c_name" type="text" name="name" value="{{ form.name }}" maxlength="100" required
+                   class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#0f172a]">
+          </div>
+          <div>
+            <label for="c_email" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Email</label>
+            <input id="c_email" type="email" name="email" value="{{ form.email }}" required
+                   class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#0f172a]">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div>
+            <label for="c_topic" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Topic</label>
+            <select id="c_topic" name="topic"
+                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#0f172a]">
+              {% for t in topics %}
+                <option value="{{ t }}" {% if form.topic == t %}selected{% endif %}>{{ t }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div>
+            <label for="c_order" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Order Number <span class="normal-case font-medium">(optional)</span></label>
+            <input id="c_order" type="text" name="order_number" value="{{ form.order_number }}" maxlength="60" placeholder="Paste from My Orders"
+                   class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0f172a]">
+          </div>
+        </div>
+
+        <div>
+          <label for="c_message" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Message</label>
+          <textarea id="c_message" name="message" rows="5" maxlength="2000" required placeholder="Tell us how we can help..."
+                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0f172a] resize-none">{{ form.message }}</textarea>
+        </div>
+
+        <button type="submit"
+                class="w-full sm:w-auto py-3 px-7 bg-[#0f172a] hover:bg-[#ea580c] text-white font-bold text-xs uppercase tracking-[1.5px] rounded-xl shadow-lg transition duration-200 flex items-center justify-center gap-2">
+          <span>Send Message</span>
+          <i class="ph ph-paper-plane-tilt text-base"></i>
+        </button>
+      </form>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
