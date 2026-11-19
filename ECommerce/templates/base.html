@@ -190,7 +190,7 @@
                   <p class="text-[11px] text-slate-600 mt-1 leading-snug">Pure handwoven silks, custom contoured denim, and effortless shirts.</p>
                 </div>
                 <div class="space-y-1.5 mt-4">
-                  <a href="{% url 'index' %}?category=Sarees" class="w-full py-2 bg-rose-600 hover:bg-rose-700 text-white font-bold text-[11px] rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm">
+                  <a href="{% url 'index' %}?category=sarees" class="w-full py-2 bg-rose-600 hover:bg-rose-700 text-white font-bold text-[11px] rounded-xl transition flex items-center justify-center gap-1.5 shadow-sm">
                     <i class="ph ph-flower-lotus"></i>
                     <span>Explore Sarees</span>
                   </a>
@@ -481,10 +481,17 @@
                   Find the perfect outfit for every occasion curated instantly to your taste and fit.
                 </p>
                 <div class="mt-3 sm:mt-5 flex items-center gap-3">
-                  <button onclick="scrollToCatalog()" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-brand-500/25 active:scale-95 flex items-center gap-2">
+                  {% if user.is_authenticated %}
+                  <button type="button" onclick="toggleStylist()" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-brand-500/25 active:scale-95 flex items-center gap-2">
                     <span>Try AI Stylist</span>
                     <i class="ph ph-arrow-right font-bold"></i>
                   </button>
+                {% else %}
+                  <a href="{% url 'login' %}" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-brand-500/25 active:scale-95 flex items-center gap-2">
+                    <span>Try AI Stylist</span>
+                    <i class="ph ph-arrow-right font-bold"></i>
+                  </a>
+                {% endif %}
                   <span class="hidden md:inline-block text-xs font-semibold text-slate-500">Free Virtual Fitting</span>
                 </div>
               </div>
@@ -512,11 +519,11 @@
                   Single-needle stitched luxury poplin &amp; twill shirts with mother-of-pearl buttons and crisp spread collars.
                 </p>
                 <div class="mt-3 sm:mt-5 flex items-center gap-3">
-                  <button onclick="selectGenderAndCategory('Men', 'Shirts')" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-blue-700 hover:bg-blue-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-blue-700/25 active:scale-95 flex items-center gap-2">
+                  <a href="{% url 'index' %}?category=Shirts#catalogSection" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-blue-700 hover:bg-blue-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-blue-700/25 active:scale-95 flex items-center gap-2">
                     <span>Shop Dress Shirts</span>
                     <i class="ph ph-arrow-right font-bold"></i>
-                  </button>
-                  <span class="hidden md:inline-block text-xs font-semibold text-blue-700 bg-blue-50 px-2 py-1 rounded-lg border border-blue-200">Starting at $185</span>
+                  </a>
+                  <span class="hidden md:inline-block text-xs font-semibold text-blue-700 bg-blue-50 px-2 py-1 rounded-lg border border-blue-200">Starting at ₹185</span>
                 </div>
               </div>
               <div class="w-[38%] sm:w-[42%] relative flex items-center justify-end overflow-hidden">
@@ -543,10 +550,10 @@
                   AI-curated outfits for your next party. From evening silk gowns to sharp tuxedos.
                 </p>
                 <div class="mt-3 sm:mt-5 flex items-center gap-3">
-                  <button onclick="scrollToCatalog()" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
+                  <a href="{% url 'index' %}?category=Dresses#catalogSection" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
                     <span>Shop Now</span>
                     <i class="ph ph-bag font-bold"></i>
-                  </button>
+                  </a>
                   <span class="hidden md:inline-block text-xs font-semibold text-rose-600 bg-rose-50 px-2 py-1 rounded-lg border border-rose-200">Extra 15% with SAVE15</span>
                 </div>
               </div>
@@ -574,16 +581,16 @@
                   28,800 vph skeleton exhibition casebacks, scratch-resistant sapphire crystals, and 56-hour reserve.
                 </p>
                 <div class="mt-3 sm:mt-5 flex items-center gap-3">
-                  <button onclick="selectGenderAndCategory('Men', 'Watches')" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-slate-950 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
+                  <a href="{% url 'index' %}?category=Watches#catalogSection" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-slate-950 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
                     <span>Explore Watches</span>
                     <i class="ph ph-compass font-bold"></i>
-                  </button>
+                  </a>
                   <span class="hidden md:inline-block text-xs font-semibold text-slate-700 bg-white px-2 py-1 rounded-lg border border-slate-200">56-Hr Reserve</span>
                 </div>
               </div>
               <div class="w-[38%] sm:w-[42%] relative flex items-center justify-end overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80" 
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMbc_f4V79hOnb3YFQQEyM5u86B9ecuaqz9KcXu3z4jL_DmzpLgz0qL9jd&s=10" 
                   alt="Men's Skeleton Automatic Chronograph" 
                   class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" 
                 />
@@ -605,10 +612,10 @@
                   Dense combed cotton with double mercerization, drop-shoulder contour, and durable shape retention.
                 </p>
                 <div class="mt-3 sm:mt-5 flex items-center gap-3">
-                  <button onclick="selectGenderAndCategory('Men', 'T-Shirts')" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-teal-700 hover:bg-teal-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-teal-700/25 active:scale-95 flex items-center gap-2">
+                  <a href="{% url 'index' %}?category=T-Shirt#catalogSection" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-teal-700 hover:bg-teal-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-teal-700/25 active:scale-95 flex items-center gap-2">
                     <span>Shop Luxury Tees</span>
                     <i class="ph ph-bag font-bold"></i>
-                  </button>
+                  </a>
                   <span class="hidden md:inline-block text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-lg border border-emerald-200">Zero Shrinkage</span>
                 </div>
               </div>
@@ -636,10 +643,10 @@
                   Pure Kanjivaram &amp; Varanasi Banarasi georgette silks woven with certified gold zari.
                 </p>
                 <div class="mt-3 sm:mt-5 flex items-center gap-3">
-                  <button onclick="selectGenderAndCategory('Women', 'Sarees')" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-purple-700 hover:bg-purple-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-purple-700/25 active:scale-95 flex items-center gap-2">
+                  <a href="{% url 'index' %}?category=Sarees#catalogSection" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-purple-700 hover:bg-purple-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-purple-700/25 active:scale-95 flex items-center gap-2">
                     <span>Explore Sarees</span>
                     <i class="ph ph-arrow-right font-bold"></i>
-                  </button>
+                  </a>
                   <span class="hidden md:inline-block text-xs font-semibold text-purple-700 bg-purple-50 px-2 py-1 rounded-lg border border-purple-200">Free Matching Blouse Cut</span>
                 </div>
               </div>
@@ -667,10 +674,10 @@
                   Solitaire 18K suites, South Sea pearls &amp; Swiss mechanical skeleton chronographs.
                 </p>
                 <div class="mt-3 sm:mt-5 flex items-center gap-3">
-                  <button onclick="selectGenderAndCategory('All', 'Jewellery Sets')" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
+                  <a href="{% url 'index' %}?category=Jewellery#catalogSection" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
                     <span>View Jewels</span>
                     <i class="ph ph-sparkle font-bold"></i>
-                  </button>
+                  </a>
                   <span class="hidden md:inline-block text-xs font-semibold text-slate-600">Complimentary Certificate</span>
                 </div>
               </div>
@@ -698,10 +705,10 @@
                   Super 150s Biella wool tuxedos, Giza poplin shirts, and Okayama raw selvedge denim.
                 </p>
                 <div class="mt-3 sm:mt-5 flex items-center gap-3">
-                  <button onclick="selectGenderAndCategory('Men', 'All')" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-blue-700 hover:bg-blue-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-blue-700/25 active:scale-95 flex items-center gap-2">
+                  <a href="{% url 'index' %}?category=Suits#catalogSection" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-blue-700 hover:bg-blue-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-blue-700/25 active:scale-95 flex items-center gap-2">
                     <span>Shop Menswear</span>
                     <i class="ph ph-arrow-right font-bold"></i>
-                  </button>
+                  </a>
                   <span class="hidden md:inline-block text-xs font-semibold text-slate-500">Bespoke Fit Guaranteed</span>
                 </div>
               </div>
@@ -729,10 +736,10 @@
                   Try your outfit virtually before you buy. Experience true drape, color and silhouette.
                 </p>
                 <div class="mt-3 sm:mt-5 flex items-center gap-3">
-                  <button onclick="scrollToCatalog()" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-teal-700 hover:bg-teal-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-teal-700/20 active:scale-95 flex items-center gap-2">
+                  <a href="#catalogSection" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-teal-700 hover:bg-teal-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-teal-700/20 active:scale-95 flex items-center gap-2">
                     <span>Try It On</span>
                     <i class="ph ph-arrows-out-cardinal font-bold"></i>
-                  </button>
+                  </a>
                   <span class="hidden md:inline-block text-xs font-semibold text-slate-500">Zero Returns Guarantee</span>
                 </div>
               </div>
@@ -876,10 +883,10 @@
                   Extra 20% off bridal wear, Kanjivaram silks, and tailored double-breasted tuxedos.
                 </p>
                 <div class="mt-3 sm:mt-5 flex items-center gap-3">
-                  <button onclick="scrollToCatalog()" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-rose-600/25 active:scale-95 flex items-center gap-2">
+                  <a href="{% url 'index' %}?category=Sarees#catalogSection" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-rose-600/25 active:scale-95 flex items-center gap-2">
                     <span>Unlock Discounts</span>
                     <i class="ph ph-ticket font-bold"></i>
-                  </button>
+                  </a>
                   <span class="hidden md:inline-block text-xs font-semibold text-rose-700 bg-rose-50 px-2 py-1 rounded-lg border border-rose-200">Coupon: FESTIVE20</span>
                 </div>
               </div>
@@ -907,10 +914,10 @@
                   Goodyear-welted burnished leather loafers and sculpted 85mm Italian Nappa stiletto pumps.
                 </p>
                 <div class="mt-3 sm:mt-5 flex items-center gap-3">
-                  <button onclick="selectGenderAndCategory('All', 'Shoes')" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-amber-800 hover:bg-amber-700 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
+                  <a href="{% url 'index' %}?category=Shoes#catalogSection" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-amber-800 hover:bg-amber-700 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
                     <span>Shop Footwear</span>
                     <i class="ph ph-arrow-right font-bold"></i>
-                  </button>
+                  </a>
                   <span class="hidden md:inline-block text-xs font-semibold text-slate-600">Free Size Exchanges</span>
                 </div>
               </div>
@@ -938,10 +945,10 @@
                   Heavyweight 260GSM mercerized crewnecks and 14.5oz authentic Okayama raw selvedge jeans.
                 </p>
                 <div class="mt-3 sm:mt-5 flex items-center gap-3">
-                  <button onclick="selectGenderAndCategory('All', 'Jeans')" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-teal-700 hover:bg-teal-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
+                  <a href="{% url 'index' %}?category=Jeans#catalogSection" class="px-4 sm:px-6 py-2 sm:py-2.5 bg-teal-700 hover:bg-teal-600 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
                     <span>Discover Denim</span>
                     <i class="ph ph-arrow-right font-bold"></i>
-                  </button>
+                  </a>
                   <span class="hidden md:inline-block text-xs font-semibold text-teal-700 bg-teal-50 px-2 py-1 rounded-lg">Japanese Mill Certified</span>
                 </div>
               </div>
@@ -990,7 +997,7 @@
             </div>
             <div>
               <h4 class="text-sm font-bold text-slate-900">Complimentary Shipping</h4>
-              <p class="text-xs text-slate-500 mt-0.5">Carbon neutral transit on orders over $50 with real-time tracking.</p>
+              <p class="text-xs text-slate-500 mt-0.5">Carbon neutral transit on orders over ₹50 with real-time tracking.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
@@ -1040,31 +1047,34 @@
             Curated essentials engineered at the intersection of architecture, sound design, and industrial ergonomics. Crafted for modern creatives.
           </p>
           <div class="flex gap-4 text-lg text-slate-400">
-            <a href="#" class="hover:text-white transition"><i class="ph ph-youtube-logo"></i></a>
-            <a href="#" class="hover:text-white transition"><i class="ph ph-instagram-logo"></i></a>
-            <a href="#" class="hover:text-white transition"><i class="ph ph-facebook-logo"></i></a>
-            <a href="#" class="hover:text-white transition"><i class="ph ph-linkedin-logo"></i></a>
-            <a href="#" class="hover:text-white transition"><i class="ph ph-github-logo"></i></a>
+            <a href="https://www.youtube.com/" class="hover:text-white transition"><i class="ph ph-youtube-logo"></i></a>
+            <a href="https://www.instagram.com/" class="hover:text-white transition"><i class="ph ph-instagram-logo"></i></a>
+            <a href="https://www.facebook.com/" class="hover:text-white transition"><i class="ph ph-facebook-logo"></i></a>
+            <a href="https://www.linkedin.com/" class="hover:text-white transition"><i class="ph ph-linkedin-logo"></i></a>
+            <a href="https://github.com/subhajitdev001-tech/Stylea-ECommerce" class="hover:text-white transition"><i class="ph ph-github-logo"></i></a>
           </div>
         </div>
 
         <div>
           <h5 class="font-bold text-white uppercase tracking-wider mb-3">Collections</h5>
           <ul class="space-y-2">
-            <li><a href="#" onclick="selectCategory('Electronics'); return false;" class="hover:text-white transition">Personal Audio</a></li>
-            <li><a href="#" onclick="selectCategory('Watches'); return false;" class="hover:text-white transition">Horology</a></li>
-            <li><a href="#" onclick="selectCategory('Home & Living'); return false;" class="hover:text-white transition">Interior Living</a></li>
-            <li><a href="#" onclick="selectCategory('Accessories'); return false;" class="hover:text-white transition">Everyday Carry</a></li>
+            <li><a href="" onclick="selectCategory('Electronics'); return false;" class="hover:text-white transition">AI Recommendation</a></li>
+            <li><a href="#" onclick="selectCategory('Watches'); return false;" class="hover:text-white transition">Unique Collection</a></li>
+            <li><a href="#" onclick="selectCategory('Home & Living'); return false;" class="hover:text-white transition">Branded Fashion</a></li>
+            <li><a href="#" onclick="selectCategory('Accessories'); return false;" class="hover:text-white transition">Everyday Stylish<Sa></li>
           </ul>
         </div>
 
         <div>
           <h5 class="font-bold text-white uppercase tracking-wider mb-3">Customer Care</h5>
           <ul class="space-y-2">
-            <li><a href="#orderLookup" onclick="showToast('Tracking portal active for registered orders', 'info'); return false;" class="hover:text-white transition">Track Your Order</a></li>
-            <li><a href="#" onclick="showToast('Warranty claims serviced in 48 hours', 'info'); return false;" class="hover:text-white transition">Warranty Claims</a></li>
-            <li><a href="#" onclick="showToast('Free returns within 30 days', 'info'); return false;" class="hover:text-white transition">Returns Policy</a></li>
-            <li><a href="#" onclick="showToast('Support live on Mon-Fri 9AM-6PM EST', 'info'); return false;" class="hover:text-white transition">Contact Studio</a></li>
+            <li><a href="{% url 'my_orders' %}" class="hover:text-white transition">Track Your Order</a></li>
+
+            <li><a href="{% url 'help' %}" class="hover:text-white transition">Warranty Claims</a></li>
+
+            <li><a href="{% url 'help' %}" class="hover:text-white transition">Returns Policy</a></li>
+
+            <li><a href="{% url 'contact_us' %}" class="hover:text-white transition">Contact Studio</a></li>
           </ul>
         </div>
 
@@ -1082,9 +1092,9 @@
       <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-400">
         <div>&copy; 2026 STYLÉA Concept Studio Inc. All rights reserved. Mock checkout demo.</div>
         <div class="flex gap-6">
-          <a href="#" class="hover:underline">Privacy Policy</a>
-          <a href="#" class="hover:underline">Terms of Service</a>
-          <a href="#" class="hover:underline">Security</a>
+          <a href="{% url 'help' %}" class="hover:underline">Privacy Policy</a>
+          <a href="{% url 'help' %}" class="hover:underline">Terms of Service</a>
+          <a href="{% url 'help' %}" class="hover:underline">Security</a>
         </div>
       </div>
     </div>
@@ -2111,7 +2121,7 @@ async function sendStylistMessage() {
         <div class="stylist-user-message">
 
             <span>
-                ${escapeStylistHtml(msg)}
+                ₹{escapeStylistHtml(msg)}
             </span>
 
         </div>
@@ -2130,7 +2140,7 @@ async function sendStylistMessage() {
 
     chatBox.insertAdjacentHTML('beforeend', `
 
-        <div class="stylist-ai-message" id="${loadingId}">
+        <div class="stylist-ai-message" id="₹{loadingId}">
 
           <div class="stylist-ai-icon">
               <img src="{% static 'image/ai-stylist-bot.png' %}"
@@ -2242,7 +2252,7 @@ async function sendStylistMessage() {
 
                 <div class="stylist-ai-content">
 
-                    ${safeReply}
+                    ₹{safeReply}
 
                 </div>
 

@@ -140,31 +140,34 @@
             Curated essentials engineered at the intersection of architecture, sound design, and industrial ergonomics. Crafted for modern creatives.
           </p>
           <div class="flex gap-4 text-lg text-slate-400">
-            <a href="#" class="hover:text-white transition"><i class="ph ph-youtube-logo"></i></a>
-            <a href="#" class="hover:text-white transition"><i class="ph ph-instagram-logo"></i></a>
-            <a href="#" class="hover:text-white transition"><i class="ph ph-facebook-logo"></i></a>
-            <a href="#" class="hover:text-white transition"><i class="ph ph-linkedin-logo"></i></a>
-            <a href="#" class="hover:text-white transition"><i class="ph ph-github-logo"></i></a>
+            <a href="https://www.youtube.com/" class="hover:text-white transition"><i class="ph ph-youtube-logo"></i></a>
+            <a href="https://www.instagram.com/" class="hover:text-white transition"><i class="ph ph-instagram-logo"></i></a>
+            <a href="https://www.facebook.com/" class="hover:text-white transition"><i class="ph ph-facebook-logo"></i></a>
+            <a href="https://www.linkedin.com/" class="hover:text-white transition"><i class="ph ph-linkedin-logo"></i></a>
+            <a href="https://github.com/subhajitdev001-tech/Stylea-ECommerce" class="hover:text-white transition"><i class="ph ph-github-logo"></i></a>
           </div>
         </div>
 
         <div>
           <h5 class="font-bold text-white uppercase tracking-wider mb-3">Collections</h5>
           <ul class="space-y-2">
-            <li><a href="#" onclick="selectCategory('Electronics'); return false;" class="hover:text-white transition">Personal Audio</a></li>
-            <li><a href="#" onclick="selectCategory('Watches'); return false;" class="hover:text-white transition">Horology</a></li>
-            <li><a href="#" onclick="selectCategory('Home & Living'); return false;" class="hover:text-white transition">Interior Living</a></li>
-            <li><a href="#" onclick="selectCategory('Accessories'); return false;" class="hover:text-white transition">Everyday Carry</a></li>
+            <li><a href="" onclick="selectCategory('Electronics'); return false;" class="hover:text-white transition">AI Recommendation</a></li>
+            <li><a href="#" onclick="selectCategory('Watches'); return false;" class="hover:text-white transition">Unique Collection</a></li>
+            <li><a href="#" onclick="selectCategory('Home & Living'); return false;" class="hover:text-white transition">Branded Fashion</a></li>
+            <li><a href="#" onclick="selectCategory('Accessories'); return false;" class="hover:text-white transition">Everyday Stylish<Sa></li>
           </ul>
         </div>
 
         <div>
           <h5 class="font-bold text-white uppercase tracking-wider mb-3">Customer Care</h5>
           <ul class="space-y-2">
-            <li><a href="#orderLookup" onclick="showToast('Tracking portal active for registered orders', 'info'); return false;" class="hover:text-white transition">Track Your Order</a></li>
-            <li><a href="#" onclick="showToast('Warranty claims serviced in 48 hours', 'info'); return false;" class="hover:text-white transition">Warranty Claims</a></li>
-            <li><a href="#" onclick="showToast('Free returns within 30 days', 'info'); return false;" class="hover:text-white transition">Returns Policy</a></li>
-            <li><a href="#" onclick="showToast('Support live on Mon-Fri 9AM-6PM EST', 'info'); return false;" class="hover:text-white transition">Contact Studio</a></li>
+            <li><a href="{% url 'my_orders' %}" class="hover:text-white transition">Track Your Order</a></li>
+
+            <li><a href="{% url 'help' %}" class="hover:text-white transition">Warranty Claims</a></li>
+
+            <li><a href="{% url 'help' %}" class="hover:text-white transition">Returns Policy</a></li>
+
+            <li><a href="{% url 'contact_us' %}" class="hover:text-white transition">Contact Studio</a></li>
           </ul>
         </div>
 
@@ -181,9 +184,9 @@
       <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-400">
         <div>&copy; 2026 STYLÉA Concept Studio Inc. All rights reserved. Mock checkout demo.</div>
         <div class="flex gap-6">
-          <a href="#" class="hover:underline">Privacy Policy</a>
-          <a href="#" class="hover:underline">Terms of Service</a>
-          <a href="#" class="hover:underline">Security</a>
+          <a href="{% url 'help' %}" class="hover:underline">Privacy Policy</a>
+          <a href="{% url 'help' %}" class="hover:underline">Terms of Service</a>
+          <a href="{% url 'help' %}" class="hover:underline">Security</a>
         </div>
       </div>
     </div>

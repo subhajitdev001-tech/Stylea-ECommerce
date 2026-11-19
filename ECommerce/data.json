@@ -1,0 +1,3758 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$XbSNStc0dq2C4WNZhkSfED$uuCafRYTvQ6G8Z6EmjS7JZYcqz/Kqq78UjR3QxEfnAY=",
+    "last_login": "2026-11-19T03:54:33.489Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-09-30T13:41:28.631Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$jl5nQz9rFXH7b6ap0XIZG3$96yg3Kh8ROStGkKXpv2D7D6zuq5ohWyv/ARVnpHTFJI=",
+    "last_login": "2026-10-08T08:43:18.180Z",
+    "is_superuser": false,
+    "username": "barbasudev721645@gmail.com",
+    "first_name": "Subhajit",
+    "last_name": "Das",
+    "email": "barbasudev721645@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-08T01:51:26Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$KBQ8lXRDwBfgoMbdeGlb0E$DvX20deE7Twx9RYPGMBkcV0T53073UaNoE8onWTeoZ8=",
+    "last_login": "2026-11-05T13:17:56.925Z",
+    "is_superuser": false,
+    "username": "riyagirisonu@gamil.com",
+    "first_name": "Riya Giri",
+    "last_name": "",
+    "email": "riyagirisonu@gamil.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-13T03:38:46.975Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$hqPOtu7U2jmhb2L5myQiOZ$NTvU4L0DoURAXBhLeNYLniRX47//MlsfNiQaJeDsZRs=",
+    "last_login": "2026-11-05T12:02:54.995Z",
+    "is_superuser": false,
+    "username": "subhajit.dev001@gmail.com",
+    "first_name": "Subhajit Das",
+    "last_name": "",
+    "email": "subhajit.dev001@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-11-05T08:39:26.606Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$rzUeBAkBxVYsF1JejA6XW9$9DWslev2y8iex0/qyw6ZtHrfD9UWYge1jKXsmcrH1KA=",
+    "last_login": "2026-11-19T02:57:51.585Z",
+    "is_superuser": false,
+    "username": "sampapaldas@gmail.com",
+    "first_name": "Suman Das",
+    "last_name": "",
+    "email": "sampapaldas@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-11-19T02:57:41.439Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "project.category",
+  "pk": 3,
+  "fields": {
+    "parent": null,
+    "category_name": "Women",
+    "category_slug": "women",
+    "category_created_at": "2026-10-12"
+  }
+},
+{
+  "model": "project.category",
+  "pk": 6,
+  "fields": {
+    "parent": null,
+    "category_name": "Men",
+    "category_slug": "men",
+    "category_created_at": "2026-10-12"
+  }
+},
+{
+  "model": "project.category",
+  "pk": 9,
+  "fields": {
+    "parent": 3,
+    "category_name": "Sarees",
+    "category_slug": "sarees",
+    "category_created_at": "2026-10-12"
+  }
+},
+{
+  "model": "project.category",
+  "pk": 10,
+  "fields": {
+    "parent": 3,
+    "category_name": "Shirt",
+    "category_slug": "shirt",
+    "category_created_at": "2026-10-12"
+  }
+},
+{
+  "model": "project.category",
+  "pk": 11,
+  "fields": {
+    "parent": 3,
+    "category_name": "Jeans",
+    "category_slug": "jeans",
+    "category_created_at": "2026-10-12"
+  }
+},
+{
+  "model": "project.category",
+  "pk": 12,
+  "fields": {
+    "parent": 3,
+    "category_name": "Shoes & Heels",
+    "category_slug": "shoes-heels",
+    "category_created_at": "2026-10-12"
+  }
+},
+{
+  "model": "project.category",
+  "pk": 13,
+  "fields": {
+    "parent": 3,
+    "category_name": "One Piece",
+    "category_slug": "one-piece",
+    "category_created_at": "2026-10-12"
+  }
+},
+{
+  "model": "project.category",
+  "pk": 14,
+  "fields": {
+    "parent": 3,
+    "category_name": "T-Shirt & Tops",
+    "category_slug": "t-shirt-tops",
+    "category_created_at": "2026-10-12"
+  }
+},
+{
+  "model": "project.category",
+  "pk": 15,
+  "fields": {
+    "parent": 3,
+    "category_name": "Dresses",
+    "category_slug": "dresses",
+    "category_created_at": "2026-10-12"
+  }
+},
+{
+  "model": "project.category",
+  "pk": 16,
+  "fields": {
+    "parent": 3,
+    "category_name": "Jewellery",
+    "category_slug": "jewellery",
+    "category_created_at": "2026-10-12"
+  }
+},
+{
+  "model": "project.category",
+  "pk": 17,
+  "fields": {
+    "parent": 6,
+    "category_name": "Suits",
+    "category_slug": "suits",
+    "category_created_at": "2026-10-12"
+  }
+},
+{
+  "model": "project.category",
+  "pk": 18,
+  "fields": {
+    "parent": 6,
+    "category_name": "T-Shirt",
+    "category_slug": "t-shirt",
+    "category_created_at": "2026-10-12"
+  }
+},
+{
+  "model": "project.category",
+  "pk": 19,
+  "fields": {
+    "parent": 6,
+    "category_name": "Shoes",
+    "category_slug": "shoes",
+    "category_created_at": "2026-10-12"
+  }
+},
+{
+  "model": "project.category",
+  "pk": 20,
+  "fields": {
+    "parent": 6,
+    "category_name": "Shirts",
+    "category_slug": "shirts",
+    "category_created_at": "2026-10-12"
+  }
+},
+{
+  "model": "project.category",
+  "pk": 21,
+  "fields": {
+    "parent": 6,
+    "category_name": "Jeans & Denim",
+    "category_slug": "jeans-denim",
+    "category_created_at": "2026-10-12"
+  }
+},
+{
+  "model": "project.category",
+  "pk": 22,
+  "fields": {
+    "parent": 6,
+    "category_name": "Watches",
+    "category_slug": "watches",
+    "category_created_at": "2026-10-12"
+  }
+},
+{
+  "model": "project.product",
+  "pk": 5,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Premium Blue Silk Saree",
+    "product_slug": "premium-blue-silk-saree",
+    "product_discount": 22,
+    "product_current_price": "2499.00",
+    "product_previous_price": "3199.00",
+    "product_image": "products/images_3.jpg",
+    "product_desc": "Elegant premium blue silk saree featuring a beautiful golden zari border. Perfect for weddings, parties, festivals, and special occasions.",
+    "product_quantity_in_stock": 24,
+    "product_rating": "4.9",
+    "product_rating_count": 312,
+    "product_created_at": "2026-10-12",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 6,
+  "fields": {
+    "product_category": 20,
+    "product_name": "Classic Slim-Fit Linen Casual Shirt",
+    "product_slug": "classic-slim-fit-linen-casual-shirt",
+    "product_discount": 40,
+    "product_current_price": "599.00",
+    "product_previous_price": "1500.00",
+    "product_image": "products/images_1_ZqxdRIO.jpg",
+    "product_desc": "Upgrade your everyday style with this premium slim fit casual shirt. Crafted from soft, breathable fabric, it offers a comfortable fit for casual outings, office wear, and parties.",
+    "product_quantity_in_stock": 46,
+    "product_rating": "4.8",
+    "product_rating_count": 344,
+    "product_created_at": "2026-10-12",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 7,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Women's Premium White Shirt",
+    "product_slug": "womens-premium-white-shirt",
+    "product_discount": 24,
+    "product_current_price": "799.00",
+    "product_previous_price": "999.02",
+    "product_image": "products/images_4.jpg",
+    "product_desc": "Elevate your everyday wardrobe with this women's premium white shirt. Designed with soft, breathable fabric and a stylish fit, it's perfect for office wear, casual outings, and everyday styling.",
+    "product_quantity_in_stock": 31,
+    "product_rating": "4.3",
+    "product_rating_count": 245,
+    "product_created_at": "2026-10-12",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 8,
+  "fields": {
+    "product_category": 11,
+    "product_name": "Women's High Waist Blue Denim Jeans",
+    "product_slug": "womens-high-waist-blue-denim-jeans",
+    "product_discount": 25,
+    "product_current_price": "1199.00",
+    "product_previous_price": "1599.00",
+    "product_image": "products/images_5.jpg",
+    "product_desc": "Upgrade your everyday style with these women's high waist blue denim jeans. Made from comfortable stretch denim, they feature a flattering fit and a versatile design, perfect for casual outings, shopping, and everyday wear.",
+    "product_quantity_in_stock": 40,
+    "product_rating": "4.8",
+    "product_rating_count": 500,
+    "product_created_at": "2026-10-12",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 9,
+  "fields": {
+    "product_category": 12,
+    "product_name": "Cushioned Slip-On Walking Sneakers",
+    "product_slug": "cushioned-slip-on-walking-sneakers",
+    "product_discount": 30,
+    "product_current_price": "599.00",
+    "product_previous_price": "999.00",
+    "product_image": "products/images_2_Rf75msZ.jpg",
+    "product_desc": "Step up your style with these men's premium white sneakers. Featuring a modern design, comfortable cushioning, and a durable outsole, they are perfect for casual outings, everyday wear, and weekend adventures.",
+    "product_quantity_in_stock": 40,
+    "product_rating": "4.7",
+    "product_rating_count": 766,
+    "product_created_at": "2026-10-12",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 10,
+  "fields": {
+    "product_category": 13,
+    "product_name": "Women's Elegant Floral Midi Dress",
+    "product_slug": "womens-elegant-floral-midi-dress",
+    "product_discount": 25,
+    "product_current_price": "1499.00",
+    "product_previous_price": "1999.00",
+    "product_image": "products/images_6.jpg",
+    "product_desc": "Elevate your style with this elegant floral midi dress for women. Featuring a beautiful floral print, a flattering silhouette, and lightweight breathable fabric, it is perfect for parties, dates, vacations, and casual outings.",
+    "product_quantity_in_stock": 45,
+    "product_rating": "4.8",
+    "product_rating_count": 645,
+    "product_created_at": "2026-10-12",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 11,
+  "fields": {
+    "product_category": 14,
+    "product_name": "Women's Lavender Graphic T-Shirt",
+    "product_slug": "womens-lavender-graphic-t-shirt",
+    "product_discount": 18,
+    "product_current_price": "649.00",
+    "product_previous_price": "799.00",
+    "product_image": "products/images_7.jpg",
+    "product_desc": "Add a fresh touch to your everyday look with this women's lavender graphic T-shirt. Made from soft, breathable cotton fabric, it offers a comfortable fit and stylish design for college, casual outings, and everyday wear.",
+    "product_quantity_in_stock": 27,
+    "product_rating": "4.6",
+    "product_rating_count": 135,
+    "product_created_at": "2026-10-12",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 12,
+  "fields": {
+    "product_category": 15,
+    "product_name": "Women's Elegant Floral Summer Dress",
+    "product_slug": "womens-elegant-floral-summer-dress",
+    "product_discount": 28,
+    "product_current_price": "1299.00",
+    "product_previous_price": "1799.00",
+    "product_image": "products/71mEnt14wkL._AC_UY1100_.jpg",
+    "product_desc": "Refresh your wardrobe with this elegant floral summer dress. Designed with a flattering silhouette, lightweight breathable fabric, and a beautiful floral print, it is perfect for brunch, vacations, parties, and casual outings.",
+    "product_quantity_in_stock": 56,
+    "product_rating": "4.1",
+    "product_rating_count": 65,
+    "product_created_at": "2026-10-12",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 13,
+  "fields": {
+    "product_category": 16,
+    "product_name": "Women's Gold Plated Floral Necklace Set",
+    "product_slug": "womens-gold-plated-floral-necklace-set",
+    "product_discount": 30,
+    "product_current_price": "1049.00",
+    "product_previous_price": "1499.00",
+    "product_image": "products/71zWFVtaOkL._AC_UY1100_.jpg",
+    "product_desc": "Enhance your elegance with this beautiful gold plated floral necklace set. Featuring an intricate floral design and a matching pair of earrings, it is perfect for weddings, festive celebrations, parties, and special occasions.",
+    "product_quantity_in_stock": 25,
+    "product_rating": "4.8",
+    "product_rating_count": 198,
+    "product_created_at": "2026-10-12",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 14,
+  "fields": {
+    "product_category": 17,
+    "product_name": "Men's Classic Charcoal Grey Business Suit",
+    "product_slug": "mens-classic-charcoal-grey-business-suit",
+    "product_discount": 20,
+    "product_current_price": "3999.00",
+    "product_previous_price": "4999.00",
+    "product_image": "products/images_8.jpg",
+    "product_desc": "Upgrade your formal wardrobe with this men's classic charcoal grey business suit. Featuring a modern tailored fit, elegant design, and comfortable fabric, it is perfect for office meetings, weddings, business events, and formal occasions.",
+    "product_quantity_in_stock": 67,
+    "product_rating": "4.5",
+    "product_rating_count": 543,
+    "product_created_at": "2026-10-12",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 15,
+  "fields": {
+    "product_category": 18,
+    "product_name": "Men's Premium Olive Green Polo T-Shirt",
+    "product_slug": "mens-premium-olive-green-polo-t-shirt",
+    "product_discount": 250,
+    "product_current_price": "749.00",
+    "product_previous_price": "999.00",
+    "product_image": "products/images_9.jpg",
+    "product_desc": "Upgrade your everyday style with this men's premium olive green polo T-shirt. Crafted from soft, breathable cotton fabric, it features a classic collar, comfortable fit, and stylish design. Perfect for casual outings, office wear, and weekend activities.",
+    "product_quantity_in_stock": -245,
+    "product_rating": "4.7",
+    "product_rating_count": 145,
+    "product_created_at": "2026-10-12",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 16,
+  "fields": {
+    "product_category": 19,
+    "product_name": "Men's Premium Black Leather Sneakers",
+    "product_slug": "mens-premium-black-leather-sneakers",
+    "product_discount": 30,
+    "product_current_price": "1399.00",
+    "product_previous_price": "1999.00",
+    "product_image": "products/images_10.jpg",
+    "product_desc": "Step up your everyday style with these men's premium black leather sneakers. Featuring a sleek design, comfortable cushioned insoles, and a durable anti-slip outsole, they are perfect for casual outings, travel, and everyday wear.",
+    "product_quantity_in_stock": 45,
+    "product_rating": "4.8",
+    "product_rating_count": 243,
+    "product_created_at": "2026-10-12",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 17,
+  "fields": {
+    "product_category": 21,
+    "product_name": "Men's Premium Slim Fit Blue Denim Jeans",
+    "product_slug": "mens-premium-slim-fit-blue-denim-jeans",
+    "product_discount": 25,
+    "product_current_price": "1199.00",
+    "product_previous_price": "1599.00",
+    "product_image": "products/images_11.jpg",
+    "product_desc": "Upgrade your everyday wardrobe with these men's premium slim fit blue denim jeans. Made from durable, comfortable stretch denim, they feature a modern slim fit and classic five-pocket design. Perfect for casual outings, college, travel, and everyday wear.",
+    "product_quantity_in_stock": 40,
+    "product_rating": "4.3",
+    "product_rating_count": 199,
+    "product_created_at": "2026-10-12",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 19,
+  "fields": {
+    "product_category": 22,
+    "product_name": "Brown Leather Belt Watch",
+    "product_slug": "brown-leather-belt-watch",
+    "product_discount": 5,
+    "product_current_price": "5300.00",
+    "product_previous_price": "5600.00",
+    "product_image": "products/brown-leather-belt-watch-93.webp",
+    "product_desc": "The Brown Leather Belt Watch is a stylish timepiece with a classic design. Featuring a genuine leather strap and a sleek dial, it adds a touch of sophistication to your look.\r\n\r\nDEMO DATA: Verify product details, price, and image usage rights before publishing for sale.",
+    "product_quantity_in_stock": 81,
+    "product_rating": "4.3",
+    "product_rating_count": 539,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 20,
+  "fields": {
+    "product_category": 22,
+    "product_name": "Longines Master Collection",
+    "product_slug": "longines-master-collection",
+    "product_discount": 14,
+    "product_current_price": "4200.00",
+    "product_previous_price": "4900.00",
+    "product_image": "products/longines-master-collection-94.webp",
+    "product_desc": "The Longines Master Collection is an elegant and refined watch known for its precision and craftsmanship. With a timeless design, it's a symbol of luxury and sophistication.\r\n\r\nDEMO DATA: Verify product details, price, and image usage rights before publishing for sale.",
+    "product_quantity_in_stock": 23,
+    "product_rating": "4.3",
+    "product_rating_count": 818,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 21,
+  "fields": {
+    "product_category": 22,
+    "product_name": "Rolex Cellini Date Black Dial",
+    "product_slug": "rolex-cellini-date-black-dial",
+    "product_discount": 25,
+    "product_current_price": "5100.00",
+    "product_previous_price": "6800.00",
+    "product_image": "products/rolex-cellini-date-black-dial-95.webp",
+    "product_desc": "The Rolex Cellini Date with Black Dial is a classic and prestigious watch. With a black dial and date complication, it exudes sophistication and is a symbol of Rolex's heritage.\r\n\r\nDEMO DATA: Verify product details, price, and image usage rights before publishing for sale.",
+    "product_quantity_in_stock": 100,
+    "product_rating": "4.3",
+    "product_rating_count": 42,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 22,
+  "fields": {
+    "product_category": 22,
+    "product_name": "Rolex Cellini Moonphase",
+    "product_slug": "rolex-cellini-moonphase",
+    "product_discount": 25,
+    "product_current_price": "3300.00",
+    "product_previous_price": "4400.00",
+    "product_image": "products/rolex-cellini-moonphase-96.webp",
+    "product_desc": "The Rolex Cellini Moonphase is a masterpiece of horology, featuring a moon phase complication and exquisite design. It reflects Rolex's commitment to precision and elegance.\r\n\r\nDEMO DATA: Verify product details, price, and image usage rights before publishing for sale.",
+    "product_quantity_in_stock": 56,
+    "product_rating": "4.4",
+    "product_rating_count": 225,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 23,
+  "fields": {
+    "product_category": 22,
+    "product_name": "Rolex Datejust",
+    "product_slug": "rolex-datejust",
+    "product_discount": 30,
+    "product_current_price": "2300.00",
+    "product_previous_price": "3300.00",
+    "product_image": "products/rolex-datejust-97.webp",
+    "product_desc": "The Rolex Datejust is an iconic and versatile timepiece with a date window. Known for its timeless design and reliability, it's a symbol of Rolex's watchmaking excellence.\r\n\r\nDEMO DATA: Verify product details, price, and image usage rights before publishing for sale.",
+    "product_quantity_in_stock": 34,
+    "product_rating": "4.7",
+    "product_rating_count": 271,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 24,
+  "fields": {
+    "product_category": 22,
+    "product_name": "Rolex Submariner Watch",
+    "product_slug": "rolex-submariner-watch",
+    "product_discount": 3,
+    "product_current_price": "2800.00",
+    "product_previous_price": "2900.00",
+    "product_image": "products/rolex-submariner-watch-98.webp",
+    "product_desc": "The Rolex Submariner is a legendary dive watch with a rich history. Known for its durability and water resistance, it's a symbol of adventure and exploration.\r\n\r\nDEMO DATA: Verify product details, price, and image usage rights before publishing for sale.",
+    "product_quantity_in_stock": 120,
+    "product_rating": "4.3",
+    "product_rating_count": 810,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 71,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Ivory and Green Tissue Silk Saree",
+    "product_slug": "ivory-and-green-tissue-silk-saree",
+    "product_discount": 15,
+    "product_current_price": "2836.00",
+    "product_previous_price": "3336.47",
+    "product_image": "products/ivory-and-green-tissue-silk-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 2,
+    "product_rating": "4.5",
+    "product_rating_count": 108,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 72,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Ivory White Chinia Silk Saree",
+    "product_slug": "ivory-white-chinia-silk-saree",
+    "product_discount": 20,
+    "product_current_price": "3724.00",
+    "product_previous_price": "4655.00",
+    "product_image": "products/ivory-white-chinia-silk-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 3,
+    "product_rating": "3.8",
+    "product_rating_count": 25,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 73,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Contrast Cream Art Silk Booty Saree",
+    "product_slug": "contrast-cream-art-silk-booty-saree",
+    "product_discount": 50,
+    "product_current_price": "2403.00",
+    "product_previous_price": "4806.00",
+    "product_image": "products/contrast-cream-art-silk-booty-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 12,
+    "product_rating": "4.1",
+    "product_rating_count": 34,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 74,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Contrast Cream Art Silk Jaal Saree",
+    "product_slug": "contrast-cream-art-silk-jaal-saree",
+    "product_discount": 30,
+    "product_current_price": "1745.00",
+    "product_previous_price": "2492.86",
+    "product_image": "products/contrast-cream-art-silk-jaal-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 7,
+    "product_rating": "3.7",
+    "product_rating_count": 103,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 75,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Light Apricot Orange Art Silk Booty Saree",
+    "product_slug": "light-apricot-orange-art-silk-booty-saree",
+    "product_discount": 20,
+    "product_current_price": "2254.00",
+    "product_previous_price": "2817.50",
+    "product_image": "products/light-apricot-orange-art-silk-booty-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 12,
+    "product_rating": "4.4",
+    "product_rating_count": 110,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 76,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Mustard Raw Mango Saree",
+    "product_slug": "mustard-raw-mango-saree",
+    "product_discount": 20,
+    "product_current_price": "9651.00",
+    "product_previous_price": "12063.75",
+    "product_image": "products/mustard-raw-mango-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 10,
+    "product_rating": "3.8",
+    "product_rating_count": 119,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 77,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Almonds Mashru Jaal Saree",
+    "product_slug": "almonds-mashru-jaal-saree",
+    "product_discount": 15,
+    "product_current_price": "1134.00",
+    "product_previous_price": "1334.12",
+    "product_image": "products/almonds-mashru-jaal-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 5,
+    "product_rating": "4.2",
+    "product_rating_count": 130,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 78,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Blue Silk Pashmeena Saree",
+    "product_slug": "blue-silk-pashmeena-saree",
+    "product_discount": 50,
+    "product_current_price": "2315.00",
+    "product_previous_price": "4630.00",
+    "product_image": "products/blue-silk-pashmeena-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 15,
+    "product_rating": "3.9",
+    "product_rating_count": 77,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 79,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Golden Tissue Silk Saree",
+    "product_slug": "golden-tissue-silk-saree",
+    "product_discount": 40,
+    "product_current_price": "1035.00",
+    "product_previous_price": "1725.00",
+    "product_image": "products/golden-tissue-silk-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 25,
+    "product_rating": "4.1",
+    "product_rating_count": 24,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 80,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Pink Viscose Silk Saree",
+    "product_slug": "pink-viscose-silk-saree",
+    "product_discount": 30,
+    "product_current_price": "2768.00",
+    "product_previous_price": "3954.29",
+    "product_image": "products/pink-viscose-silk-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 1,
+    "product_rating": "4.7",
+    "product_rating_count": 18,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 81,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Mauve Raw Mango Saree",
+    "product_slug": "mauve-raw-mango-saree",
+    "product_discount": 50,
+    "product_current_price": "11225.00",
+    "product_previous_price": "22450.00",
+    "product_image": "products/mauve-raw-mango-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 3,
+    "product_rating": "3.9",
+    "product_rating_count": 21,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 82,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Green Raw Mango Saree",
+    "product_slug": "green-raw-mango-saree",
+    "product_discount": 25,
+    "product_current_price": "5292.00",
+    "product_previous_price": "7056.00",
+    "product_image": "products/green-raw-mango-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 2,
+    "product_rating": "3.9",
+    "product_rating_count": 53,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 83,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Peacock Green Katan Buti Saree",
+    "product_slug": "peacock-green-katan-buti-saree",
+    "product_discount": 10,
+    "product_current_price": "2740.00",
+    "product_previous_price": "3044.44",
+    "product_image": "products/peacock-green-katan-buti-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 10,
+    "product_rating": "4.3",
+    "product_rating_count": 106,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 84,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Magenta Katan Jaal Saree",
+    "product_slug": "magenta-katan-jaal-saree",
+    "product_discount": 50,
+    "product_current_price": "2305.00",
+    "product_previous_price": "4610.00",
+    "product_image": "products/magenta-katan-jaal-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 25,
+    "product_rating": "3.8",
+    "product_rating_count": 115,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 85,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Maroon Tissue Silk Plain Saree",
+    "product_slug": "maroon-tissue-silk-plain-saree",
+    "product_discount": 30,
+    "product_current_price": "4458.00",
+    "product_previous_price": "6368.57",
+    "product_image": "products/maroon-tissue-silk-plain-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 12,
+    "product_rating": "4.6",
+    "product_rating_count": 85,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 86,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Red Tissue Silk Plain Saree",
+    "product_slug": "red-tissue-silk-plain-saree",
+    "product_discount": 40,
+    "product_current_price": "819.00",
+    "product_previous_price": "1365.00",
+    "product_image": "products/red-tissue-silk-plain-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 12,
+    "product_rating": "3.9",
+    "product_rating_count": 22,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 87,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Pink Warm Georgette Saree",
+    "product_slug": "pink-warm-georgette-saree",
+    "product_discount": 40,
+    "product_current_price": "1445.00",
+    "product_previous_price": "2408.33",
+    "product_image": "products/pink-warm-georgette-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 15,
+    "product_rating": "3.9",
+    "product_rating_count": 81,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 88,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Blue Warm Georgette Saree",
+    "product_slug": "blue-warm-georgette-saree",
+    "product_discount": 20,
+    "product_current_price": "11655.00",
+    "product_previous_price": "14568.75",
+    "product_image": "products/blue-warm-georgette-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 12,
+    "product_rating": "3.9",
+    "product_rating_count": 54,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 89,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Yellow / Green Mashru Rangkat Saree",
+    "product_slug": "yellow-green-mashru-rangkat-saree",
+    "product_discount": 40,
+    "product_current_price": "915.00",
+    "product_previous_price": "1525.00",
+    "product_image": "products/yellow-green-mashru-rangkat-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 12,
+    "product_rating": "3.9",
+    "product_rating_count": 18,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 90,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Peach Mashru Rangkat Saree",
+    "product_slug": "peach-mashru-rangkat-saree",
+    "product_discount": 50,
+    "product_current_price": "3937.00",
+    "product_previous_price": "7874.00",
+    "product_image": "products/peach-mashru-rangkat-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 12,
+    "product_rating": "4.9",
+    "product_rating_count": 128,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 91,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Magenta Mashru Buti Saree",
+    "product_slug": "magenta-mashru-buti-saree",
+    "product_discount": 15,
+    "product_current_price": "869.00",
+    "product_previous_price": "1022.35",
+    "product_image": "products/magenta-mashru-buti-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 12,
+    "product_rating": "3.9",
+    "product_rating_count": 59,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 92,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Yellow Kora Rangkat Saree",
+    "product_slug": "yellow-kora-rangkat-saree",
+    "product_discount": 40,
+    "product_current_price": "1229.00",
+    "product_previous_price": "2048.33",
+    "product_image": "products/yellow-kora-rangkat-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 15,
+    "product_rating": "3.9",
+    "product_rating_count": 56,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 93,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Mauve Linen Saree",
+    "product_slug": "mauve-linen-saree",
+    "product_discount": 50,
+    "product_current_price": "10331.00",
+    "product_previous_price": "20662.00",
+    "product_image": "products/mauve-linen-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 20,
+    "product_rating": "4.3",
+    "product_rating_count": 59,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 94,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Multicolor Jamawar Saree",
+    "product_slug": "multicolor-jamawar-saree",
+    "product_discount": 15,
+    "product_current_price": "3926.00",
+    "product_previous_price": "4618.82",
+    "product_image": "products/multicolor-jamawar-saree.jpg",
+    "product_desc": "",
+    "product_quantity_in_stock": 5,
+    "product_rating": "4.9",
+    "product_rating_count": 130,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 95,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Brocade Saree",
+    "product_slug": "brocade-saree",
+    "product_discount": 0,
+    "product_current_price": "14600.00",
+    "product_previous_price": "14600.00",
+    "product_image": "products/brocade-saree.jpg",
+    "product_desc": "Brocade Saree",
+    "product_quantity_in_stock": 1,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 96,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Coffee Jal Silk Saree",
+    "product_slug": "coffee-jal-silk-saree",
+    "product_discount": 0,
+    "product_current_price": "2400.00",
+    "product_previous_price": "2400.00",
+    "product_image": "products/coffee-jal-silk-saree.jpg",
+    "product_desc": "Coffee Jal Silk Saree",
+    "product_quantity_in_stock": 1,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 97,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Peacock Green Plain Silk Saree",
+    "product_slug": "peacock-green-plain-silk-saree",
+    "product_discount": 0,
+    "product_current_price": "2000.00",
+    "product_previous_price": "2000.00",
+    "product_image": "products/peacock-green-plain-silk-saree.jpg",
+    "product_desc": "Peacock Green Plain Silk Saree",
+    "product_quantity_in_stock": 0,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 98,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Musterd Plain Silk Saree",
+    "product_slug": "musterd-plain-silk-saree",
+    "product_discount": 0,
+    "product_current_price": "2000.00",
+    "product_previous_price": "2000.00",
+    "product_image": "products/musterd-plain-silk-saree.jpg",
+    "product_desc": "Musterd Plain Silk Saree",
+    "product_quantity_in_stock": 1,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 99,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Onion pink Chanderi Saree",
+    "product_slug": "onion-pink-chanderi-saree",
+    "product_discount": 0,
+    "product_current_price": "2200.00",
+    "product_previous_price": "2200.00",
+    "product_image": "products/onion-pink-chanderi-saree.jpg",
+    "product_desc": "Onion pink Chanderi Saree",
+    "product_quantity_in_stock": 1,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 100,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Sky Kota Saree",
+    "product_slug": "sky-kota-saree",
+    "product_discount": 0,
+    "product_current_price": "2400.00",
+    "product_previous_price": "2400.00",
+    "product_image": "products/sky-kota-saree.jpg",
+    "product_desc": "Sky Kota Saree",
+    "product_quantity_in_stock": 1,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 101,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Light Gray Butidar Semi Katan Silk Banarasi Saree",
+    "product_slug": "light-gray-butidar-semi-katan-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "5000.00",
+    "product_previous_price": "5000.00",
+    "product_image": "products/light-gray-butidar-semi-katan-silk-banarasi-saree.png",
+    "product_desc": "Light Gray Butidar Semi Katan Silk Banarasi Saree",
+    "product_quantity_in_stock": 1,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 102,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Pista Green Butidar Semi Katan Silk Banarasi Saree",
+    "product_slug": "pista-green-butidar-semi-katan-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "5000.00",
+    "product_previous_price": "5000.00",
+    "product_image": "products/pista-green-butidar-semi-katan-silk-banarasi-saree.png",
+    "product_desc": "Pista Green Butidar Semi Katan Silk Banarasi Saree",
+    "product_quantity_in_stock": 1,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 103,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Modern Green Butidar Semi Katan Silk Banarasi Saree",
+    "product_slug": "modern-green-butidar-semi-katan-silk-banarasi-sare",
+    "product_discount": 0,
+    "product_current_price": "5500.00",
+    "product_previous_price": "5500.00",
+    "product_image": "products/modern-green-butidar-semi-katan-silk-banarasi-saree.png",
+    "product_desc": "Modern Green Butidar Semi Katan Silk Banarasi Saree",
+    "product_quantity_in_stock": 0,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 104,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Intricate Pattern Butidar Art Silk Banarasi Saree",
+    "product_slug": "intricate-pattern-butidar-art-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "3000.00",
+    "product_previous_price": "3000.00",
+    "product_image": "products/intricate-pattern-butidar-art-silk-banarasi-saree.png",
+    "product_desc": "Intricate Pattern Butidar Art Silk Banarasi Saree",
+    "product_quantity_in_stock": 0,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 105,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Triple Star Butidar Art Silk Banarasi Saree",
+    "product_slug": "triple-star-butidar-art-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "3000.00",
+    "product_previous_price": "3000.00",
+    "product_image": "products/triple-star-butidar-art-silk-banarasi-saree.png",
+    "product_desc": "Triple Star Butidar Art Silk Banarasi Saree",
+    "product_quantity_in_stock": 0,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 106,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Designer Butidar Art Silk Banarasi Saree",
+    "product_slug": "designer-butidar-art-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "3000.00",
+    "product_previous_price": "3000.00",
+    "product_image": "products/designer-butidar-art-silk-banarasi-saree.png",
+    "product_desc": "Designer Butidar Art Silk Banarasi Saree",
+    "product_quantity_in_stock": 0,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 107,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Black Brocade Butidar Art Silk Banarasi Saree",
+    "product_slug": "black-brocade-butidar-art-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "3000.00",
+    "product_previous_price": "3000.00",
+    "product_image": "products/black-brocade-butidar-art-silk-banarasi-saree.png",
+    "product_desc": "Black Brocade Butidar Art Silk Banarasi Saree",
+    "product_quantity_in_stock": 1,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 108,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Ivory Swarovski Worked Art Silk Banarasi Saree",
+    "product_slug": "ivory-swarovski-worked-art-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "5600.00",
+    "product_previous_price": "5600.00",
+    "product_image": "products/ivory-swarovski-worked-art-silk-banarasi-saree.png",
+    "product_desc": "Ivory Swarovski Worked Art Silk Banarasi Saree",
+    "product_quantity_in_stock": 1,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 109,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Red Swarovski Worked Art Silk Banarasi Saree",
+    "product_slug": "red-swarovski-worked-art-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "5600.00",
+    "product_previous_price": "5600.00",
+    "product_image": "products/red-swarovski-worked-art-silk-banarasi-saree.png",
+    "product_desc": "Red Swarovski Worked Art Silk Banarasi Saree",
+    "product_quantity_in_stock": 0,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 110,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Swarovski Worked Jangla Art Silk Banarasi Saree",
+    "product_slug": "swarovski-worked-jangla-art-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "5600.00",
+    "product_previous_price": "5600.00",
+    "product_image": "products/swarovski-worked-jangla-art-silk-banarasi-saree.png",
+    "product_desc": "Swarovski Worked Jangla Art Silk Banarasi Saree",
+    "product_quantity_in_stock": 0,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 111,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Designer Butidar Semi Katan Silk Banarasi Saree",
+    "product_slug": "designer-butidar-semi-katan-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "5000.00",
+    "product_previous_price": "5000.00",
+    "product_image": "products/designer-butidar-semi-katan-silk-banarasi-saree.png",
+    "product_desc": "Designer Butidar Semi Katan Silk Banarasi Saree",
+    "product_quantity_in_stock": 0,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 112,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Jhumka Butidar Semi Katan Silk Banarasi Saree",
+    "product_slug": "jhumka-butidar-semi-katan-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "5000.00",
+    "product_previous_price": "5000.00",
+    "product_image": "products/jhumka-butidar-semi-katan-silk-banarasi-saree.png",
+    "product_desc": "Jhumka Butidar Semi Katan Silk Banarasi Saree",
+    "product_quantity_in_stock": 0,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 113,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Green Butidar Semi Katan Silk Banarasi Saree",
+    "product_slug": "green-butidar-semi-katan-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "5000.00",
+    "product_previous_price": "5000.00",
+    "product_image": "products/green-butidar-semi-katan-silk-banarasi-saree.png",
+    "product_desc": "Green Butidar Semi Katan Silk Banarasi Saree",
+    "product_quantity_in_stock": 0,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 114,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Rama Green Jangla Semi Katan Silk Banarasi Saree",
+    "product_slug": "rama-green-jangla-semi-katan-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "5000.00",
+    "product_previous_price": "5000.00",
+    "product_image": "products/rama-green-jangla-semi-katan-silk-banarasi-saree.png",
+    "product_desc": "Rama Green Jangla Semi Katan Silk Banarasi Saree",
+    "product_quantity_in_stock": 1,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 115,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Cream Red Butidar Art Silk Banarasi Saree",
+    "product_slug": "cream-red-butidar-art-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "3000.00",
+    "product_previous_price": "3000.00",
+    "product_image": "products/cream-red-butidar-art-silk-banarasi-saree.png",
+    "product_desc": "Cream Red Butidar Art Silk Banarasi Saree",
+    "product_quantity_in_stock": 0,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 116,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Lemon Butidar Art Silk Banarasi Saree",
+    "product_slug": "lemon-butidar-art-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "3000.00",
+    "product_previous_price": "3000.00",
+    "product_image": "products/lemon-butidar-art-silk-banarasi-saree.png",
+    "product_desc": "Lemon Butidar Art Silk Banarasi Saree",
+    "product_quantity_in_stock": 0,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 117,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Traditional Butidar Art Silk Banarasi Saree",
+    "product_slug": "traditional-butidar-art-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "3000.00",
+    "product_previous_price": "3000.00",
+    "product_image": "products/traditional-butidar-art-silk-banarasi-saree.png",
+    "product_desc": "Traditional Butidar Art Silk Banarasi Saree",
+    "product_quantity_in_stock": 0,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 118,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Traditional Banarasi Butidar Art Silk Saree",
+    "product_slug": "traditional-banarasi-butidar-art-silk-saree",
+    "product_discount": 0,
+    "product_current_price": "2500.00",
+    "product_previous_price": "2500.00",
+    "product_image": "products/traditional-banarasi-butidar-art-silk-saree.png",
+    "product_desc": "Traditional Banarasi Butidar Art Silk Saree",
+    "product_quantity_in_stock": 0,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 119,
+  "fields": {
+    "product_category": 9,
+    "product_name": "Designer Lachchha Art Silk Banarasi Saree",
+    "product_slug": "designer-lachchha-art-silk-banarasi-saree",
+    "product_discount": 0,
+    "product_current_price": "2000.00",
+    "product_previous_price": "2000.00",
+    "product_image": "products/designer-lachchha-art-silk-banarasi-saree.png",
+    "product_desc": "Designer Lachchha Art Silk Banarasi Saree",
+    "product_quantity_in_stock": 0,
+    "product_rating": "0.0",
+    "product_rating_count": 0,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 155,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Man Short Sleeve Shirt",
+    "product_slug": "man-short-sleeve-shirt",
+    "product_discount": 40,
+    "product_current_price": "645.00",
+    "product_previous_price": "1075.00",
+    "product_image": "products/women_shirt_86.webp",
+    "product_desc": "The Man Short Sleeve Shirt is a breezy and stylish option for warm days. With a comfortable fit and short sleeves, it's perfect for a laid-back yet polished look.",
+    "product_quantity_in_stock": 3,
+    "product_rating": "3.6",
+    "product_rating_count": 59,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 156,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Classic Plaid Sleeveless Vintage Shirt – 100% Cotton",
+    "product_slug": "classic-plaid-sleeveless-vintage-shirt-100-cotton",
+    "product_discount": 40,
+    "product_current_price": "822.00",
+    "product_previous_price": "1370.00",
+    "product_image": "products/7820078284939.webp",
+    "product_desc": "Retro plaid sleeveless shirt in 100% cotton with a button front and chest pockets. Why you'll reach for it Made from 100% breathable cotton for warm-weather wear Button front and chest pockets with a retro plaid pattern No stretch fabric in a regular fit Material & care Cotton. Machine wash cold, tumble dry low. Fit & sizing Available in sizes S, M, L, XL. Size Bust Waist S 34-36 in 26-28 in M 37-38 in 29-31 in L 39-40 in 32-33 in XL 41-42 in 34-35 in Measurements in inches unless noted. Wear it with Wear it open over a tank with jeans for a casual layered look. Button it up with shorts for a warm summer day.",
+    "product_quantity_in_stock": 30,
+    "product_rating": "3.7",
+    "product_rating_count": 452,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 157,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Button-Down Linen Blend Shirt with Balloon Sleeves",
+    "product_slug": "button-down-linen-blend-shirt-with-balloon-sleeves",
+    "product_discount": 25,
+    "product_current_price": "1495.00",
+    "product_previous_price": "1993.00",
+    "product_image": "products/7820079988875.webp",
+    "product_desc": "An oversized top in linen blend — wears tucked, wears loose, wears well. Why you'll reach for it 80% Rayon, 20% Linen — holds shape through washes. Clean neckline reads intentional under a blazer or on its own. Easy layering piece for everyday outfits. Fabric & care 80% Rayon, 20% Linen. Machine wash cold, tumble dry low. Fit & sizing True to size. Size Bust (in) Waist (in) S 34-36 26-28 M 37-38 29-31 L 39-40 32-33 Wear it with Tuck into high-rise jeans with loafers for office days, or wear loose over denim shorts and white sneakers for weekends.",
+    "product_quantity_in_stock": 15,
+    "product_rating": "4.8",
+    "product_rating_count": 342,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 158,
+  "fields": {
+    "product_category": 10,
+    "product_name": "100% Cotton Button-Up Shirt with Chest Pockets",
+    "product_slug": "100-cotton-button-up-shirt-with-chest-pockets",
+    "product_discount": 25,
+    "product_current_price": "306.00",
+    "product_previous_price": "408.00",
+    "product_image": "products/7820084936843.webp",
+    "product_desc": "A 100% cotton button-up shirt with chest pockets, in five colors and sizes up to 3XL. Why you'll reach for it Made of 100% cotton for breathable, opaque everyday wear. Functional chest pockets on a classic button-up front. Five colors in sizes S through 3XL. Material & care Cotton. Machine wash cold, tumble dry low. Fit & sizing Available in sizes S, M, L, XL, 2XL, 3XL. Size US Top Length Shoulder Bust Sleeve Length S 6/8 33.1 28 46.5 16.5 M 10/12 33.5 29.1 48.8 16.5 L 14 33.9 30.3 51.2 16.5 XL 16 34.3 31.5 53.5 16.5 2XL 18/20 34.6 33.5 57.5 16.5 3XL 22/24 35 35.4 61.4 16.5 Measurements in inches unless noted. Wear it with Wear it over a tank with jeans and sneakers for a casual day, or buttoned with trousers and flats for work.",
+    "product_quantity_in_stock": 12,
+    "product_rating": "4.8",
+    "product_rating_count": 423,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 159,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Shimmering Metallic Button-Up Shirt with Pockets",
+    "product_slug": "shimmering-metallic-button-up-shirt-with-pockets",
+    "product_discount": 15,
+    "product_current_price": "520.00",
+    "product_previous_price": "612.00",
+    "product_image": "products/7820088148107.webp",
+    "product_desc": "An easy top in stretch poly knit — wears tucked, wears loose, wears well. Why you'll reach for it 96% Polyester, 4% Spandex — holds shape through washes. Clean neckline reads intentional under a blazer or on its own. Easy layering piece for everyday outfits. Fabric & care 96% Polyester, 4% Spandex. Machine wash cold, tumble dry low. Fit & sizing True to size. Size Bust Waist S 34-36 in 26-28 in M 37-38 in 29-31 in L 39-40 in 32-33 in XL 41-42 in 34-35 in Wear it with Tuck into high-rise jeans with loafers for office days, or wear loose over denim shorts and white sneakers for weekends.",
+    "product_quantity_in_stock": 8,
+    "product_rating": "4.1",
+    "product_rating_count": 226,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 160,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Button Front Collared Shirt with Ruched Detailing",
+    "product_slug": "button-front-collared-shirt-with-ruched-detailing",
+    "product_discount": 5,
+    "product_current_price": "813.00",
+    "product_previous_price": "856.00",
+    "product_image": "products/7820093423755.webp",
+    "product_desc": "A tailored top in soft woven — wears tucked, wears loose, wears well. Why you'll reach for it 100% Polyester — holds shape through washes. Clean neckline reads intentional under a blazer or on its own. Easy layering piece for everyday outfits. Fabric & care 100% Polyester. Machine wash cold, tumble dry low. Fit & sizing True to size. Size Bust Waist S 34-36 in 26-28 in M 37-38 in 29-31 in L 39-40 in 32-33 in Wear it with Tuck into high-rise jeans with loafers for office days, or wear loose over denim shorts and white sneakers for weekends.",
+    "product_quantity_in_stock": 12,
+    "product_rating": "3.9",
+    "product_rating_count": 311,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 161,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Bow Ribbon Print Button Down Shirt",
+    "product_slug": "bow-ribbon-print-button-down-shirt",
+    "product_discount": 30,
+    "product_current_price": "753.00",
+    "product_previous_price": "1076.00",
+    "product_image": "products/7820093948043.webp",
+    "product_desc": "A woven button down shirt with a bow ribbon print and a classic cut. Why you'll reach for it Bow ribbon print on a classic button down design Woven 100% polyester fabric with no stretch Offered in sizes S to XL with a size table Material & care Polyester. Machine wash cold, tumble dry low. Fit & sizing Available in sizes S, M, L, XL. Size Bust Waist S 34-36 in 26-28 in M 37-38 in 29-31 in L 39-40 in 32-33 in XL 41-42 in 34-35 in Measurements in inches unless noted. Wear it with Tuck it into high-rise jeans with loafers for office days. Wear it open over a tank with denim shorts for a weekend look.",
+    "product_quantity_in_stock": 24,
+    "product_rating": "4.1",
+    "product_rating_count": 244,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 162,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Oversized Short Sleeve Button-Down Shirt",
+    "product_slug": "oversized-short-sleeve-button-down-shirt",
+    "product_discount": 5,
+    "product_current_price": "1076.00",
+    "product_previous_price": "1133.00",
+    "product_image": "products/7820094210187.webp",
+    "product_desc": "Oversized short sleeve button-down shirt in a cotton blend with a classic front and chest pocket. Why you'll reach for it Relaxed, oversized fit with a classic button-down front Short sleeves and a functional chest pocket 78% cotton, 22% polyester with no stretch Material & care Cotton, Polyester. Machine wash cold, tumble dry low. Fit & sizing Available in sizes S, M, L. Size Bust Waist S 34-36 in 26-28 in M 37-38 in 29-31 in L 39-40 in 32-33 in Measurements in inches unless noted. Wear it with Wear with denim shorts for a weekend getaway. Pair with trousers for an easy everyday outfit.",
+    "product_quantity_in_stock": 5,
+    "product_rating": "3.9",
+    "product_rating_count": 444,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 163,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Classic Cap Sleeve Button-Up Shirt",
+    "product_slug": "classic-cap-sleeve-button-up-shirt",
+    "product_discount": 10,
+    "product_current_price": "435.00",
+    "product_previous_price": "483.00",
+    "product_image": "products/7820105121931.webp",
+    "product_desc": "An easy top in cotton blend — wears tucked, wears loose, wears well. Why you'll reach for it 65% Cotton, 35% Polyester — holds shape through washes. Clean neckline reads intentional under a blazer or on its own. Easy layering piece for everyday outfits. Fabric & care 65% Cotton, 35% Polyester. Machine wash cold, tumble dry low. Fit & sizing True to size. Size Bust Waist S 34-36 in 26-28 in M 37-38 in 29-31 in L 39-40 in 32-33 in Wear it with Tuck into high-rise jeans with loafers for office days, or wear loose over denim shorts and white sneakers for weekends.",
+    "product_quantity_in_stock": 15,
+    "product_rating": "3.7",
+    "product_rating_count": 367,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 164,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Plaid Hooded Button-Down Shirt Jacket",
+    "product_slug": "plaid-hooded-button-down-shirt-jacket",
+    "product_discount": 15,
+    "product_current_price": "576.00",
+    "product_previous_price": "678.00",
+    "product_image": "products/7820140576907.webp",
+    "product_desc": "A relaxed cardigan in cotton blend — the layer you grab on the way out the door without thinking. Why you'll reach for it 65% Cotton, 35% Polyester, 60% Cotton, 40% Polyester — layers cleanly over a tee, a tank, or a button-down. Drapes straight down from the chest for a long, flattering line. Mid-weight knit wears from fall through spring. Fabric & care 65% Cotton, 35% Polyester, 60% Cotton, 40% Polyester. Machine wash cold Tumble dry low. Fit & sizing True to size. Size Bust Waist S 34-36 in 26-28 in M 37-38 in 29-31 in L 39-40 in 32-33 in Wear it with Throw over a fitted tee and jeans with loafers for weekdays, or layer over a slip dress and ankle boots in cooler evenings.",
+    "product_quantity_in_stock": 5,
+    "product_rating": "3.7",
+    "product_rating_count": 274,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 165,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Oversized Color Block Button-Down Collared Shirt",
+    "product_slug": "oversized-color-block-button-down-collared-shirt",
+    "product_discount": 20,
+    "product_current_price": "761.00",
+    "product_previous_price": "951.00",
+    "product_image": "products/7820144509067.webp",
+    "product_desc": "An oversized top in soft woven — wears tucked, wears loose, wears well. Why you'll reach for it 100% Polyester — holds shape through washes. Clean neckline reads intentional under a blazer or on its own. Easy layering piece for everyday outfits. Fabric & care 100% Polyester. Machine wash cold, tumble dry low. Fit & sizing True to size. Size Bust Waist S 34-36 26-28 M 37-38 29-31 L 39-40 32-33 XL 41-42 34-35 Wear it with Tuck into high-rise jeans with loafers for office days, or wear loose over denim shorts and white sneakers for weekends.",
+    "product_quantity_in_stock": 3,
+    "product_rating": "3.5",
+    "product_rating_count": 268,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 166,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Mineral Wash Gauze Dolman Sleeve Button Down Shirt",
+    "product_slug": "mineral-wash-gauze-dolman-sleeve-button-down-shirt",
+    "product_discount": 25,
+    "product_current_price": "1314.00",
+    "product_previous_price": "1752.00",
+    "product_image": "products/7820145328267.webp",
+    "product_desc": "A dusty pink cotton gauze shirt with a mineral wash, dolman sleeves and a relaxed fit. Why you'll reach for it 100% cotton gauze with a textured, breathable feel. Dolman sleeves with a full button-down front. Relaxed, oversized fit in non-stretch woven fabric. Material & care Cotton. Machine wash cold, tumble dry low. Fit & sizing Available in sizes S, M, L. Size Bust Waist S 34-36 in 26-28 in M 37-38 in 29-31 in L 39-40 in 32-33 in Measurements in inches unless noted. Wear it with Wear it open over a tank with denim shorts for the beach, or buttoned with white jeans and sandals for brunch.",
+    "product_quantity_in_stock": 12,
+    "product_rating": "4.7",
+    "product_rating_count": 278,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 167,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Mineral Wash Gauze Dolman Sleeve Button-Down Shirt",
+    "product_slug": "mineral-wash-gauze-dolman-sleeve-button-down-shirt",
+    "product_discount": 5,
+    "product_current_price": "670.00",
+    "product_previous_price": "705.00",
+    "product_image": "products/7820151160971.webp",
+    "product_desc": "An oversized top in 100% cotton — wears tucked, wears loose, wears well. Why you'll reach for it 100% Cotton — holds shape through washes. Clean neckline reads intentional under a blazer or on its own. Easy layering piece for everyday outfits. Fabric & care 100% Cotton. Machine wash cold. Fit & sizing True to size. Size Bust Waist S 34-36 in 26-28 in M 37-38 in 29-31 in L 39-40 in 32-33 in Wear it with Tuck into high-rise jeans with loafers for office days, or wear loose over denim shorts and white sneakers for weekends.",
+    "product_quantity_in_stock": 5,
+    "product_rating": "4.3",
+    "product_rating_count": 383,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 168,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Plaid Button-Down Shirt in 100% Cotton",
+    "product_slug": "plaid-button-down-shirt-in-100-cotton",
+    "product_discount": 5,
+    "product_current_price": "653.00",
+    "product_previous_price": "687.00",
+    "product_image": "products/7820219875467.webp",
+    "product_desc": "A relaxed top in soft knit — wears tucked, wears loose, wears well. Why you'll reach for it 100% Premium — holds shape through washes. Clean neckline reads intentional under a blazer or on its own. Easy layering piece for everyday outfits. Fabric & care 100% Premium. Machine wash cold, tumble dry low. Fit & sizing True to size. Size Bust Waist S 34-36 in 26-28 in M 37-38 in 29-31 in L 39-40 in 32-33 in Wear it with Tuck into high-rise jeans with loafers for office days, or wear loose over denim shorts and white sneakers for weekends.",
+    "product_quantity_in_stock": 30,
+    "product_rating": "5.0",
+    "product_rating_count": 430,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 169,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Tencel Mineral Washed Collared Shirt Dress",
+    "product_slug": "tencel-mineral-washed-collared-shirt-dress",
+    "product_discount": 25,
+    "product_current_price": "504.00",
+    "product_previous_price": "672.00",
+    "product_image": "products/7820932776075.webp",
+    "product_desc": "A relaxed dress in soft knit — one piece, zero styling required. Why you'll reach for it 100% Tencel — drapes cleanly, skims without clinging. Easy silhouette that works from morning to evening. Neutral piece that pairs with every shoe in the closet. Fabric & care 100% Tencel. Machine wash cold, tumble dry low. Fit & sizing True to size. Size Bust Waist Hip S 34-36 in 26-28 in 36-38 in M 37-38 in 29-31 in 39-41 in L 39-40 in 32-33 in 42-43 in Wear it with White sneakers and a denim jacket for weekend errands, or strappy sandals and gold hoops for dinner.",
+    "product_quantity_in_stock": 3,
+    "product_rating": "4.0",
+    "product_rating_count": 290,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 170,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Oversized Double Gauze Button Down Shirt Dress",
+    "product_slug": "oversized-double-gauze-button-down-shirt-dress",
+    "product_discount": 40,
+    "product_current_price": "816.00",
+    "product_previous_price": "1360.00",
+    "product_image": "products/7820933038219.webp",
+    "product_desc": "Oversized button-down shirt dress in soft 100% cotton double gauze with chest pockets. Why you'll reach for it Soft, lightweight and breathable 100% cotton double gauze Full button-down front with functional chest pockets Oversized fit, no stretch and an unlined body Material & care Cotton. Machine wash cold, tumble dry low. Fit & sizing Available in sizes S, M, L. Size Bust Waist Hip S 34-36 26-28 36-38 M 37-38 29-31 39-41 L 39-40 32-33 42-43 Measurements in inches unless noted. Wear it with Wear it loose with sandals for a casual day. Cinch it with a belt and add heels for the evening.",
+    "product_quantity_in_stock": 20,
+    "product_rating": "4.1",
+    "product_rating_count": 330,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 171,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Washed Double Gauze Button Down Shirt Dress",
+    "product_slug": "washed-double-gauze-button-down-shirt-dress",
+    "product_discount": 15,
+    "product_current_price": "568.00",
+    "product_previous_price": "668.00",
+    "product_image": "products/7820945490059.webp",
+    "product_desc": "An oversized dress in 100% cotton — one piece, zero styling required. Why you'll reach for it 100% Cotton — drapes cleanly, skims without clinging. Easy silhouette that works from morning to evening. Neutral piece that pairs with every shoe in the closet. Fabric & care 100% Cotton. Machine wash cold, tumble dry low. Fit & sizing True to size. Size Bust Waist Hip S 34-36 in 26-28 in 36-38 in M 37-38 in 29-31 in 39-41 in L 39-40 in 32-33 in 42-43 in Wear it with White sneakers and a denim jacket for weekend errands, or strappy sandals and gold hoops for dinner.",
+    "product_quantity_in_stock": 3,
+    "product_rating": "4.4",
+    "product_rating_count": 83,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 172,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Plaid Collared Dropped Shoulder Shirt Jacket",
+    "product_slug": "plaid-collared-dropped-shoulder-shirt-jacket",
+    "product_discount": 15,
+    "product_current_price": "1222.00",
+    "product_previous_price": "1438.00",
+    "product_image": "products/7825607655563.jpg",
+    "product_desc": "A relaxed cardigan in soft rayon-poly blend — the layer you grab on the way out the door without thinking. Why you'll reach for it 65% Rayon, 35% Polyester — layers cleanly over a tee, a tank, or a button-down. Drapes straight down from the chest for a long, flattering line. Mid-weight knit wears from fall through spring. Fabric & care 65% Rayon, 35% Polyester. Machine wash cold, tumble dry low. Fit & sizing True to size. Size US Bust Shoulder Sleeve Length Top Length S 2/4 42.1 23 20.3 30 M 6/8 44.1 23.4 20.7 30.4 L 10 46 23.8 21.1 30.8 XL 12 49.1 24.6 21.5 31.2 2XL 14 51.5 25.4 21.8 31.6 Wear it with Throw over a fitted tee and jeans with loafers for weekdays, or layer over a slip dress and ankle boots in cooler evenings.",
+    "product_quantity_in_stock": 20,
+    "product_rating": "4.2",
+    "product_rating_count": 478,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 173,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Sheer Mesh Button Up Collared Beach Cover-Up Shirt",
+    "product_slug": "sheer-mesh-button-up-collared-beach-cover-up-shirt",
+    "product_discount": 5,
+    "product_current_price": "1284.00",
+    "product_previous_price": "1352.00",
+    "product_image": "products/7826910576779.webp",
+    "product_desc": "An easy piece in soft woven — an easy, versatile wardrobe addition. Why you'll reach for it 100% Polyester — soft, durable, easy to care for. Clean silhouette that wears well on its own or layered. Neutral base that works with most of your closet. Fabric & care 100% Polyester. Machine wash cold Tumble dry low Product Measurements (Inches). Fit & sizing True to size. Size Top Length Bust Sleeve Length One Size 37.8 78.7 5.1 Wear it with Pair with the basics already in your closet — a white tee, a fitted tank, straight-leg jeans, loafers or sneakers depending on the day.",
+    "product_quantity_in_stock": 14,
+    "product_rating": "4.6",
+    "product_rating_count": 405,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 174,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Button Down Hooded Sheer Beach Cover-Up Shirt",
+    "product_slug": "button-down-hooded-sheer-beach-cover-up-shirt",
+    "product_discount": 40,
+    "product_current_price": "1309.00",
+    "product_previous_price": "2182.00",
+    "product_image": "products/7826944917643.webp",
+    "product_desc": "Elevate your look with our Button Down Hooded Cover-Up. Perfect for sophisticated layering or sun-kissed days, it offers lightweight comfort and refined style. Details Button-down front Lightweight, sheer design Non-stretch fabric Material & Care 65% Viscose, 35% Polyester Machine wash cold, tumble dry low Size Guide (Inches) Size Top Length Bust Sleeve Length One Size 35.8 44.9 23.2",
+    "product_quantity_in_stock": 3,
+    "product_rating": "3.8",
+    "product_rating_count": 295,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 175,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Crinkle Gauze Button Shirt and Shorts Set",
+    "product_slug": "crinkle-gauze-button-shirt-and-shorts-set",
+    "product_discount": 20,
+    "product_current_price": "1019.00",
+    "product_previous_price": "1274.00",
+    "product_image": "products/8041127575691.webp",
+    "product_desc": "Two-piece crinkle gauze set with a buttoned shirt and matching shorts with functional pockets. Why you'll reach for it Matching two-piece buttoned shirt and shorts in lightweight crinkle gauze Breathable, textured fabric made of 100% polyester Functional pockets with a no-stretch fit Material & care Polyester. Machine wash cold, tumble dry low. Fit & sizing Stretch: no stretch. Available in sizes S, M, L, XL. Size Bust Waist Hip S 34-36 in 26-28 in 36-38 in M 37-38 in 29-31 in 39-41 in L 39-40 in 32-33 in 42-43 in XL 41-42 in 34-35 in 44-45 in Measurements in inches unless noted. Wear it with Wear the set together with sandals for a beach day or casual lunch. Mix the shirt over a tank and jeans for another look.",
+    "product_quantity_in_stock": 3,
+    "product_rating": "4.3",
+    "product_rating_count": 131,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 176,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Lantern Sleeve Shirt and Tiered Ruffle Skirt Set",
+    "product_slug": "lantern-sleeve-shirt-and-tiered-ruffle-skirt-set",
+    "product_discount": 20,
+    "product_current_price": "820.00",
+    "product_previous_price": "1025.00",
+    "product_image": "products/8166979829899.webp",
+    "product_desc": "This cotton-blend set with its playful lantern sleeves and tiered ruffled skirt is ready for your next sunny weekend adventure. Why you'll reach for it Crafted from a breathable cotton-blend fabric, this set offers comfort for all-day wear. The relaxed lantern sleeve top and tiered ruffled skirt create a coordinated, playful look. Ideal for a casual brunch, a festival, or a day exploring new places with friends. Fabric & care Made from 80% cotton and 20% polyester. Machine wash cold and tumble dry low for best care. Fit & sizing This set runs true to size with a relaxed fit in the top and a comfortable elastic waist on the skirt. If you are between sizes, consider sizing up for a more relaxed feel. Size US Top Length Shoulder Bust Sleeve Length Bottom Length Waist Hip S 2/4 26.8 19.7 44.1 22.4 14.2 25.6 33.1 M 6 27.6 20.5 45.7 23.2 15 27.2 34.6 L 8 28.3 21.3 47.2 24 15.7 28.7 36.2 Wear it with Pair this set with flat sandals and a woven tote for a relaxed weekend look, or dress it up with espadrille wedges and a delicate necklace for a garden party.",
+    "product_quantity_in_stock": 25,
+    "product_rating": "4.3",
+    "product_rating_count": 136,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 177,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Oversized Paisley Print Denim Shirt Jacket",
+    "product_slug": "oversized-paisley-print-denim-shirt-jacket",
+    "product_discount": 25,
+    "product_current_price": "465.00",
+    "product_previous_price": "620.00",
+    "product_image": "products/8166982877323.webp",
+    "product_desc": "This oversized cotton-blend denim shirt jacket, featuring a subtle paisley print, is your new go-to for effortless layering on a cool weekend morning. Why you'll reach for it Crafted from a soft, washed cotton-blend denim for comfortable, everyday wear. The relaxed, oversized fit makes it ideal for easy layering over your favorite tees and tanks. Functional button-front and chest pockets add utility and a touch of casual cool for any outing. Fabric & care Made from 91% Cotton and 9% Polyester. Machine wash cold and tumble dry low for simple care. Fit & sizing This shirt jacket offers a relaxed, oversized fit, designed for comfortable layering. Consider sizing down if you prefer a less roomy silhouette. Size Bust Waist S 34-36 26-28 M 37-38 29-31 L 39-40 32-33 Wear it with Pair it over a simple white tee with dark wash jeans and ankle boots for a weekend trip, or wear it open over a slip dress with chunky sneakers for a relaxed evening.",
+    "product_quantity_in_stock": 5,
+    "product_rating": "4.3",
+    "product_rating_count": 408,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 178,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Paisley Print Denim Shirt Jacket",
+    "product_slug": "paisley-print-denim-shirt-jacket",
+    "product_discount": 40,
+    "product_current_price": "314.00",
+    "product_previous_price": "523.00",
+    "product_image": "products/8166983762059.webp",
+    "product_desc": "A relaxed fit shirt jacket in dark denim with an all-over paisley print. Why you'll reach for it Paisley print on a dark denim shade Relaxed fit in a classic shirt jacket silhouette Offered in sizes S, M and L Material & care Denim. See care label. Fit & sizing Available in sizes S, M, L. Size Bust Waist S 34-36 26-28 M 37-38 29-31 L 39-40 32-33 Measurements in inches unless noted. Wear it with Wear it over a basic tee with dark jeans and ankle boots for a casual day, or over a slip dress with sneakers.",
+    "product_quantity_in_stock": 5,
+    "product_rating": "4.1",
+    "product_rating_count": 161,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 179,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Plaid Button-Up Long Sleeve Shirt",
+    "product_slug": "plaid-button-up-long-sleeve-shirt",
+    "product_discount": 30,
+    "product_current_price": "547.00",
+    "product_previous_price": "781.00",
+    "product_image": "products/8166986186891.webp",
+    "product_desc": "This soft plaid button-up, made from a polyester-spandex blend, is your go-to for relaxed weekend brunches or a casual travel day. Why you'll reach for it Crafted from a comfortable 95% polyester, 5% spandex blend, it feels soft against your skin for all-day wear. The relaxed, long-sleeve silhouette makes it an effortless layering piece or a standalone top. Its timeless plaid pattern transitions seamlessly from a coffee run to an evening bonfire with friends. Fabric & care This shirt is made from 95% polyester and 5% spandex. Machine wash cold and tumble dry low for best care. Fit & sizing This shirt offers a relaxed fit, designed to drape comfortably. If you prefer a more tailored look, consider sizing down. Size Top Length Bust Shoulder Sleeve Length S 27.6 42.5 21.3 21.9 M 28 44.1 22 22.2 L 28.3 46.5 23.2 22.6 XL 28.7 48.8 24.4 23 Wear it with Wear it open over a white tank with your favorite jeans and ankle boots, or buttoned up with a denim skirt and white sneakers for a day out.",
+    "product_quantity_in_stock": 8,
+    "product_rating": "4.6",
+    "product_rating_count": 123,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 180,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Plaid Button-Up Hooded Shirt with Chest Pocket",
+    "product_slug": "plaid-button-up-hooded-shirt-with-chest-pocket",
+    "product_discount": 25,
+    "product_current_price": "455.00",
+    "product_previous_price": "607.00",
+    "product_image": "products/8166986350731.webp",
+    "product_desc": "This relaxed plaid button-up, featuring a soft hood and practical chest pockets, is your go-to for comfortable weekend style. Why you'll reach for it The oversized fit provides a comfortable, laid-back silhouette, ideal for layering on cooler days. A functional hood and button-up front make it versatile for changing weather or quick style adjustments. Crafted for easy wear, this shirt is perfect for brisk morning walks or a relaxed coffee run. Fabric & care Made from 65% polyester, 35% polyester. Machine wash cold and tumble dry low for best care. Fit & sizing This shirt offers a relaxed, oversized fit; consider sizing down if you prefer a less roomy feel. It's designed to drape comfortably for easy layering. Size Top Length Bust Sleeve Length S 27.6 40.2 20.1 M 28 42.1 20.5 L 28.3 44.1 20.9 XL 28.7 46.1 21.3 2XL 29.1 49.2 21.7 Wear it with Wear it open over a fitted ribbed tank with high-rise jeans and white sneakers for a casual brunch, or buttoned with leggings and ankle boots for a travel day.",
+    "product_quantity_in_stock": 25,
+    "product_rating": "3.6",
+    "product_rating_count": 174,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 181,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Christmas Checker Plaid Button Up Shirt Dress",
+    "product_slug": "christmas-checker-plaid-button-up-shirt-dress",
+    "product_discount": 40,
+    "product_current_price": "955.00",
+    "product_previous_price": "1592.00",
+    "product_image": "products/8166986678411.webp",
+    "product_desc": "A Christmas checker plaid shirt dress with a button-up front in a red multi color. Why you'll reach for it Checker plaid pattern in a red multi color Button-up shirt dress style in a red multi color Button-up shirt dress style for holiday occasions Material & care See product label. See care label. Fit & sizing Available in sizes S, M, L, XL. Size Bust Waist Hip S 33-35 25-27 35-37 M 35-38 27-30 37-40 L 38-40 30-32 40-42 XL 40-42 32-34 42-44 Measurements in inches unless noted. Wear it with Wear it with tights and boots for a holiday gathering. Add a belt and flats for a family Christmas photo.",
+    "product_quantity_in_stock": 20,
+    "product_rating": "3.9",
+    "product_rating_count": 292,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 182,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Printed Maxi Shirt Dress with Belt",
+    "product_slug": "printed-maxi-shirt-dress-with-belt",
+    "product_discount": 15,
+    "product_current_price": "1279.00",
+    "product_previous_price": "1505.00",
+    "product_image": "products/10338389393547.webp",
+    "product_desc": "Printed maxi shirt dress with a belt made for office and travel. Why you'll reach for it Buttoned front with a belted waist on a maxi length Made of 100% polyester with no stretch Sizes S to 2XL, offered in Blue Fabric & care 100% polyester. Machine wash cold. Tumble dry low. Fit & sizing Stretch: no stretch. Not lined. Available in sizes S, M, L, XL, 2XL. Size Length Bust S 49.2 38.6 M 49.6 40.2 L 50 41.7 XL 50.4 43.3 2XL 50.8 44.9 Product measurements in inches. Wear it with Wear with white sneakers and a tote for travel, or loafers and a light blazer for a relaxed office day.",
+    "product_quantity_in_stock": 8,
+    "product_rating": "3.7",
+    "product_rating_count": 357,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 183,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Satin Button-Down Shirt Dress",
+    "product_slug": "satin-button-down-shirt-dress",
+    "product_discount": 5,
+    "product_current_price": "1313.00",
+    "product_previous_price": "1382.00",
+    "product_image": "products/10338396766347.webp",
+    "product_desc": "A satin button-down shirt dress for brunches, office days and dinners. Why you'll reach for it Button-down shirt dress design in satin 100% polyester fabric, not lined, with no stretch Offered in Apricot, sizes S to XL Fabric & care 100% polyester. Machine wash cold. Tumble dry low. Fit & sizing Stretch: no stretch. Not lined. Available in sizes S, M, L, XL. Size Length Bust S 35.8 38.6 M 36.2 40.2 L 36.6 42.5 XL 37 44.9 Product measurements in inches. Wear it with For the office, wear it with loafers and a structured tote. For brunch, try flat sandals and a straw bag.",
+    "product_quantity_in_stock": 25,
+    "product_rating": "4.7",
+    "product_rating_count": 408,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 184,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Collared Long Sleeve Midi Shirt Dress with Pockets",
+    "product_slug": "collared-long-sleeve-midi-shirt-dress-with-pockets",
+    "product_discount": 25,
+    "product_current_price": "683.00",
+    "product_previous_price": "911.00",
+    "product_image": "products/10338398044299.webp",
+    "product_desc": "A collar with buttons, pockets and a tie detail on a midi shirt dress, suited to work. Why you'll reach for it Designed with a collar, buttons, pockets and a tie detail Made from 100% polyester, no stretch and not lined Black Forest color in sizes S to XL Fabric & care 100% polyester. Machine wash cold. Tumble dry low. Fit & sizing Stretch: no stretch. Not lined. Sheer: opaque. Available in sizes S, M, L, XL. Size US Bust Length Sleeve Length Shoulder Waist S 4 39.4 48.6 23.8 15.6 40.2 M 6/8 40.9 49 24.2 15.9 41.7 L 10/12 43.3 49.4 24.6 16.3 44.1 XL 14 45.7 49.8 25 16.7 46.5 Product measurements in inches. Wear it with For work, wear loafers and a structured tote. For a weekend, try white sneakers and a denim jacket.",
+    "product_quantity_in_stock": 30,
+    "product_rating": "3.6",
+    "product_rating_count": 187,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 185,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Front-Tie Maxi Shirt Dress",
+    "product_slug": "front-tie-maxi-shirt-dress",
+    "product_discount": 5,
+    "product_current_price": "1297.00",
+    "product_previous_price": "1365.00",
+    "product_image": "products/10338401157259.webp",
+    "product_desc": "A pocketed maxi shirt dress with a front tie for weekend errands, travel days and casual work settings. Why you'll reach for it Front-tie twist detail defines the waist of the maxi shirt dress Pockets add practical storage to the long length Five color options and sizes S to XXL Fabric & care 100% polyester. Machine wash cold. Tumble dry low. Fit & sizing Stretch: no stretch. Not lined. Available in sizes S, M, L, XL, XXL. Size Length Bust Sleeve Length S 49.2 38.6 17.9 M 49.6 40.2 18.3 L 50 42.5 18.7 XL 50.4 44.9 19.1 XXL 50.8 47.2 19.5 Product measurements in inches. Wear it with Wear with white sneakers and a denim jacket on weekends, or loafers and a structured tote for a casual office day.",
+    "product_quantity_in_stock": 5,
+    "product_rating": "3.6",
+    "product_rating_count": 38,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 186,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Printed Long Sleeve Shirt Dress with Belt",
+    "product_slug": "printed-long-sleeve-shirt-dress-with-belt",
+    "product_discount": 5,
+    "product_current_price": "813.00",
+    "product_previous_price": "856.00",
+    "product_image": "products/10338405023883.webp",
+    "product_desc": "A printed long sleeve shirt dress with buttons and a belt for office days and fall brunches. Why you'll reach for it Made from 100% polyester with no stretch Buttoned design with a belt to define the waist Offered in sizes S to 2XL in 1 color Fabric & care 100% polyester. Machine wash cold. Tumble dry low. Fit & sizing Stretch: no stretch. Not lined. Available in sizes S, M, L, XL, 2XL. Size Length Waist Bust S 37 35.4 38.6 M 37.4 37 40.2 L 37.8 38.6 41.7 XL 38.2 40.2 43.3 2XL 38.6 41.7 44.9 Product measurements in inches. Wear it with Pair it with ankle boots and a camel coat for a fall workday, or white sneakers and a crossbody bag for weekend errands.",
+    "product_quantity_in_stock": 20,
+    "product_rating": "4.5",
+    "product_rating_count": 56,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 187,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Long Sleeve Wrap Midi Shirt Dress with Pockets",
+    "product_slug": "long-sleeve-wrap-midi-shirt-dress-with-pockets",
+    "product_discount": 20,
+    "product_current_price": "977.00",
+    "product_previous_price": "1221.00",
+    "product_image": "products/10338405908619.webp",
+    "product_desc": "A wrap shirt dress shape with ruching and pockets in Green, suited to work and brunch. Why you'll reach for it Designed with a wrap front, ruching and pockets Made from 100% polyester, slightly stretchy and not lined Green color in sizes S to XXL Fabric & care 100% polyester. Machine wash cold. Tumble dry low. Fit & sizing Stretch: slightly stretchy. Not lined. Available in sizes S, M, L, XL, XXL. Size Length Waist Bust Sleeve Length S 50.4 26.8 35.4 24 M 50.8 28.3 37 24.4 L 51.2 29.9 38.6 24.8 XL 51.6 32.3 40.9 25.2 XXL 52 34.6 43.3 25.6 Product measurements in inches. Wear it with For work, wear loafers and a structured tote. For brunch, try ankle boots and a trench coat.",
+    "product_quantity_in_stock": 8,
+    "product_rating": "3.7",
+    "product_rating_count": 13,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 188,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Casual Linen Shirt Dress with Button-Down Front",
+    "product_slug": "casual-linen-shirt-dress-with-button-down-front",
+    "product_discount": 5,
+    "product_current_price": "691.00",
+    "product_previous_price": "727.00",
+    "product_image": "products/10338417606795.webp",
+    "product_desc": "A casual button-down shirt dress offered in three colors for weekends and relaxed work days. Why you'll reach for it Button-down front with a relaxed shirt dress cut Offered in Beige, Cerulean and Dark Navy 100% polyester in sizes S to XL Fabric & care 100% polyester. Machine wash cold. Tumble dry low. Fit & sizing Stretch: no stretch. Not lined. Available in sizes S, M, L, XL. Size Length Waist Hip Bust S 48.8 42.9 42.9 13.4 M 49.2 44.5 44.5 13.8 L 49.6 46.9 46.9 14.2 XL 50 49.2 49.2 14.6 Product measurements in inches. Wear it with Wear with white sneakers and a canvas tote for weekends, or loafers and a light blazer for a relaxed office day.",
+    "product_quantity_in_stock": 3,
+    "product_rating": "3.9",
+    "product_rating_count": 400,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 189,
+  "fields": {
+    "product_category": 10,
+    "product_name": "Printed Balloon Sleeve Maxi Shirt Dress with Tie",
+    "product_slug": "printed-balloon-sleeve-maxi-shirt-dress-with-tie",
+    "product_discount": 25,
+    "product_current_price": "360.00",
+    "product_previous_price": "480.00",
+    "product_image": "products/10338422521995.webp",
+    "product_desc": "A printed maxi shirt dress with balloon sleeves and a tie waist for vacations and weekends. Why you'll reach for it Balloon sleeves with a button-down maxi shirt shape Tie waist to adjust the fit 100% polyester, not lined, sizes S to 2XL Fabric & care 100% polyester. Machine wash cold. Tumble dry low. Fit & sizing Stretch: no stretch. Not lined. Available in sizes S, M, L, XL, 2XL. Size Length Bust Sleeve Length S 50.4 43.3 21.3 M 50.8 44.9 21.7 L 51.2 46.5 22 XL 51.6 48 22.4 Product measurements in inches. Wear it with Wear with flat sandals and a straw tote on vacation, or ankle boots and a denim jacket for a fall weekend.",
+    "product_quantity_in_stock": 10,
+    "product_rating": "4.7",
+    "product_rating_count": 136,
+    "product_created_at": "2026-10-28",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 190,
+  "fields": {
+    "product_category": 17,
+    "product_name": "Classic Navy Two-Piece Suit",
+    "product_slug": "classic-navy-two-piece-suit",
+    "product_discount": 10,
+    "product_current_price": "11699.00",
+    "product_previous_price": "12999.00",
+    "product_image": "products/images_1_ZVynPN6.jpg",
+    "product_desc": "A timeless wardrobe essential with a tailored fit and a clean, structured silhouette. Made from a soft wool-blend fabric, it stays comfortable through long days at the office or at events. Pair it with a white shirt and a silk tie for a sharp, professional look.",
+    "product_quantity_in_stock": 16,
+    "product_rating": "4.3",
+    "product_rating_count": 500,
+    "product_created_at": "2026-11-03",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 191,
+  "fields": {
+    "product_category": 17,
+    "product_name": "Charcoal Grey Slim Fit Suit",
+    "product_slug": "charcoal-grey-slim-fit-suit",
+    "product_discount": 15,
+    "product_current_price": "10199.00",
+    "product_previous_price": "11999.00",
+    "product_image": "products/a7a767ad6e72e5884c951a1020551f95.jpg",
+    "product_desc": "A notch lapel and a modern, close cut that flatters every build. The smooth, wrinkle-resistant fabric holds its shape from morning meetings to evening dinners. It is easy to style with both formal shirts and turtlenecks.",
+    "product_quantity_in_stock": 0,
+    "product_rating": "4.2",
+    "product_rating_count": 344,
+    "product_created_at": "2026-11-03",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 192,
+  "fields": {
+    "product_category": 20,
+    "product_name": "Blue & Black Check Shirt",
+    "product_slug": "blue-black-check-shirt",
+    "product_discount": 25,
+    "product_current_price": "659.00",
+    "product_previous_price": "878.67",
+    "product_image": "products/dj_83.jpg",
+    "product_desc": "The Blue & Black Check Shirt is a stylish and comfortable men's shirt featuring a classic check pattern. Made from high-quality fabric, it's suitable for both casual and semi-formal occasions.",
+    "product_quantity_in_stock": 53,
+    "product_rating": "4.9",
+    "product_rating_count": 139,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 193,
+  "fields": {
+    "product_category": 20,
+    "product_name": "Gigabyte Aorus Men Tshirt",
+    "product_slug": "gigabyte-aorus-men-tshirt",
+    "product_discount": 30,
+    "product_current_price": "2579.00",
+    "product_previous_price": "3684.29",
+    "product_image": "products/dj_84.jpg",
+    "product_desc": "The Gigabyte Aorus Men Tshirt is a cool and casual shirt for gaming enthusiasts. With the Aorus logo and sleek design, it's perfect for expressing your gaming style.",
+    "product_quantity_in_stock": 95,
+    "product_rating": "4.4",
+    "product_rating_count": 384,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 194,
+  "fields": {
+    "product_category": 20,
+    "product_name": "Man Plaid Shirt",
+    "product_slug": "man-plaid-shirt",
+    "product_discount": 15,
+    "product_current_price": "3499.00",
+    "product_previous_price": "4116.47",
+    "product_image": "products/dj_85.jpg",
+    "product_desc": "The Man Plaid Shirt is a timeless and versatile men's shirt with a classic plaid pattern. Its comfortable fit and casual style make it a wardrobe essential for various occasions.",
+    "product_quantity_in_stock": 98,
+    "product_rating": "3.9",
+    "product_rating_count": 404,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 195,
+  "fields": {
+    "product_category": 20,
+    "product_name": "Men Check Shirt",
+    "product_slug": "men-check-shirt",
+    "product_discount": 40,
+    "product_current_price": "2269.00",
+    "product_previous_price": "3781.67",
+    "product_image": "products/dj_87.jpg",
+    "product_desc": "The Men Check Shirt is a classic and versatile shirt featuring a stylish check pattern. Suitable for various occasions, it adds a smart and polished touch to your wardrobe.",
+    "product_quantity_in_stock": 7,
+    "product_rating": "4.7",
+    "product_rating_count": 52,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 196,
+  "fields": {
+    "product_category": 19,
+    "product_name": "Nike Air Jordan 1 Red And Black",
+    "product_slug": "nike-air-jordan-1-red-and-black",
+    "product_discount": 20,
+    "product_current_price": "6449.00",
+    "product_previous_price": "8061.25",
+    "product_image": "products/dj_88.jpg",
+    "product_desc": "The Nike Air Jordan 1 in Red and Black is an iconic basketball sneaker known for its stylish design and high-performance features, making it a favorite among sneaker enthusiasts and athletes.",
+    "product_quantity_in_stock": 92,
+    "product_rating": "4.7",
+    "product_rating_count": 438,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 197,
+  "fields": {
+    "product_category": 19,
+    "product_name": "Nike Baseball Cleats",
+    "product_slug": "nike-baseball-cleats",
+    "product_discount": 40,
+    "product_current_price": "2649.00",
+    "product_previous_price": "4415.00",
+    "product_image": "products/dj_89.jpg",
+    "product_desc": "Nike Baseball Cleats are designed for maximum traction and performance on the baseball field. They provide stability and support for players during games and practices.",
+    "product_quantity_in_stock": 54,
+    "product_rating": "3.5",
+    "product_rating_count": 150,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 198,
+  "fields": {
+    "product_category": 19,
+    "product_name": "Puma Future Rider Trainers",
+    "product_slug": "puma-future-rider-trainers",
+    "product_discount": 20,
+    "product_current_price": "4249.00",
+    "product_previous_price": "5311.25",
+    "product_image": "products/dj_90.jpg",
+    "product_desc": "The Puma Future Rider Trainers offer a blend of retro style and modern comfort. Perfect for casual wear, these trainers provide a fashionable and comfortable option for everyday use.",
+    "product_quantity_in_stock": 50,
+    "product_rating": "5.0",
+    "product_rating_count": 342,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 199,
+  "fields": {
+    "product_category": 19,
+    "product_name": "Sports Sneakers Off White & Red",
+    "product_slug": "sports-sneakers-off-white-red",
+    "product_discount": 10,
+    "product_current_price": "1899.00",
+    "product_previous_price": "2110.00",
+    "product_image": "products/dj_91.jpg",
+    "product_desc": "The Sports Sneakers in Off White and Red combine style and functionality, making them a fashionable choice for sports enthusiasts. The red and off-white color combination adds a bold and energetic touch.",
+    "product_quantity_in_stock": 70,
+    "product_rating": "4.2",
+    "product_rating_count": 361,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 200,
+  "fields": {
+    "product_category": 16,
+    "product_name": "Green Crystal Earring",
+    "product_slug": "green-crystal-earring",
+    "product_discount": 5,
+    "product_current_price": "4099.00",
+    "product_previous_price": "4314.74",
+    "product_image": "products/dj_182.jpg",
+    "product_desc": "The Green Crystal Earring is a dazzling accessory that features a vibrant green crystal. With a classic design, it adds a touch of elegance to your ensemble, perfect for formal or special occasions.",
+    "product_quantity_in_stock": 54,
+    "product_rating": "3.7",
+    "product_rating_count": 441,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 201,
+  "fields": {
+    "product_category": 16,
+    "product_name": "Green Oval Earring",
+    "product_slug": "green-oval-earring",
+    "product_discount": 40,
+    "product_current_price": "919.00",
+    "product_previous_price": "1531.67",
+    "product_image": "products/dj_183.jpg",
+    "product_desc": "The Green Oval Earring is a stylish and versatile accessory with a unique oval shape. Whether for casual or dressy occasions, its green hue and contemporary design make it a standout piece.",
+    "product_quantity_in_stock": 95,
+    "product_rating": "4.0",
+    "product_rating_count": 277,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 202,
+  "fields": {
+    "product_category": 16,
+    "product_name": "Tropical Earring",
+    "product_slug": "tropical-earring",
+    "product_discount": 30,
+    "product_current_price": "2169.00",
+    "product_previous_price": "3098.57",
+    "product_image": "products/dj_184.jpg",
+    "product_desc": "The Tropical Earring is a fun and playful accessory inspired by tropical elements. Featuring vibrant colors and a lively design, it's perfect for adding a touch of summer to your look.",
+    "product_quantity_in_stock": 32,
+    "product_rating": "4.8",
+    "product_rating_count": 367,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 203,
+  "fields": {
+    "product_category": 15,
+    "product_name": "Black Women's Gown",
+    "product_slug": "black-womens-gown",
+    "product_discount": 10,
+    "product_current_price": "1819.00",
+    "product_previous_price": "2021.11",
+    "product_image": "products/dj_177.jpg",
+    "product_desc": "The Black Women's Gown is an elegant and timeless evening gown. With a sleek black design, it's perfect for formal events and special occasions, exuding sophistication and style.",
+    "product_quantity_in_stock": 92,
+    "product_rating": "4.4",
+    "product_rating_count": 262,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 204,
+  "fields": {
+    "product_category": 15,
+    "product_name": "Corset Leather With Skirt",
+    "product_slug": "corset-leather-with-skirt",
+    "product_discount": 20,
+    "product_current_price": "3689.00",
+    "product_previous_price": "4611.25",
+    "product_image": "products/dj_178.jpg",
+    "product_desc": "The Corset Leather With Skirt is a bold and edgy ensemble that combines a stylish corset with a matching skirt. Ideal for fashion-forward individuals, it makes a statement at any event.",
+    "product_quantity_in_stock": 15,
+    "product_rating": "4.3",
+    "product_rating_count": 69,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 205,
+  "fields": {
+    "product_category": 15,
+    "product_name": "Corset With Black Skirt",
+    "product_slug": "corset-with-black-skirt",
+    "product_discount": 10,
+    "product_current_price": "4999.00",
+    "product_previous_price": "5554.44",
+    "product_image": "products/dj_179.jpg",
+    "product_desc": "The Corset With Black Skirt is a chic and versatile outfit that pairs a fashionable corset with a classic black skirt. It offers a trendy and coordinated look for various occasions.",
+    "product_quantity_in_stock": 38,
+    "product_rating": "3.6",
+    "product_rating_count": 264,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 206,
+  "fields": {
+    "product_category": 15,
+    "product_name": "Dress Pea",
+    "product_slug": "dress-pea",
+    "product_discount": 25,
+    "product_current_price": "3099.00",
+    "product_previous_price": "4132.00",
+    "product_image": "products/dj_180.jpg",
+    "product_desc": "The Dress Pea is a stylish and comfortable dress with a pea pattern. Perfect for casual outings, it adds a playful and fun element to your wardrobe, making it a great choice for day-to-day wear.",
+    "product_quantity_in_stock": 63,
+    "product_rating": "4.3",
+    "product_rating_count": 408,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 207,
+  "fields": {
+    "product_category": 15,
+    "product_name": "Marni Red & Black Suit",
+    "product_slug": "marni-red-black-suit",
+    "product_discount": 40,
+    "product_current_price": "4579.00",
+    "product_previous_price": "7631.67",
+    "product_image": "products/dj_181.jpg",
+    "product_desc": "The Marni Red & Black Suit is a sophisticated and fashion-forward suit ensemble. With a combination of red and black tones, it showcases a modern design for a bold and confident look.",
+    "product_quantity_in_stock": 100,
+    "product_rating": "3.8",
+    "product_rating_count": 485,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 208,
+  "fields": {
+    "product_category": 14,
+    "product_name": "Blue Frock",
+    "product_slug": "blue-frock",
+    "product_discount": 15,
+    "product_current_price": "1549.00",
+    "product_previous_price": "1822.35",
+    "product_image": "products/dj_162.jpg",
+    "product_desc": "The Blue Frock is a charming and stylish dress for various occasions. With a vibrant blue color and a comfortable design, it adds a touch of elegance to your wardrobe.",
+    "product_quantity_in_stock": 71,
+    "product_rating": "4.9",
+    "product_rating_count": 318,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 209,
+  "fields": {
+    "product_category": 14,
+    "product_name": "Girl Summer Dress",
+    "product_slug": "girl-summer-dress",
+    "product_discount": 40,
+    "product_current_price": "1149.00",
+    "product_previous_price": "1915.00",
+    "product_image": "products/dj_163.jpg",
+    "product_desc": "The Girl Summer Dress is a cute and breezy dress designed for warm weather. With playful patterns and lightweight fabric, it's perfect for keeping cool and stylish during the summer.",
+    "product_quantity_in_stock": 76,
+    "product_rating": "4.3",
+    "product_rating_count": 274,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 210,
+  "fields": {
+    "product_category": 14,
+    "product_name": "Gray Dress",
+    "product_slug": "gray-dress",
+    "product_discount": 10,
+    "product_current_price": "1369.00",
+    "product_previous_price": "1521.11",
+    "product_image": "products/dj_164.jpg",
+    "product_desc": "The Gray Dress is a versatile and chic option for various occasions. With a neutral gray color, it can be dressed up or down, making it a wardrobe staple for any fashion-forward individual.",
+    "product_quantity_in_stock": 95,
+    "product_rating": "4.0",
+    "product_rating_count": 38,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 211,
+  "fields": {
+    "product_category": 14,
+    "product_name": "Short Frock",
+    "product_slug": "short-frock",
+    "product_discount": 15,
+    "product_current_price": "1779.00",
+    "product_previous_price": "2092.94",
+    "product_image": "products/dj_165.jpg",
+    "product_desc": "The Short Frock is a playful and trendy dress with a shorter length. Ideal for casual outings or special occasions, it combines style and comfort for a fashionable look.",
+    "product_quantity_in_stock": 28,
+    "product_rating": "4.9",
+    "product_rating_count": 437,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 212,
+  "fields": {
+    "product_category": 14,
+    "product_name": "Tartan Dress",
+    "product_slug": "tartan-dress",
+    "product_discount": 15,
+    "product_current_price": "2269.00",
+    "product_previous_price": "2669.41",
+    "product_image": "products/dj_166.jpg",
+    "product_desc": "The Tartan Dress features a classic tartan pattern, bringing a timeless and sophisticated touch to your wardrobe. Perfect for fall and winter, it adds a hint of traditional charm.",
+    "product_quantity_in_stock": 86,
+    "product_rating": "3.5",
+    "product_rating_count": 69,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 213,
+  "fields": {
+    "product_category": 12,
+    "product_name": "Black & Brown Slipper",
+    "product_slug": "black-brown-slipper",
+    "product_discount": 5,
+    "product_current_price": "2709.00",
+    "product_previous_price": "2851.58",
+    "product_image": "products/dj_185.jpg",
+    "product_desc": "The Black & Brown Slipper is a comfortable and stylish choice for casual wear. Featuring a blend of black and brown colors, it adds a touch of sophistication to your relaxation.",
+    "product_quantity_in_stock": 17,
+    "product_rating": "3.6",
+    "product_rating_count": 351,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 214,
+  "fields": {
+    "product_category": 12,
+    "product_name": "Calvin Klein Heel Shoes",
+    "product_slug": "calvin-klein-heel-shoes",
+    "product_discount": 5,
+    "product_current_price": "2139.00",
+    "product_previous_price": "2251.58",
+    "product_image": "products/dj_186.jpg",
+    "product_desc": "Calvin Klein Heel Shoes are elegant and sophisticated, designed for formal occasions. With a classic design and high-quality materials, they complement your stylish ensemble.",
+    "product_quantity_in_stock": 29,
+    "product_rating": "4.9",
+    "product_rating_count": 58,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 215,
+  "fields": {
+    "product_category": 12,
+    "product_name": "Golden Shoes Woman",
+    "product_slug": "golden-shoes-woman",
+    "product_discount": 30,
+    "product_current_price": "4309.00",
+    "product_previous_price": "6155.71",
+    "product_image": "products/dj_187.jpg",
+    "product_desc": "The Golden Shoes for Women are a glamorous choice for special occasions. Featuring a golden hue and stylish design, they add a touch of luxury to your outfit.",
+    "product_quantity_in_stock": 19,
+    "product_rating": "3.7",
+    "product_rating_count": 259,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 216,
+  "fields": {
+    "product_category": 12,
+    "product_name": "Pampi Shoes",
+    "product_slug": "pampi-shoes",
+    "product_discount": 40,
+    "product_current_price": "5399.00",
+    "product_previous_price": "8998.33",
+    "product_image": "products/dj_188.jpg",
+    "product_desc": "Pampi Shoes offer a blend of comfort and style for everyday use. With a versatile design, they are suitable for various casual occasions, providing a trendy and relaxed look.",
+    "product_quantity_in_stock": 47,
+    "product_rating": "4.8",
+    "product_rating_count": 476,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.product",
+  "pk": 217,
+  "fields": {
+    "product_category": 12,
+    "product_name": "Red Shoes",
+    "product_slug": "red-shoes",
+    "product_discount": 30,
+    "product_current_price": "1599.00",
+    "product_previous_price": "2284.29",
+    "product_image": "products/dj_189.jpg",
+    "product_desc": "The Red Shoes make a bold statement with their vibrant red color. Whether for a party or a casual outing, these shoes add a pop of color and style to your wardrobe.",
+    "product_quantity_in_stock": 48,
+    "product_rating": "3.8",
+    "product_rating_count": 187,
+    "product_created_at": "2026-11-04",
+    "product_is_active": true
+  }
+},
+{
+  "model": "project.wishlist",
+  "pk": 16,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "product": 19,
+    "added_at": "2026-11-03T17:40:20.422Z"
+  }
+},
+{
+  "model": "project.wishlist",
+  "pk": 18,
+  "fields": {
+    "user": [
+      "subhajit.dev001@gmail.com"
+    ],
+    "product": 205,
+    "added_at": "2026-11-05T12:39:43.413Z"
+  }
+},
+{
+  "model": "project.cartitem",
+  "pk": 42,
+  "fields": {
+    "user": [
+      "riyagirisonu@gamil.com"
+    ],
+    "product": 6,
+    "quantity": 1,
+    "added_at": "2026-11-19T02:56:20.409Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 54,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-04T06:18:12.839Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 55,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-04T06:19:13.328Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 56,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-04T06:24:36.267Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 57,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "office",
+    "pincode": "721645",
+    "created_at": "2026-11-04T06:27:29.940Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 58,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "office",
+    "pincode": "721645",
+    "created_at": "2026-11-04T06:31:11.519Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 59,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-04T06:31:30.839Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 60,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-04T06:32:18.776Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 61,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-04T06:33:51.278Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 62,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-04T07:06:04.632Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 63,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-04T07:06:08.201Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 64,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-04T11:53:04.790Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 65,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-04T11:53:56.385Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 66,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-04T11:54:12.399Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 67,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-04T11:54:24.111Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 68,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-04T11:55:06.889Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 69,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-04T11:55:42.428Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 70,
+  "fields": {
+    "user": [
+      "subhajit.dev001@gmail.com"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-05T08:48:24.520Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 71,
+  "fields": {
+    "user": [
+      "subhajit.dev001@gmail.com"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-05T08:48:54.768Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 72,
+  "fields": {
+    "user": [
+      "riyagirisonu@gamil.com"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "office",
+    "pincode": "721645",
+    "created_at": "2026-11-18T13:31:32.618Z"
+  }
+},
+{
+  "model": "project.address",
+  "pk": 73,
+  "fields": {
+    "user": [
+      "riyagirisonu@gamil.com"
+    ],
+    "country": "India",
+    "phone_number": "+917602890337",
+    "street_address": "Gosarmor,baluhata road",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "address_type": "home",
+    "pincode": "721645",
+    "created_at": "2026-11-19T02:52:30.748Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "09093240-ca8c-495f-9e04-153133973268",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "payment_amount": "11699.00",
+    "payment_status": "pending",
+    "payment_method": "cod",
+    "address": 65,
+    "order_status": "pending",
+    "razorpay_order_id": null,
+    "razorpay_payment_id": null,
+    "razorpay_signature": null,
+    "created_at": "2026-11-04T11:53:56.393Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "0bdbd34a-2789-4c25-9def-b398db491af5",
+  "fields": {
+    "user": [
+      "subhajit.dev001@gmail.com"
+    ],
+    "payment_amount": "2579.00",
+    "payment_status": "pending",
+    "payment_method": "cod",
+    "address": 70,
+    "order_status": "pending",
+    "razorpay_order_id": null,
+    "razorpay_payment_id": null,
+    "razorpay_signature": null,
+    "created_at": "2026-11-05T08:48:24.533Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "0faf00eb-bbb9-4619-938b-ee17766e9ca5",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "payment_amount": "11699.00",
+    "payment_status": "pending",
+    "payment_method": "cod",
+    "address": 63,
+    "order_status": "pending",
+    "razorpay_order_id": null,
+    "razorpay_payment_id": null,
+    "razorpay_signature": null,
+    "created_at": "2026-11-04T07:06:08.203Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "14758e31-0f23-4748-8a1e-2cf5f695ad0d",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "payment_amount": "15499.00",
+    "payment_status": "success",
+    "payment_method": "online",
+    "address": 54,
+    "order_status": "pending",
+    "razorpay_order_id": "order_TvzqT700hN4NYK",
+    "razorpay_payment_id": "pay_TvzqaVo90SUm06",
+    "razorpay_signature": "955e252e6bbd03aa3e0e91f2f5f66fc2ed704e620f1dc38125cceae445e97b67",
+    "created_at": "2026-11-04T06:18:12.957Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "210d61cc-11f0-459f-b92a-1e3c95fbc44d",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "payment_amount": "10199.00",
+    "payment_status": "pending",
+    "payment_method": "cod",
+    "address": 60,
+    "order_status": "pending",
+    "razorpay_order_id": null,
+    "razorpay_payment_id": null,
+    "razorpay_signature": null,
+    "created_at": "2026-11-04T06:32:18.777Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "2672e07e-bf3e-4caf-b57f-38022523c726",
+  "fields": {
+    "user": [
+      "riyagirisonu@gamil.com"
+    ],
+    "payment_amount": "3499.00",
+    "payment_status": "success",
+    "payment_method": "online",
+    "address": 72,
+    "order_status": "pending",
+    "razorpay_order_id": "order_U1ehXEbfcQ1TAL",
+    "razorpay_payment_id": "pay_U1ehj4LfgDcjRl",
+    "razorpay_signature": "d71c2c086ec94e4d82830159a052f4e89f7357e2413f1caa43221851b1f423b6",
+    "created_at": "2026-11-18T13:31:33.754Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "287f9a25-6526-4cc1-9a6b-9af8defbe3ea",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "payment_amount": "10199.00",
+    "payment_status": "pending",
+    "payment_method": "cod",
+    "address": 58,
+    "order_status": "pending",
+    "razorpay_order_id": null,
+    "razorpay_payment_id": null,
+    "razorpay_signature": null,
+    "created_at": "2026-11-04T06:31:11.520Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "2aad2e2a-e4b7-4fdb-afcb-7f167614dfd8",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "payment_amount": "11699.00",
+    "payment_status": "pending",
+    "payment_method": "cod",
+    "address": 67,
+    "order_status": "pending",
+    "razorpay_order_id": null,
+    "razorpay_payment_id": null,
+    "razorpay_signature": null,
+    "created_at": "2026-11-04T11:54:24.111Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "2b4f40b6-0290-4e49-a2ba-f57dc96b333a",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "payment_amount": "11699.00",
+    "payment_status": "pending",
+    "payment_method": "cod",
+    "address": 68,
+    "order_status": "pending",
+    "razorpay_order_id": null,
+    "razorpay_payment_id": null,
+    "razorpay_signature": null,
+    "created_at": "2026-11-04T11:55:06.889Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "51f43281-a53b-4818-8396-6dcadb561a49",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "payment_amount": "10199.00",
+    "payment_status": "success",
+    "payment_method": "online",
+    "address": 56,
+    "order_status": "pending",
+    "razorpay_order_id": "order_TvzxEK7hDN1kBN",
+    "razorpay_payment_id": "pay_TvzxO6dErygDeb",
+    "razorpay_signature": "b72569ecc42020493f62fd7e329b8844fdb352430f471c685b0a2a3a15e188e9",
+    "created_at": "2026-11-04T06:24:36.968Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "570e8c46-be1d-4b02-b424-caed7fd605a2",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "payment_amount": "11699.00",
+    "payment_status": "pending",
+    "payment_method": "online",
+    "address": 62,
+    "order_status": "pending",
+    "razorpay_order_id": "order_Tw0f2ZwnEHEJLC",
+    "razorpay_payment_id": null,
+    "razorpay_signature": null,
+    "created_at": "2026-11-04T07:06:05.386Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "5c5aa999-9125-49c6-9b5b-59c533a9cd7d",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "payment_amount": "10199.00",
+    "payment_status": "pending",
+    "payment_method": "online",
+    "address": 55,
+    "order_status": "pending",
+    "razorpay_order_id": null,
+    "razorpay_payment_id": null,
+    "razorpay_signature": null,
+    "created_at": "2026-11-04T06:19:13.330Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "6619be79-a90f-46e9-8c84-b6f177cec5ba",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "payment_amount": "11699.00",
+    "payment_status": "pending",
+    "payment_method": "cod",
+    "address": 69,
+    "order_status": "pending",
+    "razorpay_order_id": null,
+    "razorpay_payment_id": null,
+    "razorpay_signature": null,
+    "created_at": "2026-11-04T11:55:42.428Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "918aae19-d649-4092-bdc6-47acc29ccf2e",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "payment_amount": "11699.00",
+    "payment_status": "pending",
+    "payment_method": "cod",
+    "address": 64,
+    "order_status": "pending",
+    "razorpay_order_id": null,
+    "razorpay_payment_id": null,
+    "razorpay_signature": null,
+    "created_at": "2026-11-04T11:53:04.790Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "92464574-b035-40be-a547-24b8326391f1",
+  "fields": {
+    "user": [
+      "riyagirisonu@gamil.com"
+    ],
+    "payment_amount": "3499.00",
+    "payment_status": "success",
+    "payment_method": "online",
+    "address": 73,
+    "order_status": "pending",
+    "razorpay_order_id": "order_U1sLbNJAB2CIWJ",
+    "razorpay_payment_id": "pay_U1sLqYeA1dyqqO",
+    "razorpay_signature": "ae99754612f3edc84c08a715cc477d1b6d6f3e31c7a88967c6680419bfa9b115",
+    "created_at": "2026-11-19T02:52:31.848Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "a52331ff-8671-41db-81c8-ba821da98a3e",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "payment_amount": "10199.00",
+    "payment_status": "pending",
+    "payment_method": "cod",
+    "address": 61,
+    "order_status": "pending",
+    "razorpay_order_id": null,
+    "razorpay_payment_id": null,
+    "razorpay_signature": null,
+    "created_at": "2026-11-04T06:33:51.280Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "a751f3c3-3cce-4f66-8422-168f226bea90",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "payment_amount": "10199.00",
+    "payment_status": "pending",
+    "payment_method": "cod",
+    "address": 57,
+    "order_status": "pending",
+    "razorpay_order_id": null,
+    "razorpay_payment_id": null,
+    "razorpay_signature": null,
+    "created_at": "2026-11-04T06:27:29.941Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "ad7c1263-6a1b-41b9-8390-9a04419bdff7",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "payment_amount": "10199.00",
+    "payment_status": "pending",
+    "payment_method": "cod",
+    "address": 59,
+    "order_status": "pending",
+    "razorpay_order_id": null,
+    "razorpay_payment_id": null,
+    "razorpay_signature": null,
+    "created_at": "2026-11-04T06:31:30.840Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "b533b5b3-906d-4646-9b52-874fb428c03b",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "payment_amount": "11699.00",
+    "payment_status": "pending",
+    "payment_method": "cod",
+    "address": 66,
+    "order_status": "pending",
+    "razorpay_order_id": null,
+    "razorpay_payment_id": null,
+    "razorpay_signature": null,
+    "created_at": "2026-11-04T11:54:12.399Z"
+  }
+},
+{
+  "model": "project.order",
+  "pk": "dcdf7876-459b-4a9c-a747-09074fbfe71c",
+  "fields": {
+    "user": [
+      "subhajit.dev001@gmail.com"
+    ],
+    "payment_amount": "2649.00",
+    "payment_status": "success",
+    "payment_method": "online",
+    "address": 71,
+    "order_status": "pending",
+    "razorpay_order_id": "order_TwQwm3cJc7lvRG",
+    "razorpay_payment_id": "pay_TwQwvkbdR0OlOK",
+    "razorpay_signature": "937b0dc4a3bbf36e7b35fa89aa9954326fc63c1e67ceb23f5526e8af276ef847",
+    "created_at": "2026-11-05T08:48:55.829Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 35,
+  "fields": {
+    "order_id": "14758e31-0f23-4748-8a1e-2cf5f695ad0d",
+    "product": 191,
+    "price": "10199.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T06:18:12.958Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 36,
+  "fields": {
+    "order_id": "14758e31-0f23-4748-8a1e-2cf5f695ad0d",
+    "product": 19,
+    "price": "5300.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T06:18:12.959Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 37,
+  "fields": {
+    "order_id": "5c5aa999-9125-49c6-9b5b-59c533a9cd7d",
+    "product": 191,
+    "price": "10199.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T06:19:13.331Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 38,
+  "fields": {
+    "order_id": "51f43281-a53b-4818-8396-6dcadb561a49",
+    "product": 191,
+    "price": "10199.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T06:24:36.970Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 39,
+  "fields": {
+    "order_id": "a751f3c3-3cce-4f66-8422-168f226bea90",
+    "product": 191,
+    "price": "10199.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T06:27:29.942Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 40,
+  "fields": {
+    "order_id": "287f9a25-6526-4cc1-9a6b-9af8defbe3ea",
+    "product": 191,
+    "price": "10199.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T06:31:11.520Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 41,
+  "fields": {
+    "order_id": "ad7c1263-6a1b-41b9-8390-9a04419bdff7",
+    "product": 191,
+    "price": "10199.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T06:31:30.841Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 42,
+  "fields": {
+    "order_id": "210d61cc-11f0-459f-b92a-1e3c95fbc44d",
+    "product": 191,
+    "price": "10199.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T06:32:18.778Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 43,
+  "fields": {
+    "order_id": "a52331ff-8671-41db-81c8-ba821da98a3e",
+    "product": 191,
+    "price": "10199.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T06:33:51.280Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 44,
+  "fields": {
+    "order_id": "570e8c46-be1d-4b02-b424-caed7fd605a2",
+    "product": 190,
+    "price": "11699.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T07:06:05.387Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 45,
+  "fields": {
+    "order_id": "0faf00eb-bbb9-4619-938b-ee17766e9ca5",
+    "product": 190,
+    "price": "11699.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T07:06:08.205Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 46,
+  "fields": {
+    "order_id": "918aae19-d649-4092-bdc6-47acc29ccf2e",
+    "product": 190,
+    "price": "11699.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T11:53:04.798Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 47,
+  "fields": {
+    "order_id": "09093240-ca8c-495f-9e04-153133973268",
+    "product": 190,
+    "price": "11699.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T11:53:56.393Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 48,
+  "fields": {
+    "order_id": "b533b5b3-906d-4646-9b52-874fb428c03b",
+    "product": 190,
+    "price": "11699.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T11:54:12.404Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 49,
+  "fields": {
+    "order_id": "2aad2e2a-e4b7-4fdb-afcb-7f167614dfd8",
+    "product": 190,
+    "price": "11699.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T11:54:24.111Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 50,
+  "fields": {
+    "order_id": "2b4f40b6-0290-4e49-a2ba-f57dc96b333a",
+    "product": 190,
+    "price": "11699.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T11:55:06.889Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 51,
+  "fields": {
+    "order_id": "6619be79-a90f-46e9-8c84-b6f177cec5ba",
+    "product": 190,
+    "price": "11699.00",
+    "quantity": 1,
+    "created_at": "2026-11-04T11:55:42.431Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 52,
+  "fields": {
+    "order_id": "0bdbd34a-2789-4c25-9def-b398db491af5",
+    "product": 193,
+    "price": "2579.00",
+    "quantity": 1,
+    "created_at": "2026-11-05T08:48:24.536Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 53,
+  "fields": {
+    "order_id": "dcdf7876-459b-4a9c-a747-09074fbfe71c",
+    "product": 197,
+    "price": "2649.00",
+    "quantity": 1,
+    "created_at": "2026-11-05T08:48:55.831Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 54,
+  "fields": {
+    "order_id": "2672e07e-bf3e-4caf-b57f-38022523c726",
+    "product": 194,
+    "price": "3499.00",
+    "quantity": 1,
+    "created_at": "2026-11-18T13:31:33.779Z"
+  }
+},
+{
+  "model": "project.orderitems",
+  "pk": 55,
+  "fields": {
+    "order_id": "92464574-b035-40be-a547-24b8326391f1",
+    "product": 194,
+    "price": "3499.00",
+    "quantity": 1,
+    "created_at": "2026-11-19T02:52:31.862Z"
+  }
+},
+{
+  "model": "project.profile",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "avatar": "b1"
+  }
+},
+{
+  "model": "project.profile",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "riyagirisonu@gamil.com"
+    ],
+    "avatar": "g2"
+  }
+},
+{
+  "model": "project.profile",
+  "pk": 3,
+  "fields": {
+    "user": [
+      "subhajit.dev001@gmail.com"
+    ],
+    "avatar": "b3"
+  }
+},
+{
+  "model": "project.profile",
+  "pk": 4,
+  "fields": {
+    "user": [
+      "sampapaldas@gmail.com"
+    ],
+    "avatar": "b3"
+  }
+},
+{
+  "model": "project.contactus",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "name": "Subhajit Das",
+    "email": "barbasudev721645@gmail.com",
+    "topic": "Order / Delivery",
+    "order_number": "#0faf00eb-bbb9-4619-938b-ee17766e9ca5",
+    "message": "casdcasdcccwdwdcwdc",
+    "email_sent": true,
+    "is_resolved": false,
+    "created_at": "2026-11-04T11:42:16.629Z"
+  }
+}
+]
