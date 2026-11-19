@@ -11,19 +11,23 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load environment variables from .env file
+load_dotenv(BASE_DIR / '.env')
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-dp__a3-i7@7!a8q!5w09bg4e=4%(8)w9=z)=)ewtdj**^bbt_x'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -85,11 +89,11 @@ WSGI_APPLICATION = 'ECommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'stylea_user',
-        'USER': 'root',
-        'PASSWORD': 'mysql1234',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '3306'),
     }
 }
 
@@ -136,7 +140,7 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-#add manually
+# add manually
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
@@ -158,8 +162,13 @@ EMAIL_USE_TLS = True   # Set to True if using port 587
 EMAIL_USE_SSL = False  # Set to True if using port 465 Instead of TLS
 
 # Authentication credentials
-EMAIL_HOST_USER = 'styleafashionai@gmail.com'      # Your email address
-EMAIL_HOST_PASSWORD = 'lfsyiysqeqbeuqch'            # App Password without spaces
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 
 # Default sender address for the application
-DEFAULT_FROM_EMAIL = 'STYLÉA <styleafashionai@gmail.com>'
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
+
+RAZORPAY_KEY_ID = os.getenv('RAZORPAY_KEY_ID')
+RAZORPAY_KEY_SECRET = os.getenv('RAZORPAY_KEY_SECRET')
+
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')

@@ -838,7 +838,7 @@ CONTACT_TOPICS = [
 
 
 def help_page(request):
-    return render(request, 'help.html')
+    return render(request, 'help_page.html')
 
 
 def contact_us(request):
